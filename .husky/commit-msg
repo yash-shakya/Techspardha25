@@ -1,0 +1,27 @@
+#!/bin/sh
+
+echo "🔍 Validating commit message format..."
+
+npx --no -- commitlint --edit "$1"
+
+if [ $? -ne 0 ]; then
+  echo "❌ Commit message validation failed!"
+  echo ""
+  echo "💡 Your commit message should follow the Conventional Commits format:"
+  echo "   <type>(<scope>): <description>"
+  echo ""
+  echo "   Allowed types: feat, fix, docs, style, refactor, perf, test, chore, revert"
+  echo "   scope is optional, but can be anything specifying the location of the commit change"
+  echo "   description should be clear and concise"
+  echo ""
+  echo "   Examples:"
+  echo "   feat(auth): add login functionality"
+  echo "   fix(cart): resolve item count issue"
+  echo "   docs(readme): update contributing guide"
+  echo ""
+  echo "👉 Please amend your commit message and try again:"
+  echo "   git commit --amend -m 'valid commit message'"
+  exit 1
+fi
+
+echo "✅ Commit message format is valid!"

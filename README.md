@@ -1,20 +1,21 @@
-# Turborepo starter
+# Techspardha25
 
-This is an official starter Turborepo.
+We are using Turbo repo to manage all our frontend apps
+- techspardha website : /app/web (NextJS@15 Default)
+- excalibur website : /app/excalibur (ReactJS Already Built)
+- hackshetra website : /app/hackshetra (ReactJS)
+- designathon website? : /app/designathon (TBD)
 
-## Using this example
+**Use `yarn` package manager**
 
-Run the following command:
+### Learn about MonoRepo and Turborepo
+(To fully utilise the power of Turborepo)
 
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
+#### What's inside?
 
 This Turborepo includes the following packages/apps:
 
-### Apps and Packages
+##### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org/) app
 - `web`: another [Next.js](https://nextjs.org/) app
@@ -24,7 +25,7 @@ This Turborepo includes the following packages/apps:
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
-### Utilities
+##### Utilities
 
 This Turborepo has some additional tools already setup for you:
 
@@ -32,7 +33,7 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-### Build
+##### Build
 
 To build all apps and packages, run the following command:
 
@@ -41,7 +42,7 @@ cd my-turborepo
 pnpm build
 ```
 
-### Develop
+##### Develop
 
 To develop all apps and packages, run the following command:
 
@@ -50,7 +51,7 @@ cd my-turborepo
 pnpm dev
 ```
 
-### Remote Caching
+##### Remote Caching
 
 > [!TIP]
 > Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
