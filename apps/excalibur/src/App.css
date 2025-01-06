@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Poppins:wght@300&display=swap');
+
+@font-face {
+  font-family: starlord;
+  src: url(../src/assets/fonts/Starlord.otf);
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.excalibur {
+  /* position: relative; */
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  /* overflow-y: hidden; */
+}
+
+.slogan {
+  font-family: starlord;
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.797);
+  margin-top: -1.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  margin-left: 2.0625rem;
+  display: inline;
+  padding: 0;
+  color: rgba(105, 50, 108, 0.53);
+  text-align: center;
+  overflow-x: hidden;
+  font-family: Pirata One;
+  font-size: 13.25rem;
+  font-weight: 400;
+  letter-spacing: 2.0625rem;
+  text-shadow: -10px -10px pink;
+  transition-duration: 500ms;
+}
+
+@media (max-width: 1300px) {
+  h1 {
+    margin-left: 2rem;
+    /* margin-bottom: 0.5rem; */
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 10.25rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    text-shadow: -9px -9px pink;
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    margin-left: 1.2rem;
+    /* margin-bottom: 1rem; */
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+    text-shadow: -8px -8px pink;
+  }
+
+  .slogan {
+    font-family: starlord;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.797);
+    text-align: center;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 960px) {
+  h1 {
+    margin-left: 1rem;
+    /* margin-bottom: 1.5rem; */
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 8rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    text-shadow: -7px -7px pink;
+  }
+}
+
+@media (max-width: 770px) {
+  h1 {
+    margin-left: 0.5rem;
+    /* margin-bottom: 2rem; */
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 7rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    text-shadow: -5px -5px pink;
+  }
+
+  .slogan {
+    font-family: starlord;
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.797);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.8px;
+  }
+}
+
+@media (max-width: 660px) {
+  h1 {
+    margin-left: 0.2rem;
+    /* margin-bottom: 2.5rem; */
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    text-shadow: -4px -4px pink;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    margin-left: 0.02rem;
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: 0.02rem;
+    text-shadow: -3px -3px pink;
+  }
+
+  .slogan {
+    font-family: starlord;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.797);
+    margin-top: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 360px) {
+  h1 {
+    text-align: center;
+    font-family: Pirata One;
+    font-size: 4rem;
+    font-weight: 400;
+    text-shadow: -2px -2px pink;
+  }
+}
+
+
+/* VERSION 2 */
+.excalibur>.details {
+  min-height: 100svh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.excalibur>.middle {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: center;
+}
+.excalibur>.middle-2 {
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.excalibur>.end {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  scroll-snap-align: center;
+}
