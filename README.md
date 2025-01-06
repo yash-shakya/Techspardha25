@@ -83,3 +83,72 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
 - [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
 - [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+
+## 📝 Commit Message Guidelines
+
+This project follows the **Conventional Commits** specification to ensure a consistent commit message format. This helps in understanding the purpose of each commit and automates tasks like versioning and changelog generation.
+
+### 🎯 Commit Message Format
+
+```
+<type>(<scope>): <description>
+```
+
+- **`type`**: Describes the kind of change. Must be one of the following:
+  - `feat`: A new feature.
+  - `fix`: A bug fix.
+  - `docs`: Documentation changes only.
+  - `style`: Changes that do not affect the meaning of the code (e.g., formatting, missing semicolons).
+  - `refactor`: Code changes that neither fix a bug nor add a feature.
+  - `perf`: Performance improvements.
+  - `test`: Adding or updating tests.
+  - `chore`: Miscellaneous tasks like updating build scripts.
+  - `revert`: Reverts a previous commit.
+
+- **`scope`** (optional): A brief identifier specifying the part of the codebase affected (e.g., `auth`, `cart`, `readme`).
+
+- **`description`**: A concise description of the change.
+
+---
+
+### 🛠️ Examples
+
+Here are some examples of valid commit messages:
+
+- `feat(auth): add login functionality`
+- `fix(cart): resolve item count issue`
+- `docs(readme): update contributing guide`
+
+---
+
+### 🚫 Validation
+
+Commit messages are validated using `@commitlint` during the commit process. If your commit message doesn't follow the required format, you'll see an error like this:
+
+```
+❌ Commit message validation failed!
+
+💡 Your commit message should follow the Conventional Commits format:
+   <type>(<scope>): <description>
+
+👉 Please amend your commit message and try again:
+   git commit --amend -m 'valid commit message'
+```
+
+---
+
+### 🔧 Overriding the Validation
+
+If you need to bypass the validation (not recommended), use the `--no-verify` flag:
+
+```bash
+git commit -m "your commit message" --no-verify
+```
+
+However, ensure to follow the format to maintain consistency in the project's commit history.
+
+---
+
+### 📚 Resources
+
+For more details, see the [Conventional Commits Specification](https://www.conventionalcommits.org/).
