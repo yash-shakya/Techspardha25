@@ -1,1 +1,8 @@
-npm test
+#!/bin/sh
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+if [ "$branch_name" = "main" ]; then
+  echo "❌ Committing to the main branch directly is not allowed!"
+  echo "✅ Create a new branch with the name 'feat/<name>' using:"
+  echo "   git checkout -b feat/<name>"
+  exit 1
+fi

@@ -1,0 +1,8 @@
+#!/bin/sh
+branch_name=$(git rev-parse --abbrev-ref HEAD)
+if [ "$branch_name" = "main" ]; then
+  echo "❌ Pushing directly to the main branch is not allowed!"
+  echo "✅ Push your changes to a feature branch using:"
+  echo "   git push origin feat/<name>"
+  exit 1
+fi
