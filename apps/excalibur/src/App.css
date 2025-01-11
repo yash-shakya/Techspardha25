@@ -12,8 +12,7 @@
   position: relative;
 }
 
-.excalibur {
-  /* position: relative; */
+/* .excalibur {
   width: 90%;
   height: 100vh;
   display: flex;
@@ -24,7 +23,6 @@
   overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  /* overflow-y: hidden; */
 }
 
 .slogan {
@@ -34,21 +32,21 @@
   margin-top: -1.5rem;
   margin-bottom: 1.5rem;
   letter-spacing: 1.5px;
-}
+} */
 
 h1 {
-  margin-left: 2.0625rem;
-  display: inline;
-  padding: 0;
-  color: rgba(105, 50, 108, 0.53);
-  text-align: center;
-  overflow-x: hidden;
-  font-family: Pirata One;
-  font-size: 13.25rem;
-  font-weight: 400;
-  letter-spacing: 2.0625rem;
+  /* margin-left: 2.0625rem; */
+  /* display: inline; */
+  /* padding: 0; */
+  /* color: rgba(105, 50, 108, 0.53); */
+  /* text-align: center; */
+  /* overflow-x: hidden; */
+  /* font-family: Pirata One; */
+  /* font-size: 13.25rem; */
+  /* font-weight: 400; */
+  /* letter-spacing: 2.0625rem; */
   text-shadow: -10px -10px pink;
-  transition-duration: 500ms;
+  /* transition-duration: 500ms; */
 }
 
 @media (max-width: 1300px) {
@@ -168,7 +166,7 @@ h1 {
 
 
 /* VERSION 2 */
-.excalibur>.details {
+/* .excalibur>.details {
   min-height: 100svh;
   width: 100%;
   display: flex;
@@ -204,4 +202,4 @@ h1 {
   gap: 1.5rem;
   padding: 1.5rem;
   scroll-snap-align: center;
-}
+} */

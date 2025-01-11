@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./Countdown.css"
 import Register from "../Register/Register";
 
 
@@ -65,27 +64,35 @@ export default function Countdown() {
     //  ##   Regards -> Debatreya
     
     return (
-        <div className="countdown-container">
-            <p>Journey into the relms of code starts in ....</p>
-            <div className="countdown">
-                <span className="countdown-days">
-                    <span className="days-left">{left.days > 0 ? left.days : "00"}</span>
-                    <span   className="text">Days</span>
-                </span>
-                <span className="countdown-hours">
-                    <span className="hours-left">{left.hours > 0 ? left.hours : "00"}</span>
-                    <span   className="text">Hours</span>
-                </span>
-                <span className="countdown-minutes">
-                    <span className="minutes-left">{left.minutes > 0 ? left.minutes : "00"}</span>
-                    <span   className="text">Minutes</span>
-                </span>
-                <span className="countdown-seconds">
-                    <span className="seconds-left">{left.seconds > 0 ? left.seconds : "00"}</span>
-                    <span   className="text">Seconds</span>
-                </span>
-            </div>
-            <Register />
+        <div className="w-fit h-min rounded-md p-5 bg-white/10 backdrop-blur-lg shadow-lg text-gray-300 text-[1.5rem] mx-2 mt-auto mb-5 text-center font-pirata transform scale-100 lg:scale-100 mdx:scale-80 smx:scale-70">
+        <p>Journey into the realms of code starts in...</p>
+        <div className="flex justify-evenly">
+            <span className="w-[6.04688rem] h-[7.125rem] text-lg m-2.5 p-2.5 flex flex-col justify-evenly text-center bg-black/85 rounded-lg">
+                <p className="text-green-400 text-center font-pirata text-[3.375rem] font-bold">
+                    {left.days > 0 ? left.days : "00"}
+                </p>
+                <span className="text-gray-400 text-center font-pirata text-[1.3125rem] font-light">Days</span>
+            </span>
+            <span className="w-[6.04688rem] h-[7.125rem] text-lg m-2.5 p-2.5 flex flex-col justify-evenly text-center bg-black/85 rounded-lg">
+                <p className="text-yellow-400 text-center font-pirata text-[3.375rem] font-bold">
+                    {left.hours > 0 ? left.hours : "00"}
+                </p>
+                <span className="text-gray-400 text-center font-pirata text-[1.3125rem] font-light">Hours</span>
+            </span>
+            <span className="w-[6.04688rem] h-[7.125rem] text-lg m-2.5 p-2.5 flex flex-col justify-evenly text-center bg-black/85 rounded-lg">
+                <p className="text-blue-400 text-center font-pirata text-[3.375rem] font-bold">
+                    {left.minutes > 0 ? left.minutes : "00"}
+                </p>
+                <span className="text-gray-400 text-center font-pirata text-[1.3125rem] font-light">Minutes</span>
+            </span>
+            <span className="w-[6.04688rem] h-[7.125rem] text-lg m-2.5 p-2.5 flex flex-col justify-evenly text-center bg-black/85 rounded-lg">
+                <p className="text-red-400 text-center font-pirata text-[3.375rem] font-bold">
+                    {left.seconds > 0 ? left.seconds : "00"}
+                </p>
+                <span className="text-gray-400 text-center font-pirata text-[1.3125rem] font-light">Seconds</span>
+            </span>
         </div>
+        <Register />
+    </div>
     )
 }
