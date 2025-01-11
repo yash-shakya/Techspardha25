@@ -23,6 +23,10 @@ export default {
         'custom-glow': '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.5rem #bc13fe',
 
       },
+      scrollbar: {
+        'thin': '2px',
+        'rounded': '10px',
+      },
     },
   },
   plugins: [],
