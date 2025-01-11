@@ -12,15 +12,35 @@ export default {
         poppins: ['"Poppins"', 'sans-serif'],
         quicksand: ['"Quicksand"', 'sans-serif'],
         starlord: ['"Starlord"', 'sans-serif'],
+        'kode-mono': ['"Kode Mono"', 'monospace'], 
       },
       screens: {
-        mdx: '770px', // Custom breakpoint for 770px
-        smx: '480px', // Custom breakpoint for 480px
+          'mini': { 'max': '320px'},
+          'max-md': { 'max': '1024px' },  // Max width 1024px
+          'max-sm': { 'max': '770px' },   // Max width 770px
+          'max-xs': { 'max': '480px' },   // Max width 480px
       },
-      boxShadow: {
-        'text': '-10px -10px pink',
+      scale: {
+        70: '0.7',
+        80: '0.8',
+        100: '1',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow-pink': {
+          textShadow: '-10px -10px pink',
+        },
+      });
+    },
+    // function ({ addUtilities }) {
+    //   addUtilities({
+    //       'text-shadow' : {
+    //       textShadow: '0px 0px pink',
+    //     },
+    //   });
+    // }
+  ],
 }
