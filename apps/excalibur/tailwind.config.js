@@ -9,7 +9,7 @@ export default {
       boxShadow: {
         'text': '-10px -10px pink',
         'custom-glow': '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.5rem #bc13fe',
-
+          custom: '0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.1rem #bc13fe, 0 0 0.4rem #bc13fe, inset 0 0 0.8rem #bc13fe',
       },
       fontFamily: {
         pirata: ['"Pirata One"', 'cursive'],
@@ -37,6 +37,9 @@ export default {
       addUtilities({
         '.text-shadow-pink': {
           textShadow: '-10px -10px pink',
+        },
+        '.text-theme': {
+          textShadow: '0 0 7px #00d0ff, 0 0 10px #ffffff00, 0 0 21px #000000a4, 0 0 42px rgba(0, 68, 255, 0), 0 0 82px rgb(1, 11, 36), 0 0 92px rgb(2, 17, 37), 0 0 102px rgb(0, 0, 0), 0 0 151px rgb(0, 0, 0)',
         },
       });
     },
