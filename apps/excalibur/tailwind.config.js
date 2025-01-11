@@ -6,13 +6,18 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'text': '-10px -10px pink',
+        'custom-glow': '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.5rem #bc13fe',
+
+      },
       fontFamily: {
         pirata: ['"Pirata One"', 'cursive'],
         plaster: ['"Plaster"', 'sans-serif'],
         poppins: ['"Poppins"', 'sans-serif'],
         quicksand: ['"Quicksand"', 'sans-serif'],
         starlord: ['"Starlord"', 'sans-serif'],
-        'kode-mono': ['"Kode Mono"', 'monospace'], 
+        kode: ['"Kode Mono", monospace'],
       },
       screens: {
           'mini': { 'max': '320px'},
@@ -35,12 +40,6 @@ export default {
         },
       });
     },
-    // function ({ addUtilities }) {
-    //   addUtilities({
-    //       'text-shadow' : {
-    //       textShadow: '0px 0px pink',
-    //     },
-    //   });
-    // }
   ],
 }
+

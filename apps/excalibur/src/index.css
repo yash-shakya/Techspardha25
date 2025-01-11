@@ -25,3 +25,30 @@ body{
   width: 0px;
   height: 0px;
 }
+
+@layer utilities {
+  .shadow-custom-glow {
+    box-shadow: 
+      0 0 0.2rem #fff, 
+      0 0 0.2rem #fff, 
+      0 0 0.5rem #bc13fe, 
+      0 0 0.5rem #bc13fe, 
+      0 0 0.5rem #bc13fe, 
+      inset 0 0 0.5rem #bc13fe;
+  }
+}
+
+@layer utilities {
+  .arrow::before {
+    content: '';
+    height: 100%;
+    aspect-ratio: 1/1;
+    background: rgba(0, 0, 0, 0.468);
+    backdrop-filter: blur(100px);
+    @apply shadow-custom-glow absolute rounded-full p-[0.4rem];
+    left: 50%;
+    transform: translate(-50%, -20%);
+  }
+}
+
+
