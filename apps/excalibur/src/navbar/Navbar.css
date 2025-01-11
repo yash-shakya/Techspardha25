@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&family=Quicksand:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap'); */
 
-nav{
+/* nav{
     color: #FFF;
     font-family: Kode Mono;
     font-style: normal;
@@ -15,19 +15,19 @@ nav{
     transition-duration: 500ns;
     position: relative;
     height: 60px;
-}
-nav>a+span{
+} */
+/* nav>a+span{
     margin: auto 0;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-nav>a>span{
+} */
+/* nav>a>span{
     font-size: 4rem;
     margin: auto 0;
-}
-nav>.nav-sections{
+} */
+/* nav>.nav-sections{
     width: fit-content;
     height: 90%;
     border-radius: 30px;
@@ -39,17 +39,17 @@ nav>.nav-sections{
     border: 1px solid rgba(255, 255, 255, 0.08);
     background: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(4px);
-}
-nav>.nav-sections>a{
+} */
+/* nav>.nav-sections>a{
     width: max-content;
     text-decoration: none;
     padding: 5px 10px;
-    color: #FFF;
+    color: #FFF; */
     /* backdrop-filter: blur(20px); */
-    font-size: 1.2rem;
+    /* font-size: 1.2rem;
     border-radius: 30px;
-}
-nav>.nav-sections>a:hover{
+} */
+/* nav>.nav-sections>a:hover{
     transition-duration: 0.5s;
     border-radius: 4.5rem;
     background: #bb13fe81;
@@ -59,23 +59,23 @@ nav>.nav-sections>a:hover{
               0 0 0.5rem #bc13fe,
               0 0 0.5rem #bc13fe,
               inset 0 0 0.5rem #bc13fe;
-}
-nav>.techspardha_logo{
+} */
+/* nav>.techspardha_logo{
     filter: drop-shadow(0px 0px 20px rgb(54, 124, 255));
-}
+} */
 
 /* This style is not working */
 
-nav>span>svg{
+/* nav>span>svg{
     position: absolute;
     top: 1.0585rem;
     width: 6.71369rem;
     height: 2.3125rem;
     fill: rgb(54, 124, 255);
     filter: blur(40.58064270019531px);
-}
+} */
 
-@media (max-width: 1300px) {
+/* @media (max-width: 1300px) {
     nav{
         margin-top: 3rem;
         margin-bottom: 1rem;
@@ -87,12 +87,11 @@ nav>span>svg{
         font-size: 3.7rem;
         margin: auto 0;
     }
-  }
+  } */
   
-  @media (max-width: 1000px) {
+  /* @media (max-width: 1000px) {
     nav{
         margin-top: 2.5rem;
-        /* margin-bottom: 2rem; */
     }
     nav>span>img{
         height: 55px;
@@ -106,7 +105,6 @@ nav>span>svg{
   @media (max-width: 960px) {
     nav{
         margin-top: 2.5rem;
-        /* margin-bottom: 2rem; */
     }
     nav>span>img{
         height: 52px;
@@ -120,7 +118,6 @@ nav>span>svg{
   @media (max-width: 770px) {
     nav{
         margin-top: 2rem;
-        /* margin-bottom: 2rem; */
     }
     nav>span>img{
         height: 45px;
@@ -174,10 +171,10 @@ nav>span>svg{
         margin: auto 0;
     }
   }
-
+ */
 
   /* Dropdown */
-nav>.dropnav{
+/* nav>.dropnav{
     width: 100svw;
     border-radius: 30px;
     text-align: center;
@@ -196,17 +193,17 @@ nav>.dropnav{
     left: 50%;
     border-radius: 10px;
     transform: translateX(-50%);
-}
+} */
 
-nav>.dropnav>a{
+/* nav>.dropnav>a{
     text-decoration: none;
     padding: 5px 10px;
     color: #FFF;
     font-weight: 200;
     width: 100px;
     margin: auto;
-}
-nav>.dropnav>a:hover{
+} */
+/* nav>.dropnav>a:hover{
     transition-duration: 0.5s;
     border-radius: 4.5rem;
     background: #bb13fe81;
@@ -216,8 +213,8 @@ nav>.dropnav>a:hover{
               0 0 0.5rem #bc13fe,
               0 0 0.5rem #bc13fe,
               inset 0 0 0.5rem #bc13fe;
-}
-.arrow{
+} */
+/* .arrow{
     margin: auto;
     text-align: center;
     height: 100%;
@@ -225,9 +222,9 @@ nav>.dropnav>a:hover{
     backdrop-filter: blur(100px);
     font-size: 1.5rem;
     position: relative;
-    display: none;
-}
-.arrow::before{
+    display: none; 
+} */
+/* .arrow::before{ 
     content: "";
     height: 100%;
     aspect-ratio: 1/1;
@@ -240,18 +237,18 @@ nav>.dropnav>a:hover{
               0 0 0.5rem #bc13fe,
               inset 0 0 0.5rem #bc13fe;
     position: absolute;
-    left: 50%;
+    left: 50%; 
     /* transform: translateX(-50%); */
-    transform: translate(-50% ,-20%);
+    /*transform: translate(-50% ,-20%);
     border-radius: 50%;
     padding: 0.4rem;
-}
+} */
 
-@media (max-width: 700px){
+/* @media (max-width: 700px){
     .arrow{
         display: flex;
     }
     .nav-sections{
         display: none;
     }
-}
+} */
