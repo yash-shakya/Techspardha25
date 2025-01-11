@@ -30,6 +30,10 @@ export default {
         80: '0.8',
         100: '1',
       },
+      scrollbar: {
+        'thin': '2px',
+        'rounded': '10px',
+      },
     },
   },
   plugins: [
