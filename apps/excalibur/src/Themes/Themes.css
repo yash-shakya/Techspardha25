@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&family=Quicksand:wght@300&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&family=Quicksand:wght@300&display=swap');
 
 .themes-section{
     width: 100%;
@@ -8,7 +8,7 @@
     box-shadow: 0 0 10px inherit;
     margin: 2rem;
 }
-.themes-section>h2{
+.themes-section>h2{ 
     color: aliceblue;
     text-decoration: bold;
     font-size: 2.5rem;
@@ -55,4 +55,4 @@
         0 0 102px rgb(0, 0, 0),
         0 0 151px rgb(0, 0, 0);
     scale: 1.2;
-}
+} */

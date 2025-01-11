@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Plaster&family=Poppins:wght@300;400&family=Quicksand:wght@300&display=swap');
 .countdown-container{
     width: fit-content;
@@ -31,7 +31,6 @@
     justify-content: space-evenly;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.842);
-    /* backdrop-filter: blur(20px); */
     border-radius: 10px;
 }
 .countdown-container>.countdown>span>.text{
@@ -91,4 +90,4 @@
     .countdown-container{
         scale: 0.7;
     }
-}
+} */
