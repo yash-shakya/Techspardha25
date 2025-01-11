@@ -1,4 +1,3 @@
-import "./Footer.css"
 export default function Footer(){
     return (
         <footer className="bg-[rgba(0,0,0,0.694)]  

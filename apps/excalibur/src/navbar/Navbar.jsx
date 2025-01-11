@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './Navbar.css'
 import { GrDown } from "react-icons/gr";
 
 function Normalnav(){
