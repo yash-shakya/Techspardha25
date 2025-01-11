@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-
-=======
->>>>>>> 3c6fb93745ccaf2d069e2e952fff5aefa881ee68
 export default function Footer(){
     return (
         <footer className="bg-[rgba(0,0,0,0.694)]  
