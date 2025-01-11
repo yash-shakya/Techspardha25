@@ -24,15 +24,17 @@ function App() {
         {/* <Sponsors /> */}
       </section>
 
-      <section className="min-h-[100svh] flex flex-col justify-center items-center scroll-snap-align-center">
+      <section className="min-h-[100svh] flex flex-col justify-center items-center scroll-snap-align-center" id="about">
         <Event />
+        <section id="themes">
         <Themes />
+        </section>
       </section>
 
-      <section className="min-h-fit flex flex-col justify-center items-center scroll-snap-align-start">
+      <section className="min-h-fit flex flex-col justify-center items-center scroll-snap-align-start" id="schedule">
         <TimeLine />
       </section>
-      <section className="min-h-[100svh] flex flex-col justify-around items-center gap-6 p-6 scroll-snap-align-center">
+      <section className="min-h-[100svh] flex flex-col justify-around items-center gap-6 p-6 scroll-snap-align-center" id="rules">
         <Rules />
         <ContactUs />
         <Footer />
