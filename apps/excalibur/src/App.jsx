@@ -12,25 +12,29 @@ import ContactUs from './ContactUs/ContactUs'
 
 function App() {
   return (
-    <div className='excalibur'>
+    <div className="w-[90%] h-screen flex flex-col items-center mx-auto overflow-x-hidden overflow-y-scroll scroll-smooth snap-y snap-mandatory">
 
-      <section className="details">
+      <section className="min-h-[100svh] w-full flex flex-col justify-start items-center scroll-snap-align-start">
         <Navbar />
-        <h1>EXCALIBUR</h1>
-        <div className="slogan">DESIGN | DEVELOP | DOMINATE</div>
+        <h1 className="ml-8 inline p-0 text-center text-[#67326C] text-[13.25rem] font-pirata tracking-[2.0625rem]  transition-all duration-500 text-shadow-pink">EXCALIBUR</h1>
+        <div className="font-starlord text-[2.5rem] text-[rgba(255,255,255,0.797)] mt-[-1.5rem] mb-[1.5rem] tracking-[1.5px]
+        max-xs:text-[1rem]  max-xs:mt-[1.5rem] max-xs:tracking-[1.5px] max-xs:mb-[1.5rem] max-sm:text-[1.3rem] max-sm:mt-[0.5rem] max-sm:mb-[0.5rem] max-sm:tracking-[0.8px]
+        max-md:text-[2rem] max-md:mt-[-1rem] max-md:mb-[1rem] max-md:tracking-[1.5px]">DESIGN | DEVELOP | DOMINATE</div>
         <Countdown />
         {/* <Sponsors /> */}
       </section>
 
-      <section className="middle" id="about">
+      <section className="min-h-[100svh] flex flex-col justify-center items-center scroll-snap-align-center" id="about">
         <Event />
+        <section id="themes">
         <Themes />
+        </section>
       </section>
 
-      <section className="middle-2" id="rules">
+      <section className="min-h-fit flex flex-col justify-center items-center scroll-snap-align-start" id="schedule">
         <TimeLine />
       </section>
-      <section className="end" id="rules">
+      <section className="min-h-[100svh] flex flex-col justify-around items-center gap-6 p-6 scroll-snap-align-center" id="rules">
         <Rules />
         <ContactUs />
         <Footer />
