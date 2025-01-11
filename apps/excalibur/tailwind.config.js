@@ -12,7 +12,7 @@ export default {
         poppins: ['"Poppins"', 'sans-serif'],
         quicksand: ['"Quicksand"', 'sans-serif'],
         starlord: ['"Starlord"', 'sans-serif'],
-        kode: ['"Kode Mono"'],
+        kode: ['"Kode Mono", monospace'],
       },
       screens: {
         mdx: '770px', // Custom breakpoint for 770px
