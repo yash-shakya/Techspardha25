@@ -20,6 +20,7 @@ export default {
         kode: ['"Kode Mono", monospace'],
       },
       screens: {
+          xs: '480px',
           'mini': { 'max': '320px'},
           'max-md': { 'max': '1024px' },  // Max width 1024px
           'max-sm': { 'max': '770px' },   // Max width 770px

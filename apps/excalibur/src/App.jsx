@@ -14,27 +14,36 @@ function App() {
   return (
     <div className="w-[90%] h-screen flex flex-col items-center mx-auto overflow-x-hidden overflow-y-scroll scroll-smooth snap-y snap-mandatory">
 
-      <section className="min-h-[100svh] w-full flex flex-col justify-start items-center scroll-snap-align-start">
+      {/* First Section */}
+      <section className="min-h-fit flex flex-col justify-start items-center scroll-snap-align-start relative">
         <Navbar />
-        <h1 className="ml-8 inline p-0 text-center text-[#67326C] text-[13.25rem] font-pirata tracking-[2.0625rem]  transition-all duration-500 text-shadow-pink">EXCALIBUR</h1>
-        <div className="font-starlord text-[2.5rem] text-[rgba(255,255,255,0.797)] mt-[-1.5rem] mb-[1.5rem] tracking-[1.5px]
-        max-xs:text-[1rem]  max-xs:mt-[1.5rem] max-xs:tracking-[1.5px] max-xs:mb-[1.5rem] max-sm:text-[1.3rem] max-sm:mt-[0.5rem] max-sm:mb-[0.5rem] max-sm:tracking-[0.8px]
-        max-md:text-[2rem] max-md:mt-[-1rem] max-md:mb-[1rem] max-md:tracking-[1.5px]">DESIGN | DEVELOP | DOMINATE</div>
+        <h1 className="ml-8 inline p-0 text-center text-[#67326C] text-[13.25rem] font-pirata tracking-[2.0625rem] transition-all duration-500 text-shadow-pink max-lg:text-[10rem] max-lg:tracking-[1.5rem] max-md:text-[8rem] max-md:tracking-[1rem] max-sm:text-[6rem] max-sm:tracking-[0.8rem] max-xs:text-[4rem] max-xs:tracking-[0.5rem]">
+          EXCALIBUR
+        </h1>
+        <div className="font-starlord text-[2.5rem] text-[rgba(255,255,255,0.797)] mt-[-1.5rem] mb-[1.5rem] tracking-[1.5px] max-xs:text-[1rem] max-xs:mt-[1rem] max-xs:mb-[1rem] max-xs:tracking-[1px] max-sm:text-[1.3rem] max-sm:mt-[0.5rem] max-sm:mb-[0.5rem] max-sm:tracking-[0.8px] max-md:text-[2rem] max-md:mt-[0rem] max-md:mb-[1rem] max-md:tracking-[1.2px]">
+          DESIGN | DEVELOP | DOMINATE
+        </div>
         <Countdown />
         {/* <Sponsors /> */}
       </section>
 
-      <section className="min-h-[100svh] flex flex-col justify-center items-center scroll-snap-align-center" id="about">
+      {/* Second Section */}
+      <section className="min-h-fit flex flex-col justify-center items-center scroll-snap-align-start
+      mt-8" id="about">
         <Event />
         <section id="themes">
-        <Themes />
+          <Themes />
         </section>
       </section>
 
-      <section className="min-h-fit flex flex-col justify-center items-center scroll-snap-align-start" id="schedule">
+      {/* Third Section */}
+      <section className="min-h-fit flex flex-col justify-center items-center mt-8 scroll-snap-align-start
+     " id="schedule">
         <TimeLine />
       </section>
-      <section className="min-h-[100svh] flex flex-col justify-around items-center gap-6 p-6 scroll-snap-align-center" id="rules">
+
+      {/* Fourth Section */}
+      <section className="min-h-fit flex flex-col justify-around items-center gap-6 p-6 mt-8 scroll-snap-align-start" id="rules">
         <Rules />
         <ContactUs />
         <Footer />
