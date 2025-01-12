@@ -1,15 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
+import { poppins } from "./fonts";
+import Background from "./ui/background";
 
 export const metadata: Metadata = {
   title: "Techspardha",
@@ -23,8 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={`${poppins.className} bg-gray-900 text-white relative h-screen w-screen overflow-x-hidden`}>
+        <div className="flex flex-col max-w-full mx-auto p-5 container">
+          {children}
+        </div>
+        <Background />
       </body>
     </html>
   );
