@@ -1,0 +1,38 @@
+/* Mobile Styles for Phone Only */
+@media (max-width: 450px) {
+    .guest-card-container {
+      width: 90% !important; 
+      height: 350px !important; 
+    }
+
+    .guest-button-left, .guest-button-right {
+      top: 45% !important; 
+    }
+    .guest-card {
+      transform: translateX(-50px); 
+    }
+  
+    .guest-card-container:hover {
+      transform: translateX(50px); 
+    }
+    .py-10 {
+        padding-top: 10px; /* Adjust padding for smaller screens */
+        padding-bottom: 10px;
+      }
+    
+      .w-full {
+        width: 100%; /* Ensures the container spans full width */
+      }
+    
+      .guest-card-container {
+        width: 300px; /* Adjust card width for mobile */
+        height: auto; /* Make card height responsive */
+        margin: 0 auto; /* Center the card on smaller screens */
+      }
+    
+      /* Make the card container fit better in the gray background */
+      .bg-gray-500 {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+  }
