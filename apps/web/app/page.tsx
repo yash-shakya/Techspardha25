@@ -1,3 +1,4 @@
+=======
 import RubikWetHeading from "./techspardha";
 import {
 	TECHSPARDHA,
@@ -6,6 +7,7 @@ import {
 	buttonText,
 } from "./constants/landingpage";
 import SponsorsCard from "./ui/components/SponsorsCard";
+
 
 export default function Home() {
 	// Define the sponsors data and other props in Home component
