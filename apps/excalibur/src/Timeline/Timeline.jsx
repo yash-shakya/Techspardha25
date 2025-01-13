@@ -43,9 +43,15 @@ const Card = ({initial, date, name, detail})=>{
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <span className="text-pink-300 font-quicksand text-xl font-extrabold leading-7">{date}</span>
-        <span className="text-white font-kode text-lg font-semibold leading-7">{name}</span>
-        <p className="text-white font-quicksand text-base font-normal leading-6">{detail}</p>
+  
+{/* <div className="overflow-auto max-h-[200px] "> */}
+  <span className="text-pink-300 font-quicksand text-base font-extrabold leading-7 sm:text-lg md:text-xl lg:text-2xl">{date}</span>
+  <span className="text-white font-kode text-base font-semibold leading-7 sm:text-base md:text-lg lg:text-xl">{name}</span>
+  <p className="text-white font-quicksand text-sm font-normal leading-6 sm:text-sm md:text-base lg:text-lg">{detail}</p>
+{/* </div> */}
+
+
+
       </motion.div>
     </div>
   );

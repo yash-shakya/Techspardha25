@@ -28,7 +28,7 @@ export default function Event() {
     }, []);
 
     return (
-        <div className="w-full h-min rounded-lg px-12 pb-12 bg-white/5 backdrop-blur-xl shadow-[0_0_22px_rgba(0,0,0,0.2)] text-[#d5d5d5] text-[1.5rem] mt-80 text-center max-xs:scale-[0.9]">
+        <div className="w-full h-min rounded-lg px-12 pb-12 bg-white/5 backdrop-blur-xl shadow-[0_0_22px_rgba(0,0,0,0.2)] text-[#d5d5d5] text-[1.5rem] text-center max-xs:scale-[0.9]">
             <h2 className="p-8">
                 What is <span className="text-[pink] font-pirata text-4xl font-thin tracking-[2px] transition-all duration-[1500ms]">Excalibur</span>?
             </h2>

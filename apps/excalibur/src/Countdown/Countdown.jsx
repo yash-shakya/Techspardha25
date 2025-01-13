@@ -65,7 +65,7 @@ export default function Countdown() {
 
     return (
         <div className=" w-fit h-min rounded-lg p-5 bg-white/10 backdrop-blur-xl shadow-md
-        text-gray-300 text-2xl mt-auto mb-5 mx-2 text-center font-pirata
+        text-gray-300 text-2xl mx-2 text-center font-pirata
         max-md:scale-[1] max-sm:scale-[0.8] max-xs:scale-[0.7]">
             <p>Journey into the realms of code starts in...</p>
             <div className="flex justify-evenly">
