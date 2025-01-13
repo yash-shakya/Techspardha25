@@ -4,7 +4,7 @@ import {
 	sponsorsData,
 	emailPlaceholder,
 	buttonText,
-  guestCardsData
+	guestCardsData,
 } from "./constants/landingpage";
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
@@ -15,14 +15,14 @@ export default function Home() {
 	return (
 		<>
 			<RubikWetHeading text={TECHSPARDHA} />
-      <div className="content flex-col flex gap-8">
-      <Guestgroup cardsData={guestCardsData} />
-			<SponsorsCard
-				SponsorsCard={sponsorsData}
-				emailPlaceholder={emailPlaceholder}
-				buttonText={buttonText}
-			/>
-</div>
+			<div className="content flex-col flex gap-8">
+				<Guestgroup cardsData={guestCardsData} />
+				<SponsorsCard
+					SponsorsCard={sponsorsData}
+					emailPlaceholder={emailPlaceholder}
+					buttonText={buttonText}
+				/>
+			</div>
 		</>
 	);
 }
