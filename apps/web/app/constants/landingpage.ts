@@ -81,7 +81,6 @@ export const guestCardsData = [
 	},
 ];
 
-
 function generateId(): string {
 	return Math.random().toString(36).substring(2, 10);
 }
@@ -92,4 +91,14 @@ export const eventCardsData = [
 	{ id: generateId(), name: `Hackathon`, img: `events.png` },
 	{ id: generateId(), name: `Tech Talk`, img: `events2.png` },
 	{ id: generateId(), name: `Robotics`, img: `events.png` },
+];
+
+export const NavItems = [
+	{ name: "EVENTS", link: "/events" },
+	{ name: "LECTURES", link: "/lectures" },
+	{ name: "SPONSORS", link: "/sponsors" },
+	{ name: "LOGO", link: "/logo.png" },
+	{ name: "ABOUT US", link: "/about" },
+	{ name: "TEAM", link: "/team" },
+	{ name: "DEVELOPERS", link: "/developers" },
 ];
