@@ -35,3 +35,49 @@ export const sponsorsData = [
 
 export const emailPlaceholder = "WANT TO SPONSOR? DROP YOUR E-MAIL HERE!!!";
 export const buttonText = "Submit";
+
+export const guestCardsData = [
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "AMAN DATTARWAL",
+		date: "Jan 1, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "AMAN DATTARWAL",
+		date: "Feb 5, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "AMAN DATTARWAL",
+		date: "Feb 5, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "AMAN DATTARWAL",
+		date: "Feb 5, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "Jane Smith",
+		date: "Feb 5, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "Jane Smith",
+		date: "Feb 5, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	// more cards...
+];
