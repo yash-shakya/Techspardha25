@@ -97,7 +97,7 @@ export const NavItems = [
 	{ name: "EVENTS", link: "/events" },
 	{ name: "LECTURES", link: "/lectures" },
 	{ name: "SPONSORS", link: "/sponsors" },
-	{ name: "LOGO", link: "/logo.png" },
+	{ name: "logo", link: "/logo.png" },
 	{ name: "ABOUT US", link: "/about" },
 	{ name: "TEAM", link: "/team" },
 	{ name: "DEVELOPERS", link: "/developers" },
