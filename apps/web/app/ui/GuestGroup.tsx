@@ -1,124 +1,107 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import GuestLectureCard from './components/GuestLectureCard';
-import './GuestLecture.css';
-const Guestgroup = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+"use client";
+import React, { useState, useEffect } from "react";
+import GuestLectureCard from "./components/GuestLectureCard";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-  const backgroundImages = [
-    '/GuestBackground/Green.png',
-    '/GuestBackground/Blue.png',
-  ];
+interface CardData {
+	image?: string;
+	name: string;
+	date: string;
+	description: string;
+}
 
-  const cardsData = [
-    {
-      image: '/GuestLecturer/person1.jpg',
-      name: 'John Doe',
-      date: 'Jan 1, 2025',
-      description: 'This is a short description of John Doe.',
-      link: '/guest-lecture/john-doe',
-    },
-    {
-      image: '/GuestLecturer/person5.jpg',
-      name: 'Jane Smith',
-      date: 'Feb 5, 2025',
-      description: 'This is a short description of Jane Smith.',
-      link: '/guest-lecture/jane-smith',
-    },
-    {
-      image: '/GuestLecturer/person1.jpg',
-      name: 'Alice Johnson',
-      date: 'Mar 15, 2025',
-      description: 'This is a short description of Alice Johnson.',
-      link: '/guest-lecture/alice-johnson',
-    },
-    {
-      image: '/GuestLecturer/person3.jpg',
-      name: 'David Brown',
-      date: 'Apr 10, 2025',
-      description: 'This is a short description of David Brown.',
-      link: '/guest-lecture/david-brown',
-    },
-    {
-      image: '/GuestLecturer/person4.jpg',
-      name: 'Eve Williams',
-      date: 'May 20, 2025',
-      description: 'This is a short description of Eve Williams.',
-      link: '/guest-lecture/eve-williams',
-    },
-  ];
+import "./GuestLecture.css";
+const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
+	const [currentIndex, setCurrentIndex] = useState(0);
+	const [isClient, setIsClient] = useState(false);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? cardsData.length - 1 : prevIndex - 1
-    );
-  };
+	useEffect(() => {
+		// This will ensure the client-side logic only runs after the initial render
+		setIsClient(true);
+	}, []);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      (prevIndex + 1) % cardsData.length
-    );
-  };
+	const backgroundImages = [
+		"/GuestBackground/Green.png",
+		"/GuestBackground/Blue.png",
+	];
 
-  const visibleCards = [
-    cardsData[(currentIndex - 1 + cardsData.length) % cardsData.length],
-    cardsData[currentIndex],
-    cardsData[(currentIndex + 1) % cardsData.length],
-  ];
+	const handlePrev = () => {
+		setCurrentIndex((prevIndex) =>
+			prevIndex === 0 ? cardsData.length - 1 : prevIndex - 1
+		);
+	};
 
-  return (
-    <div className="py-10 relative w-full flex flex-col items-center bg-gray-500">
-      {/* Previous Button */}
-      <div
-        onClick={handlePrev}
-        className="guest-button-left absolute left-4 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer px-4 py-2 bg-white text-black rounded-full hover:bg-gray-300 transition"
-      >
-        &lt;
-      </div>
+	const handleNext = () => {
+		setCurrentIndex((prevIndex) => (prevIndex + 1) % cardsData.length);
+	};
 
-      {/* Cards Container */}
-      <div className="relative flex gap-8 w-full justify-center items-center">
-        {visibleCards.map((card, index) => (
-          <div
-            key={index}
-            className="guest-card-container relative transition-transform duration-500 ease-in-out"
-            style={{
-              width: '400px', // Keep this for larger screens
-              height: '600px', // Keep this for larger screens
-            }}
-          >
-            {card ? (
-              <Link href={card.link}>
-                <div>
-                  <GuestLectureCard
-                    image={card.image || 'https://via.placeholder.com/300x150'}
-                    backGroundImage={
-                      backgroundImages[index % backgroundImages.length] ||
-                      './defaultBackground.png'
-                    }
-                    name={card.name || 'Default Name'}
-                    date={card.date || 'Default Date'}
-                    description={card.description || 'No description available'}
-                  />
-                </div>
-              </Link>
-            ) : (
-              <div className="text-white text-center">Card data not available</div>
-            )}
-          </div>
-        ))}
-      </div>
+	const visibleCards = [
+		cardsData[(currentIndex - 1 + cardsData.length) % cardsData.length],
+		cardsData[currentIndex],
+		cardsData[(currentIndex + 1) % cardsData.length],
+	];
 
-      {/* Next Button */}
-      <div
-        onClick={handleNext}
-        className="guest-button-right absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer px-4 py-2 bg-white text-black rounded-full hover:bg-gray-300 transition"
-      >
-        &gt;
-      </div>
-    </div>
-  );
+	return (
+		<div className="relative flex flex-col items-center w-4/5 sm:h-auto gap-8 mx-auto">
+			<h2 className="text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
+				Guest Lectures
+			</h2>
+
+			<div
+				onClick={handlePrev}
+				className="guest-button-left m-4 absolute -left-12 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer px-4 py-2 bg-white text-black rounded-full hover:bg-gray-300 transition"
+			>
+				<FaChevronLeft />
+			</div>
+
+			{/* Cards Container */}
+			{isClient && (
+				<div className="relative flex gap-8 w-full justify-center items-center h-auto">
+					{visibleCards.map((card, index) => (
+						<div
+							key={index}
+							className="guest-card-container relative transition-transform duration-500 ease-in-out"
+							style={{
+								width: "450px",
+								height: "530px",
+							}}
+						>
+							{card ? (
+								<div>
+									<GuestLectureCard
+										image={
+											card.image
+												? card.image
+												: "https://via.placeholder.com/300x150"
+										}
+										backGroundImage={
+											backgroundImages[
+												(currentIndex + index) % backgroundImages.length
+											] || "/GuestBackground/Blue.png"
+										}
+										name={card.name || "Default Name"}
+										date={card.date || "Default Date"}
+										description={card.description || "No description available"}
+									/>
+								</div>
+							) : (
+								<div className="text-white text-center">
+									Card data not available
+								</div>
+							)}
+						</div>
+					))}
+				</div>
+			)}
+
+			<div
+				onClick={handleNext}
+				className="guest-button-right absolute -right-12 m-4 top-1/2 transform -translate-y-1/2 cursor-pointer px-4 py-2 bg-white text-black rounded-full hover:bg-gray-300 transition"
+			>
+				<FaChevronRight />
+			</div>
+		</div>
+	);
 };
 
 export default Guestgroup;
