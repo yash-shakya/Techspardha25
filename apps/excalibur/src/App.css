@@ -34,8 +34,8 @@
   letter-spacing: 1.5px;
 } */
 
-/* h1 {
-  margin-left: 2.0625rem;
+h1 {
+  /* margin-left: 2.0625rem;
   display: inline;
   padding: 0;
   color: rgba(105, 50, 108, 0.53);
@@ -44,10 +44,10 @@
   font-family: Pirata One;
   font-size: 13.25rem;
   font-weight: 400;
-  letter-spacing: 2.0625rem;
-  text-shadow: -10px -10px pink;
-  transition-duration: 500ms;
-} */
+  letter-spacing: 2.0625rem; */
+  text-shadow: -10px -10px pink; 
+  /* transition-duration: 500ms; */
+}
 
 @media (max-width: 1300px) {
   h1 {

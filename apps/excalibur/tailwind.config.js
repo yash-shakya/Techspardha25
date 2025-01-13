@@ -8,6 +8,10 @@ export default {
     extend: {
       boxShadow: {
         'text': '-10px -10px pink',
+        'text-pink-sm': '1px 1px 2px #ff9ccd',
+        'text-pink-md': '2px 2px 3px #ff9ccd',
+        'text-pink-lg': '3px 3px 4px #ff9ccd',
+        'text-pink-xl': '4px 4px 5px #ff9ccd',
         'custom-glow': '0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, 0 0 0.5rem #bc13fe, inset 0 0 0.5rem #bc13fe',
           custom: '0 0 .2rem #fff, 0 0 .2rem #fff, 0 0 0.5rem #bc13fe, 0 0 0.1rem #bc13fe, 0 0 0.4rem #bc13fe, inset 0 0 0.8rem #bc13fe',
       },
