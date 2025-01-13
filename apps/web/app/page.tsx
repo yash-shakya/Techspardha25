@@ -5,7 +5,7 @@ import {
 	emailPlaceholder,
 	buttonText,
 	guestCardsData,
-	eventCardsData
+	eventCardsData,
 } from "./constants/landingpage";
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
@@ -16,15 +16,25 @@ export default function Home() {
 
 	return (
 		<>
-			<RubikWetHeading text={TECHSPARDHA} />
+			<div className="sm:min-h-screen flex flex-col items-center justify-center">
+				{/* HERO SECTION */}
+				<RubikWetHeading text={TECHSPARDHA} />
+				{/* MORE COMPONENTS TO BE ADDED */}
+			</div>
 			<div className="content flex-col flex gap-12">
-				<EventGroup eventData = {eventCardsData} />
-				<Guestgroup cardsData={guestCardsData} />
-				<SponsorsCard
-					SponsorsCard={sponsorsData}
-					emailPlaceholder={emailPlaceholder}
-					buttonText={buttonText}
-				/>
+				<div className="sm:min-h-screen flex flex-col items-center justify-center">
+					<EventGroup eventData={eventCardsData} />
+				</div>
+				<div className="sm:min-h-screen flex flex-col items-center justify-center">
+					<Guestgroup cardsData={guestCardsData} />
+				</div>
+				<div className="min-h-screen flex flex-col items-center justify-center">
+					<SponsorsCard
+						SponsorsCard={sponsorsData}
+						emailPlaceholder={emailPlaceholder}
+						buttonText={buttonText}
+					/>
+				</div>
 			</div>
 		</>
 	);

@@ -49,8 +49,8 @@ export default function EventsGroup({ eventData }: EventsGroupProps) {
 	}, [isHovered]);
 
 	return (
-		<div className="w-full mx-auto mt-4 flex flex-col">
-            <h2 className="text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
+		<div className="w-full mx-auto flex flex-col">
+            <h2 className="p-4 text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
 				Events
 			</h2>
 			<div className="flex items-center flex-grow sm-p-8 p-4 justify-center">
@@ -76,18 +76,26 @@ export default function EventsGroup({ eventData }: EventsGroupProps) {
 					<FaChevronRight className="text-gray-400 group-hover:text-white text-3xl" />
 				</button>
 			</div>
+            {/* MAY COMMENT THIS COMPONENT */}
 			<div className="flex justify-center p-5">
 				{eventData.map((_, index) => (
 					<div
 						key={index}
 						className={`h-1 w-10 mx-1 ${
 							index === currentIndex
-								? "bg-[#beff46] rounded-xl"
+								? "bg-gray-600 rounded-xl shadow-[0px_0px_2px_0px_#ffffff]"
 								: "bg-gray-300 rounded-xl"
 						} transition-all duration-500 ease-in-out`}
 					></div>
 				))}
 			</div>
+            {/* ########################## */}
+            <Link
+                href={`/events`}
+                className="font-extralight shadow-sm mx-auto w-fit px-3 py-1 border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.08)] rounded-2xl m-5"
+            >
+                View Them All
+            </Link>
 		</div>
 	);
 }

@@ -16,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} bg-gray-900 text-white relative h-screen w-screen overflow-x-hidden`}>
+        {/* TODO: A (position: absolute) NAVBAR to be added here */}
         <div className="flex flex-col max-w-full mx-auto p-5 container">
           {children}
         </div>

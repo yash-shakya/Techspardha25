@@ -49,9 +49,9 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 
 			<div
 				onClick={handlePrev}
-				className="guest-button-left m-4 absolute -left-12 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer px-4 py-2 bg-white text-black rounded-full hover:bg-gray-300 transition"
+				className="m-4 absolute -left-12 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer p-3 bg-gray-200 rounded-full hover:text-gray-700 duration-500 text-gray-400"
 			>
-				<FaChevronLeft />
+				<FaChevronLeft className="text-3xl" />
 			</div>
 
 			{/* Cards Container */}
@@ -96,9 +96,9 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 
 			<div
 				onClick={handleNext}
-				className="guest-button-right absolute -right-12 m-4 top-1/2 transform -translate-y-1/2 cursor-pointer px-4 py-2 bg-white text-black rounded-full hover:bg-gray-300 transition"
+				className="absolute -right-12 m-4 top-1/2 transform -translate-y-1/2 cursor-pointer p-3 bg-gray-200 rounded-full hover:text-gray-700 duration-500 text-gray-400"
 			>
-				<FaChevronRight />
+				<FaChevronRight className="text-3xl" />
 			</div>
 		</div>
 	);
