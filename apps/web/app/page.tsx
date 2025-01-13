@@ -1,16 +1,24 @@
 =======
 import RubikWetHeading from "./techspardha";
-import { TECHSPARDHA } from "./constants/landingpage";
+import {
+	TECHSPARDHA,
+	sponsorsData,
+	emailPlaceholder,
+	buttonText,
+} from "./constants/landingpage";
+import SponsorsCard from "./ui/components/SponsorsCard";
 
 
 export default function Home() {
+	// Define the sponsors data and other props in Home component
+
 	return (
 		<>
-
-			<h1 className="text-5xl font-black text-center">Techspardha'25</h1>
-=======
-			<RubikWetHeading 
-				text={TECHSPARDHA}
+			<RubikWetHeading text={TECHSPARDHA} />
+			<SponsorsCard
+				SponsorsCard={sponsorsData}
+				emailPlaceholder={emailPlaceholder}
+				buttonText={buttonText}
 			/>
 		</>
 	);
