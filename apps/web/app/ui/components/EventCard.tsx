@@ -1,105 +1,32 @@
-'use client';
-import React from "react";
-import dynamic from "next/dynamic";
 import Image from "next/image";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import "./eventcard.css";
 
-// const Swiper = dynamic(() => import("swiper/react"), { ssr: false });
-// const SwiperSlide = dynamic(() => import("swiper/react").then(mod => mod.SwiperSlide), { ssr: false });
-
-const Swiper: React.ComponentType = dynamic(() => import("swiper/react"), { ssr: false });
-const SwiperSlide: React.ComponentType = dynamic(
-  () => import("swiper/react").then((mod) => mod.SwiperSlide),
-  { ssr: false }
-);
-
-
-import { Pagination, Autoplay } from "swiper/modules";
-
-interface EventContent {
+export interface EventCardProps {
   name: string;
   img: string;
-  
+  isActive: boolean;
 }
 
-const eventData: EventContent[] = [
-  {
-    name: `Black Box`,
-    img: `BlackBox.jpg`,
-   
-  },
-  {
-    name: `Black Box`,
-    img: `BlackBox.jpg`,
-  },
-  {
-    name: `Black Box`,
-    img: `BlackBox.jpg`,
-  },
-  {
-    name: `Black Box`,
-    img: `BlackBox.jpg`,
-  },
-  {
-    name: `Black Box`,
-    img: `BlackBox.jpg`,
-  },
-  // ...other team members
-];
-
-const EventCard: React.FC = () => {
+export default function EventCard({ name, img, isActive }: EventCardProps) {
   return (
-    <div id="event" className="event-section mb-12 w-11/12 md:px-12 mx-auto py-12">
-      <div className="text-center mb-8">
-      </div>
-
-      <div className="slider-container">
-        <Swiper
-          modules={[Pagination, Autoplay]}
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000 }}
-          spaceBetween={20}
-          breakpoints={{
-            1024: { slidesPerView: 3 },
-            724: { slidesPerView: 2 },
-            576: { slidesPerView: 1 },
-          }}
-        >
-          {eventData.map((member) => (
-            <SwiperSlide key={member.name}>
-              <EventItem member={member} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </div>
-  );
-};
-
-interface EventItemProps {
-  member: EventContent;
-}
-
-const EventItem: React.FC<EventItemProps> = ({ member }) => {
-  return (
-    <div className="event-card flex flex-col justify-center items-center rounded-lg bg-gradient-to-t from-black to-zinc-800 transition-all duration-300 hover:scale-95 hover:shadow-lg">
-      <div className="event-image-container mb-4 flex items-center justify-center">
+    <div
+      className={`flex flex-col rounded-sm shadow-md shadow-gray-600 transition-transform duration-300 sm:w-[750px] w-[350px] ${
+        isActive ? "scale-95 shadow-lg" : ""
+      }`}
+    >
+      <div className="relative flex items-center justify-center w-full h-64 sm:h-80 md:h-96 overflow-hidden">
         <Image
-          className="event-image rounded-lg object-cover"
-          src={`/eventItem/${member.img}`}
-          alt={member.name}
-          width={200}
-          height={200}
+          className="object-cover rounded-b-lg"
+          src={`/${img}`}
+          alt={`Image of ${name}`}
+          layout="fill"
+          sizes="(max-width: 768px) 100vw,
+                 (max-width: 1200px) 80vw,
+                 90vw"
         />
       </div>
-      <div className="event-info text-center">
-        <h3 className="event-name text-xl font-bold truncate">{member.name}</h3>
+      <div className="text-white text-lg text-center p-2 font-[Satoshi Variable] sm:text-3xl">
+        {name}
       </div>
     </div>
   );
-};
-
-export default EventCard;
+}

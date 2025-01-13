@@ -1,4 +1,4 @@
-import { rubik_wet_paint } from "./fonts";
+import { rubik_wet_paint } from "../fonts";
 
 interface RubikWetHeadingProps {
     text: string;
