@@ -13,7 +13,8 @@ export default {
         '60%': '60%',
       },
       "fontFamily": {
-        "porter-sans-block": "Porter Sans Block"
+        "porter-sans-block": "Porter Sans Block",
+        "kode": ['"Kode Mono", monospace'],
       }
     }
   },
