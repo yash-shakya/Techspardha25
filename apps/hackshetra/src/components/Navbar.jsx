@@ -22,7 +22,7 @@ function Navbar() {
                         </filter>
                     </defs>
                 </svg>
-                <img src="src/assets/TechspardhaLogo.svg" alt="T" />
+                <img src="/TechspardhaLogo.svg" alt="T" />
             </span>
         </nav>
     )
