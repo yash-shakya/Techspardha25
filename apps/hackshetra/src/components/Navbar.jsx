@@ -1,5 +1,4 @@
 import React from 'react'
-import techSpardhaLogo from "../assets/TechspardhaLogo.svg"
 
 function Navbar() {
     return (
@@ -23,7 +22,7 @@ function Navbar() {
                         </filter>
                     </defs>
                 </svg>
-                <img src={techSpardhaLogo} alt="T" />
+                <img src="src/assets/TechspardhaLogo.svg" alt="T" />
             </span>
         </nav>
     )
