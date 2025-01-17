@@ -28,10 +28,10 @@ function App() {
     <div className="w-[90%] h-screen flex flex-col items-center mx-auto overflow-x-hidden overflow-y-scroll scroll-smooth snap-y snap-mandatory">
 
       {/* First Section */}
-      <section className="min-h-fit flex flex-col justify-start items-center scroll-snap-align-start relative">
+      <section className="min-h-fit flex flex-col justify-center items-center scroll-snap-align-start relative">
         <Navbar />
         <h1
-  className="ml-8 inline p-0 text-center text-[#67326C] font-pirata tracking-[0.5rem]  transition-all duration-500 text-[4rem] 
+  className="ml-5 inline p-0 text-center text-[#67326C] font-pirata tracking-[0.5rem]  transition-all duration-500 text-[4rem] 
   sm:text-[6rem]
   sm:tracking-[0.8rem]
   md:text-[8rem] md:tracking-[1rem] 
