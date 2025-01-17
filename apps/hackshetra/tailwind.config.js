@@ -15,6 +15,7 @@ export default {
       "fontFamily": {
         "porter-sans-block": "Porter Sans Block",
         "kode": ['"Kode Mono", monospace'],
+        "blanka":"Blanka"
       }
     }
   },
