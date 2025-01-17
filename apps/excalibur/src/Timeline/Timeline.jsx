@@ -59,7 +59,7 @@ const Card = ({initial, date, name, detail})=>{
 
 export default function Timeline() {
   return (
-    <section className="mt-80 max-w-[760px] w-[98%] backdrop-blur-[20px] shadow-[0_0_0_rgba(0,0,0,0.893)] text-[#d5d5d5] text-2xl rounded-[20px] p-5 mb-20 text-center">
+    <section className="max-w-[760px] w-[98%] backdrop-blur-[20px] shadow-[0_0_0_rgba(0,0,0,0.893)] text-[#d5d5d5] text-2xl rounded-[20px] p-5  text-center">
       <h2 className="m-12 font-starlord tracking-[2px] font-normal">Schedule</h2>
       <div className="my-0 mx-auto max-w-[31rem]">
         <Card
