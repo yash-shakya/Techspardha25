@@ -24,7 +24,8 @@ const Card = ({ initial, date, name, detail }) => {
   return (
     <div
       className="timeline-extra-card relative w-full m p-6 odd:rounded-bl-[3rem] even:rounded-br-[3rem] odd:border-b-[10px] odd:border-l-[10px] even:border-b-[10px] even:border-r-[10px] border-[#D946EF] odd:pl-12 even:pr-12  last:border-b-0 last:rounded-none
-       before:content-[''] before:w-2.5 before:h-2.5 before:rounded-full before:border-[8px] before:border-white before:bg-[#9110a4] odd:before:right-[calc(100%-8px)] even:before:left-[calc(100%-8px)] before:absolute before:top-1/2 before:-translate-y-1/2 before:z-10"
+       before:content-[''] before:w-2.5 before:h-2.5 before:rounded-full before:border-[8px] before:border-white before:bg-[#9110a4] odd:before:right-[calc(100%-3.5px)] even:before:left-[calc(100%-3.5px)] before:absolute before:top-1/2 before:-translate-y-1/2 before:z-10
+       before:shadow-[0_0_20px_4px_#9110a4]"
       ref={ref}
     >
 <motion.div
