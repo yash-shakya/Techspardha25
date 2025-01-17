@@ -11,17 +11,13 @@ const Loader = () => {
       }}
         >
       <div className="relative flex flex-col items-center justify-center">
-        {/* Animated Neon Background */}
-        <div className="absolute w-[550px] h-[550px] rounded-full blur-3xl animate-spin-slow pulse-neon"></div>
-
-        {/* Sword Image with Pulsing and Upward Animation */}
         <img
           src={sword}
           alt="Loading..."
           className="relative h-[500px] m-2 animate-pulse-then-move-down"
           style={{
             filter:
-              "drop-shadow(0 0 20px rgba(255, 20, 147, 0.8)) drop-shadow(0 0 40px rgba(255, 20, 147, 1))",
+              "drop-shadow(0 0 20px rgba(255, 20, 147, 0.5)) drop-shadow(0 0 40px rgba(255, 20, 147, 0.6))",
           }}
         />
       </div>
