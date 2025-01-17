@@ -39,6 +39,27 @@ export default {
         'thin': '2px',
         'rounded': '10px',
       },
+      keyframes: {
+        pulseThenMoveDown: {
+          '0%, 100%': { transform: 'scale(1)', opacity: 1 }, // Initial state
+          '50%': { transform: 'scale(1.1)', opacity: 1 }, // Pulse effect
+          '80%': { transform: 'scale(1)', opacity: 1 }, // After the pulse
+          '100%': { transform: 'translateY(150%)', opacity: 0 }, // Move down and fade out
+        },
+        pulseNeon: {
+          '0%, 100%': { opacity: 0.5, transform: 'scale(1)' },
+          '50%': { opacity: 1, transform: 'scale(1.2)' },
+        },
+        spinSlow: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+      },
+      animation: {
+        'pulse-then-move-down': 'pulseThenMoveDown 3s ease-in-out forwards', // Custom downward animation
+        'pulse-neon': 'pulseNeon 3s ease-in-out infinite',
+        'spin-slow': 'spinSlow 10s linear infinite',
+      },
     },
   },
   plugins: [

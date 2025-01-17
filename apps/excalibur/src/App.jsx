@@ -1,4 +1,5 @@
 import "./App.css";
+import { useState,useEffect } from "react";
 import Background from "./Background/Background";
 import Countdown from "./Countdown/Countdown";
 import Navbar from "./navbar/Navbar";
@@ -9,8 +10,20 @@ import Themes from "./Themes/Themes";
 import Footer from "./Footer/Footer";
 import Rules from "./Rules/Rules";
 import ContactUs from "./ContactUs/ContactUs";
+import Loader from "./Loader/Loader";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+    return () => clearTimeout(timer); 
+  }, []);
+
+  if (isLoading) {
+    return <Loader />;
+  }
+  
   return (
     <div className="w-[90%] h-screen flex flex-col items-center mx-auto overflow-x-hidden overflow-y-scroll scroll-smooth snap-y snap-mandatory">
 
@@ -19,11 +32,11 @@ function App() {
         <Navbar />
         <h1
   className="ml-8 inline p-0 text-center text-[#67326C] font-pirata tracking-[0.5rem]  transition-all duration-500 text-[4rem] 
-   sm:text-[6rem]
-   sm:tracking-[0.8rem]
-    md:text-[8rem] md:tracking-[1rem] 
-    lg:text-[10rem] lg:tracking-[1.5rem] 
-    xl:text-[13.25rem] xl:tracking-[2.0625rem]  "
+  sm:text-[6rem]
+  sm:tracking-[0.8rem]
+  md:text-[8rem] md:tracking-[1rem] 
+  lg:text-[10rem] lg:tracking-[1.5rem] 
+  xl:text-[13.25rem] xl:tracking-[2.0625rem]  "
     
 >
   EXCALIBUR
