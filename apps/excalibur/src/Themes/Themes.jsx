@@ -2,7 +2,7 @@
 export default function Themes() {
     let themes = ["AI/ML", "Education", "Health", "Web-3", "Open Innovation", "AR-VR"];
     return (
-        <div className="w-full bg-[rgba(0,0,0,0.212)] backdrop-blur-[2px] rounded-[20px] shadow-[0_0_10px_inherit] m-8">
+        <div className="w-full bg-[rgba(0,0,0,0.212)] backdrop-blur-[2px] rounded-[20px] shadow-[0_0_10px_inherit] ">
             <h2 className="text-[aliceblue] text-[2.5rem] text-center font-kode font-extrabold m-8">Themes</h2>
             <div className="flex flex-wrap justify-evenly m-6">
                 {themes.map((theme,index) => (
