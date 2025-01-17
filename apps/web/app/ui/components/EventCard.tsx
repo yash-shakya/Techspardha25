@@ -18,7 +18,7 @@ export default function EventCard({ name, img, isActive }: EventCardProps) {
           className="object-cover rounded-b-lg"
           src={`/${img}`}
           alt={`Image of ${name}`}
-          layout="fill"
+          fill
           sizes="(max-width: 768px) 100vw,
                  (max-width: 1200px) 80vw,
                  90vw"

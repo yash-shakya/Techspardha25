@@ -102,3 +102,10 @@ export const NavItems = [
 	{ name: "TEAM", link: "/team" },
 	{ name: "DEVELOPERS", link: "/developers" },
 ];
+
+export const tempNotifications = [
+	{title: "Notification"},
+	{title: "Notification"},
+	{title: "Notification"},
+	{title: "Notification"}
+]

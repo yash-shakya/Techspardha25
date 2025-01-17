@@ -10,12 +10,12 @@ export default {
         'map': "url('./assets/map.svg')",
       },
       backgroundSize: {
-        '60%': '60%',
+        '55%': '55%',
       },
       "fontFamily": {
-        "porter-sans-block": "Porter Sans Block",
+        "porter-sans-block": "porter-sans-block",
         "kode": ['"Kode Mono", monospace'],
-        "blanka":"Blanka"
+        "blanka":"blanka",
       }
     }
   },

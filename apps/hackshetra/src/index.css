@@ -3,18 +3,28 @@
 @tailwind utilities;
 
 @layer base {
-    @font-face {
-      font-family: 'Blanka';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(./assets/fonts/Blanka-Regular.otf) format('woff2');
-    }
+  @font-face {
+    font-family: 'blanka';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./assets/fonts/Blanka-Regular.otf) format('woff2');
   }
+}
 
-body{
-    position: relative;
-    background-image: url(./assets/background.svg);
-    background-size: cover;
-    background-attachment: fixed;
+@layer base {
+  @font-face {
+    font-family: 'porter-sans-block';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(./assets/fonts/porter-sans-inline-block.otf) format('woff2');
+  }
+}
+
+body {
+  position: relative;
+  background-image: url(./assets/background.svg);
+  background-size: cover;
+  background-attachment: fixed;
 }
