@@ -17,7 +17,7 @@ export default function NavBar({ navitems }: NavBarProps) {
         {navitems.map((item, i) => {
           if (item.name === "logo")
             return (
-              <Link href={item.link} key={i}>
+              <Link href="/" key={i}>
                 <Image alt="Logo" src={logo} height={45} width={45} />
               </Link>
             );
