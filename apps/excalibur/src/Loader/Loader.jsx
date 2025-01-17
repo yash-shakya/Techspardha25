@@ -17,7 +17,7 @@ const Loader = () => {
         {/* Sword Image with Pulsing and Upward Animation */}
         <img
           src={sword}
-          alt="Excalibur Sword"
+          alt="Loading..."
           className="relative h-[500px] m-2 animate-pulse-then-move-down"
           style={{
             filter:
