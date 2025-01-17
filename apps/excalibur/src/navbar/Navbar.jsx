@@ -87,7 +87,7 @@ function Dropnav(){
 export default function Navbar(){
     let back = '<'
     return(
-<nav class="text-white font-kode  mt-12 mb-auto w-[95%] flex justify-between transition-[duration] duration-[500ns] relative h-[60px]">
+<nav className="text-white font-kode  mt-12 mb-auto w-[95%] flex justify-between transition-[duration] duration-[500ns] relative h-[60px]">
 <a className='relative flex justify-center items-center my-auto'><span className="text-[4rem]  my-auto" >{back}</span></a>
             <Normalnav />
             <Dropnav />
