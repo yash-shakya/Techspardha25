@@ -9,7 +9,12 @@ export default {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'ocean-blue': '#1E314BB2',
+        'light-ocean-blue':'#1E314B',
+      },
+    },
   },
   plugins: [],
 }

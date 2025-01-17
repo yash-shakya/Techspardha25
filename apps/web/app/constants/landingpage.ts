@@ -79,5 +79,26 @@ export const guestCardsData = [
 		description:
 			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
 	},
-	// more cards...
+];
+
+function generateId(): string {
+	return Math.random().toString(36).substring(2, 10);
+}
+
+export const eventCardsData = [
+	{ id: generateId(), name: `Black Box`, img: `events.png` },
+	{ id: generateId(), name: `Code Sprint`, img: `events2.png` },
+	{ id: generateId(), name: `Hackathon`, img: `events.png` },
+	{ id: generateId(), name: `Tech Talk`, img: `events2.png` },
+	{ id: generateId(), name: `Robotics`, img: `events.png` },
+];
+
+export const NavItems = [
+	{ name: "EVENTS", link: "/events" },
+	{ name: "LECTURES", link: "/lectures" },
+	{ name: "SPONSORS", link: "/sponsors" },
+	{ name: "logo", link: "/logo.png" },
+	{ name: "ABOUT US", link: "/about" },
+	{ name: "TEAM", link: "/team" },
+	{ name: "DEVELOPERS", link: "/developers" },
 ];
