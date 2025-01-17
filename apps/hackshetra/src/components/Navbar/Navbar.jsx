@@ -2,7 +2,7 @@ import React from 'react'
 
 function Navbar() {
     return (
-        <nav className='flex  justify-between w-[85%] mx-auto font-kode  mt-12 mb-auto'>
+        <nav className='flex  justify-between w-[80%] mx-auto font-kode mb-0  mt-12'>
             <a className='relative flex justify-center items-center my-auto text-white'><span className="text-[4rem]  my-auto" >{"<"}</span></a>
             <span className="techspardha_logo 'relative flex justify-between items-center my-auto"   style={{ filter: 'drop-shadow(0px 0px 20px rgb(54, 124, 255))' }}>
                 {/* ellipse svg */}
