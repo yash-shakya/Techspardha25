@@ -10,11 +10,15 @@ export default {
         'map': "url('./assets/map.svg')",
       },
       backgroundSize: {
-        '60%': '60%',
+        '55%': '55%',
       },
       "fontFamily": {
-        "porter-sans-block": "Porter Sans Block",
+        "porter-sans-block": "porter-sans-block",
         "kode": ['"Kode Mono", monospace'],
+        "blanka":"blanka",
+        "diplomata":['"Diplomata", serif'],
+        "dm-serif-display":['"DM Serif Display", serif'],
+        "dm-sans":['"DM Sans", serif']
       }
     }
   },
