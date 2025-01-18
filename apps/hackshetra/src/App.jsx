@@ -3,6 +3,9 @@ import './App.css'
 import Navbar from './components/Navbar/Navbar.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Register from './components/Resgister/Register.jsx'
+import Themes from './components/Themes/Themes.jsx'
+import Data from './components/Themes/Data.jsx'
+import './components/Themes/Themes.css'
 
 function App() {
 
@@ -30,7 +33,9 @@ function App() {
           </div>
         </div>
         <AboutUs />
+        <Themes data={Data} activeSlide={2}/>
       </div>
+
 
     </>
   )
