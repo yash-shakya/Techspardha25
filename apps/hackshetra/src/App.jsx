@@ -27,7 +27,7 @@ function App() {
             DESIGN | DEVELOP | DOMINATE
           </div>
 
-          <div className=' w-fit h-min rounded-lg p-5 bg-cyan-400/5 backdrop-blur-xl shadow-md
+          <div className=' w-fit h-min rounded-lg p-5 bg-cyan-400/5 backdrop-blur-xl
           text-gray-300 text-2xl mx-2 text-center font-pirata shadow-[0px_0px_10px_0px_#3cb7dd]
             max-md:scale-[1] max-sm:scale-[0.8] max-xs:scale-[0.7]'>
 
