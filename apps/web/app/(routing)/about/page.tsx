@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { TECHSPARDHA, sponsorsData, emailPlaceholder, buttonText, guestCardsData, eventCardsData, NavItems, tempNotifications } from '../../constants/landingpage';
+import { aboutPageImages } from '../../constants/aboutpage';
 import Image from 'next/image';
 
 export default function About(){
@@ -21,13 +21,13 @@ export default function About(){
           </section>
           </div>
           <div className="flex flex-col items-center space-y-4 w-full max-w-md mx-auto">
-  {guestCardsData.map((img, index) => (
-    <div key={index} className="w-full flex justify-center">
+  {aboutPageImages.map((img: { name: string; link: string }, index: number) => (
+    <div key={index} className="w-[1250px] flex justify-center">
       <Image
-        src={img.image || "/placeholder.svg"}
+        src={img.link || "/placeholder.svg"}
         alt={`Guest ${index + 1}`}
-        width={1200}
-        height={1800}
+        width={1800}
+        height={2700}
         className="object-contain"
       />
     </div>
