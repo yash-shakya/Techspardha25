@@ -19,14 +19,5 @@ export default {
       },
     },
   },
-  plugins: [
-    function ({ addUtilities }) {
-      addUtilities({
-        '.bg-clip-text': {
-          '-webkit-background-clip': 'text',
-          'background-clip': 'text',
-        },
-      });
-    },
-  ],
+  plugins: [],
 };
