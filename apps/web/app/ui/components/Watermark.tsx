@@ -3,7 +3,7 @@ import logo from "../../../public/technoLogo.svg";
 
 export default function Watermark() {
   return (
-    <div className="w-[1920px] h-[auto] flex-col justify-start items-center gap-3 inline-flex overflow-hidden mt-[35px]">
+    <div className="w-full overflow-clip h-[auto] flex-col justify-start items-center gap-3 inline-flex mt-[35px]">
       <div className="w-[230px] h-[22.40px] text-center text-[#d2d6db]/60 text-base font-medium font-['Satoshi Variable'] leading-snug">
         Team Techspardha 🙌🏼
       </div>
