@@ -1,4 +1,5 @@
 'use client'
+
 import { useAuth } from './lib/context/auth-context';
 import { signOutUser } from './lib/actions';
 import RubikWetHeading from "./ui/techspardha";
@@ -17,29 +18,47 @@ import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { user } = useAuth();
   const router = useRouter();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleLogout = async () => {
-    const result = await signOutUser();
-    if (result.success) {
-      router.push('/');
+    try {
+      const result = await signOutUser();
+      if (result.success) {
+        router.push('/');
+      }
+    } catch (error) {
+      console.error('Logout failed:', error);
     }
   };
 
+  // Prevent hydration mismatch by not rendering user-dependent content until mounted
+  if (!isMounted) {
+    return null; // or a loading skeleton
+  }
+
   return (
     <>
-      {/* User Profile Section */}
       <div className="fixed top-4 right-4 flex items-center gap-4 z-50">
         {user ? (
           <>
             <div className="flex items-center gap-3 bg-white/10 backdrop-blur-lg rounded-full px-4 py-2">
-              <img
+              <Image
                 src={user.photoURL || '/default-avatar.png'}
                 alt="Profile"
-                className="w-8 h-8 rounded-full"
+                width={32}
+                height={32}
+                className="rounded-full"
+                priority
               />
               <span className="text-white text-sm">{user.displayName}</span>
             </div>
@@ -60,32 +79,33 @@ export default function Home() {
         )}
       </div>
 
-      <div className="sm:min-h-screen flex flex-col items-center gap-[22px]">
-        {/* HERO SECTION */}
-        <RubikWetHeading text={TECHSPARDHA} />
-        <div className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-medium font-['Satoshi Variable'] leading-[33px]">
-          Theme for fest!!!!
-        </div>
-        <PresentedBy />
-        <NotificationCard />
-        <Watermark />
-      </div>
+      <main>
+        <section className="sm:min-h-screen flex flex-col items-center gap-[22px]">
+          <RubikWetHeading text={TECHSPARDHA} />
+          <h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-medium font-['Satoshi Variable'] leading-[33px]">
+            Theme for fest!!!!
+          </h2>
+          <PresentedBy />
+          <NotificationCard />
+          <Watermark />
+        </section>
 
-      <div className="content flex-col flex gap-12">
-        <div className="sm:min-h-screen flex flex-col items-center justify-center">
-          <EventGroup eventData={eventCardsData} />
+        <div className="content flex-col flex gap-12">
+          <section className="sm:min-h-screen flex flex-col items-center justify-center">
+            <EventGroup eventData={eventCardsData} />
+          </section>
+          <section className="sm:min-h-screen flex flex-col items-center justify-center">
+            <Guestgroup cardsData={guestCardsData} />
+          </section>
+          <section className="min-h-screen flex flex-col items-center justify-center">
+            <SponsorsCard
+              SponsorsCard={sponsorsData}
+              emailPlaceholder={emailPlaceholder}
+              buttonText={buttonText}
+            />
+          </section>
         </div>
-        <div className="sm:min-h-screen flex flex-col items-center justify-center">
-          <Guestgroup cardsData={guestCardsData} />
-        </div>
-        <div className="min-h-screen flex flex-col items-center justify-center">
-          <SponsorsCard
-            SponsorsCard={sponsorsData}
-            emailPlaceholder={emailPlaceholder}
-            buttonText={buttonText}
-          />
-        </div>
-      </div>
+      </main>
     </>
   );
 }
