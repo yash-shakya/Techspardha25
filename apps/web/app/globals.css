@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Scrollbar styles */
+/* For Webkit-based browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+	width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 25, 38, 0.25); /* Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(41, 110, 147, 1); /* Scrollbar thumb color */
+	border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* For Firefox */
+html {
+	scrollbar-width: thin; /* Makes the scrollbar 10px wide */
+	scrollbar-color: rgba(41, 110, 147, 1) rgba(0, 25, 38, 0.25); /* Thumb and track colors */
+}
