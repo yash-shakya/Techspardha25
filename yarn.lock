@@ -603,15 +603,15 @@
   resolved "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@repo/eslint-config@*", "@repo/eslint-config@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\packages\\eslint-config":
+"@repo/eslint-config@*", "@repo/eslint-config@file:D:\\Coding\\Web Development\\Techspardha25\\packages\\eslint-config":
   version "0.0.0"
   resolved "file:packages/eslint-config"
 
-"@repo/typescript-config@*", "@repo/typescript-config@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\packages\\typescript-config":
+"@repo/typescript-config@*", "@repo/typescript-config@file:D:\\Coding\\Web Development\\Techspardha25\\packages\\typescript-config":
   version "0.0.0"
   resolved "file:packages/typescript-config"
 
-"@repo/ui@*", "@repo/ui@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\packages\\ui":
+"@repo/ui@*", "@repo/ui@file:D:\\Coding\\Web Development\\Techspardha25\\packages\\ui":
   version "0.0.0"
   resolved "file:packages/ui"
   dependencies:
@@ -1688,7 +1688,7 @@ dlv@^1.1.3:
   resolved "https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz"
   integrity sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA==
 
-"docs@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\apps\\docs":
+"docs@file:D:\\Coding\\Web Development\\Techspardha25\\apps\\docs":
   version "0.1.0"
   resolved "file:apps/docs"
   dependencies:
@@ -2279,7 +2279,7 @@ esutils@^2.0.2:
   resolved "https://registry.npmjs.org/esutils/-/esutils-2.0.3.tgz"
   integrity sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==
 
-"excalibur@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\apps\\excalibur":
+"excalibur@file:D:\\Coding\\Web Development\\Techspardha25\\apps\\excalibur":
   version "0.0.0"
   resolved "file:apps/excalibur"
   dependencies:
@@ -2671,7 +2671,7 @@ graphemer@^1.4.0:
   resolved "https://registry.npmjs.org/graphemer/-/graphemer-1.4.0.tgz"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
-"hackshetra@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\apps\\hackshetra":
+"hackshetra@file:D:\\Coding\\Web Development\\Techspardha25\\apps\\hackshetra":
   version "0.0.0"
   resolved "file:apps/hackshetra"
   dependencies:
@@ -5031,7 +5031,7 @@ wcwidth@^1.0.1:
   dependencies:
     defaults "^1.0.3"
 
-"web@file:C:\\Users\\DELL\\Desktop\\Techspardha25\\apps\\web":
+"web@file:D:\\Coding\\Web Development\\Techspardha25\\apps\\web":
   version "0.1.0"
   resolved "file:apps/web"
   dependencies:

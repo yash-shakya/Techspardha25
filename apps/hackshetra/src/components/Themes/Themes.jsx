@@ -14,7 +14,7 @@ export default (props) => {
   const prev = () => activeSlide > 0 && setactiveSlide(activeSlide - 1);
 
   const getStyles = (index) => {
-    
+
 
     if (activeSlide === index)
       return {
@@ -63,55 +63,55 @@ export default (props) => {
   return (
     <>
 
-    <div className="flex flex-col justify-center items-center
-         text-white w-[75%] mt-11 bg-cyan-400/5 backdrop-blur-sm p-4 font-kode rounded-lg">
-     {/* carousel  */}
-     <h3 className='text-center text-4xl mb-6 pb-5'>Themes</h3>
+      <section className="flex flex-col justify-center items-center
+         text-white w-[75%] mt-11 backdrop-blur-sm p-4 font-kode rounded-lg" id="theme">
+        {/* carousel  */}
+        <h3 className='text-center text-4xl mb-6 pb-5'>Themes</h3>
         <div className="slideC flex flex-wrap justify-center">
           {props.data.map((item, i) => (
             <React.Fragment key={item.id}>
-            <div
-              className="slide m-2 p-4 rounded-lg"
-              style={{
-                background: item.bgColor,
-                // boxShadow: `0 5px 20px ${item.bgColor}30`,
-                // border: "5px solid #8cfcff",
-                borderRadius: "10px",
-                ...getStyles(i)
-              }}
-            >
-              <SliderContent {...item} />
-            </div>
-            <div
-              className="reflection"
-              style={{
-                background: `linear-gradient(to bottom, ${item.bgColor}40, transparent)`,
-                ...getStyles(i)
-              }}
-            />
+              <div
+                className="slide m-2 p-4 rounded-lg"
+                style={{
+                  background: item.bgColor,
+                  // boxShadow: `0 5px 20px ${item.bgColor}30`,
+                  // border: "5px solid #8cfcff",
+                  borderRadius: "10px",
+                  ...getStyles(i)
+                }}
+              >
+                <SliderContent {...item} />
+              </div>
+              <div
+                className="reflection"
+                style={{
+                  background: `linear-gradient(to bottom, ${item.bgColor}40, transparent)`,
+                  ...getStyles(i)
+                }}
+              />
             </React.Fragment>
           ))}
         </div>
         {/* carousel */}
-        
+
         <div className="btns">
-        <FontAwesomeIcon
-          className="btn"
-          onClick={prev}
-          icon={faChevronLeft}
-          color="#fff"
-          size="2x"
-        />
-        <FontAwesomeIcon
-          className="btn"
-          onClick={next}
-          icon={faChevronRight}
-          color="#fff"
-          size="2x"
-        />
-      </div>
-        
-      </div>
+          <FontAwesomeIcon
+            className="btn"
+            onClick={prev}
+            icon={faChevronLeft}
+            color="#fff"
+            size="2x"
+          />
+          <FontAwesomeIcon
+            className="btn"
+            onClick={next}
+            icon={faChevronRight}
+            color="#fff"
+            size="2x"
+          />
+        </div>
+
+      </section>
     </>
   );
 };
@@ -122,7 +122,7 @@ const SliderContent = (props) => {
       {props.icon}
       <h2>{props.title}</h2>
       <p>{props.desc}</p>
-      
+
     </div>
   );
 };

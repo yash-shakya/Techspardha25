@@ -17,7 +17,7 @@ function AboutUs() {
     }, [activeSlide])
 
     return (
-        <section className='text-white w-[75%] mt-11 bg-cyan-400/5 backdrop-blur-sm p-4 font-kode rounded-lg' id='about'>
+        <section className='text-white w-[75%] mt-11  backdrop-blur-sm p-4 font-kode rounded-lg bg-cyan-800/20 shadow-[0px_0px_10px_0px_#3cb7dd]' id='about'>
             <h3 className='text-center text-4xl mb-6'>What is Hackshetra?</h3>
             <div className='flex flex-col justify-center items-center md:justify-between md:flex-row'>
                 <div id="slider" className='w-[75%] md:w-[60%] mb-3'>
