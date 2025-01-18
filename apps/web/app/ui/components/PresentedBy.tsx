@@ -5,11 +5,11 @@ import digitalOcean from "../../../public/digitalOcean.svg";
 
 export default function PresentedBy() {
   return (
-    <div className="flex opacity-80 gap-[26px] items-end">
+    <div className="flex max-sm:flex-col opacity-80 gap-[26px] items-end max-sm:items-center">
       <div className="text-white/60 text-2xl font-medium uppercase leading-tight mb-[-4px]">
         Presented by
       </div>
-      <div className="flex gap-[25px] items-end">
+      <div className="flex gap-[25px] items-end flex-wrap max-sm:flex-col max-sm:items-center">
         <Image src={digitalOcean} alt="docker" />
         <Image src={appWrite} alt="docker" />
         <Image src={docker} alt="docker" />
