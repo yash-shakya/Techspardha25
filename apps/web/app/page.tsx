@@ -25,7 +25,7 @@ export default function Home() {
   const handleLogout = async () => {
     const result = await signOutUser();
     if (result.success) {
-      router.push('/developers/login');
+      router.push('/');
     }
   };
 
@@ -52,7 +52,7 @@ export default function Home() {
           </>
         ) : (
           <button
-            onClick={() => router.push('/developers/login')}
+            onClick={() => router.push('/login')}
             className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm"
           >
             Login

@@ -1,14 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { signInWithGoogle
+import Image from 'next/image'
 
- } from '../../lib/actions'
+import { auth,signInWithGoogle } from '../../lib/actions'
+
 export default function LoginPage() {
   const router = useRouter()
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const [formData, setFormData] = useState({
+    email: '',
+    mobile: '',
+    collegeName: '',
+    year: '',
+  })
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        router.push('/'); 
+      }
+    });
+    return () => unsubscribe();
+  }, [router]);
 
   const handleGoogleSignIn = async () => {
     try {
@@ -17,28 +33,66 @@ export default function LoginPage() {
       const result = await signInWithGoogle()
       
       if (result.success) {
-        router.push('/') // Redirect to home page after successful login
+        router.push('/form')
       } else {
         setError(result.error || 'Failed to sign in')
       }
     } catch (err) {
       setError('An unexpected error occurred')
-      console.error(err)
     } finally {
       setIsLoading(false)
     }
   }
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log(formData)
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800">
-      <div className="w-[400px] bg-white/10 backdrop-blur-lg border border-gray-700 rounded-lg shadow-xl">
-        <div className="p-6">
-          <h2 className="text-2xl text-center text-white font-semibold mb-6">Welcome to Techspardha</h2>
-          <div className="flex flex-col gap-4">
+    <div className="flex items-center justify-center w-full min-h-screen md:min-h-[651px]">
+      <div className="rounded-3xl w-[80%] max-w-[648px] h-[80vh] max-h-[651px] flex items-center justify-center bg-ocean-blue/60 shadow-xl">
+        <div className="w-full max-w-md p-8">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12"
+            />
+          </div>
+
+          <div className="text-center">
+            <h2 className="text-lg md:text-xl text-[#6F8294] mb-4">Hey there,</h2>
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-[#367CFF]">
+                <Image
+                  src="/placeholder.svg"
+                  alt="Profile Picture"
+                  width={30}
+                  height={30}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h1 className="text-2xl md:text-3xl text-[#AEBCCA] font-semibold">Welcome to Techspardha</h1>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit} className="space-y-6 flex flex-col justify-center items-center">
+           
+              
+
+            <div className="w-[90%] md:w-[521px] flex items-center">
+              <div className="flex-grow border-t border-gray-300"></div>
+              <span className="px-4 text-sm text-gray-500"></span>
+              <div className="flex-grow border-t border-gray-300"></div>
+            </div>
+
             <button
               onClick={handleGoogleSignIn}
               disabled={isLoading}
-              className="w-full flex items-center justify-center gap-2 bg-white text-gray-900 hover:bg-gray-100 py-2 px-4 rounded-md transition duration-300 ease-in-out disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-[90%] md:w-[521px] h-[36px] rounded-3xl bg-white text-sm md:text-base text-gray-700 hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
             >
               {isLoading ? (
                 <div className="animate-spin">⌛</div>
@@ -68,9 +122,14 @@ export default function LoginPage() {
             </button>
             
             {error && (
-              <div className="text-red-400 text-sm text-center">{error}</div>
+              <div className="text-red-500 text-sm text-center">{error}</div>
             )}
-          </div>
+            
+            <div className="text-center text-sm text-gray-500">
+              Sign In with Google{' '}
+              
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 'use client'
-
 import { useAuth } from '../lib/context/auth-context';
 import { signOutUser } from '../lib/actions';
 import { useRouter } from 'next/navigation';
@@ -22,7 +21,7 @@ export default function UserProfile() {
   if (!user) {
     return (
       <button
-        onClick={() => router.push('/developers/login')}
+        onClick={() => router.push('/login')}
         className="fixed top-4 right-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm z-50"
       >
         Login
@@ -38,10 +37,6 @@ export default function UserProfile() {
           alt="Profile"
           className="w-8 h-8 rounded-full border border-white/20"
         />
-        <div className="flex flex-col">
-          <span className="text-white text-sm font-medium">{user.displayName}</span>
-          <span className="text-white/60 text-xs">{user.email}</span>
-        </div>
       </div>
       <button
         onClick={handleLogout}
