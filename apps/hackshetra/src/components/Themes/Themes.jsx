@@ -1,19 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
-export default (props) => {
+function Themes (props) {
 	const [activeSlide, setActiveSlide] = useState(props.activeSlide);
 
-	const next = () =>
-		activeSlide < props.data.length - 1 && setActiveSlide(activeSlide + 1);
+	const next = ()=>{
+		setActiveSlide((prev)=> prev==props.data.length-1 ? 0 : prev+1)
+	}
+		
+	const prev = () => {
+		setActiveSlide((prev)=> prev==0 ? props.data.length-1 : prev-1)
+	}
 
-	const prev = () => activeSlide > 0 && setActiveSlide(activeSlide - 1);
+	const time = useRef(null)
+
+	const timer = ()=>{
+		clearTimeout(time.current)
+		time.current = setTimeout(next,3500)
+	}
+
+	useEffect(()=>{
+		timer()
+		return ()=> clearTimeout(time.current)
+	},[activeSlide])
 
 	const getStyles = (index) => {
 		if (activeSlide === index)
 			return {
 				opacity: 1,
-				transform: "translateX(0px) translateZ(0px) rotateY(0deg)",
+				transform: "translateX(0px) translateZ(0px) rotate(0deg)",
 				zIndex: 10,
 			};
 		else if (activeSlide - 1 === index)
@@ -40,16 +55,24 @@ export default (props) => {
 				transform: "translateX(480px) translateZ(-500px) rotateY(-35deg)",
 				zIndex: 8,
 			};
-		else if (index < activeSlide - 2)
+		else if (activeSlide - 3 == index)
 			return {
-				opacity: 0,
+				transform: "translateX(480px) translateZ(-500px) rotateY(-35deg)",
+				zIndex: 7,
+			};
+		else if (activeSlide + 3 == index)
+			return {
 				transform: "translateX(-480px) translateZ(-500px) rotateY(35deg)",
 				zIndex: 7,
 			};
-		else if (index > activeSlide + 2)
+		else if (activeSlide - 4 == index)
 			return {
-				opacity: 0,
-				transform: "translateX(480px) translateZ(-500px) rotateY(-35deg)",
+				transform: "translateX(240px) translateZ(-400px) rotateY(-35deg)",
+				zIndex: 7,
+			};
+		else if (activeSlide + 4 == index)
+			return {
+				transform: "translateX(-240px) translateZ(-400px) rotateY(35deg)",
 				zIndex: 7,
 			};
 	};
@@ -90,13 +113,13 @@ export default (props) => {
 				<div className="btns flex">
 					<FaChevronLeft
 						className="btn cursor-pointer"
-						onClick={prev}
+						onClick={()=>{prev(); timer()}}
 						color="#fff"
 						size={32}
 					/>
 					<FaChevronRight
 						className="btn cursor-pointer"
-						onClick={next}
+						onClick={()=>{next(); timer()}}
 						color="#fff"
 						size={32}
 					/>
@@ -115,3 +138,5 @@ const SliderContent = (props) => {
 		</div>
 	);
 };
+
+export default Themes
