@@ -4,7 +4,7 @@ import { useState } from "react";
 import logo from "../../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface NavItem {
 	name: string;
@@ -16,6 +16,7 @@ interface NavBarProps {
 
 export default function NavBar({ navitems }: NavBarProps) {
 	const router = useRouter();
+	const pathname = usePathname();
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const toggleDropdown = () => {
 		setIsDropdownOpen((prev) => !prev);
@@ -53,7 +54,7 @@ export default function NavBar({ navitems }: NavBarProps) {
 									key={i}
 									onClick={() => {
 										// redirect to home page
-										router.push("/");
+										if(pathname !== "/") router.push("/");
 										// Go to the required section
 										const targetElement = document.getElementById(
 											item.name.toLowerCase()
