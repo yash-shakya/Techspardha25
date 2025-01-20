@@ -30,7 +30,7 @@ export default function EventsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-[#001926] px-4 py-8 md:px-8 lg:px-12">
+    <div className="min-h-screen bg-transparent px-4 py-8 md:px-8 lg:px-12">
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <h1 className="text-3xl font-bold  md:text-4xl pb-5  bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text  font-[Satoshi Variable]">Events Category</h1>
         
@@ -42,20 +42,20 @@ export default function EventsPage() {
               onClick={() => setIsOpen(!isOpen)}
               className="flex w-full items-center justify-between w- gap-2 rounded-l-3xl 
               rounded-r-3xl  rounded-y-0 border-[3px]
-               border-[#002236] px-6 py-2 text-white transition-colors hover:bg-[#003252] md:w-auto"
+               border-[#003252] px-6 py-2 text-white transition-colors hover:bg-[#003252] md:w-auto"
             >
               {selectedCategory}
               <FiChevronDown className={`h-5 w-5 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {isOpen && (
-              <div className="absolute mt-2 w-full rounded-lg font-[Satoshi Variable] font-bold bg-[#142B37] py-2 shadow-xl z-50">
+              <div className="absolute mt-2 w-full rounded-lg font-[Satoshi Variable] font-bold bg-[#003252] py-2 shadow-xl z-50">
                 <button
                   onClick={() => {
                     setSelectedCategory("All Events")
                     setIsOpen(false)
                   }}
-                  className="w-full px-4 py-2 text-left text-white hover:bg-[#003252]"
+                  className="w-full px-4 py-2 text-left text-white bg-[#003252] hover:bg-[#003252]"
                 >
                   All Events
                 </button>
@@ -66,7 +66,7 @@ export default function EventsPage() {
                       setSelectedCategory(category)
                       setIsOpen(false)
                     }}
-                    className="w-full px-4 py-2 text-left text-white font-[Satoshi Variable] font-bold bg-[#142B37]  hover:bg-[#003252]"
+                    className="w-full px-4 py-2 text-left text-white font-[Satoshi Variable] font-bold bg-[#003252]  hover:bg-[#003252]"
                   >
                     {category}
                   </button>
