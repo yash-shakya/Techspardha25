@@ -8,7 +8,7 @@ import { EVENTCATEGORIES } from '../../constants/eventPage'
 export default function EventsPage() {
   const [activeEvent, setActiveEvent] = useState<number | null>(null)
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedCategory, setSelectedCategory] = useState("Coding Events")
+  const [selectedCategory, setSelectedCategory] = useState("All Events")
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function EventsPage() {
   })
 
   return (
-    <div className="min-h-screen bg-transparent px-4 py-8 md:px-8 lg:px-12">
+    <div className="bg-transparent px-4 py-8 md:px-8 lg:px-12">
       <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <h1 className="text-3xl font-bold  md:text-4xl pb-5  bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text  font-[Satoshi Variable]">Events Category</h1>
         

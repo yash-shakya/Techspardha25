@@ -24,14 +24,14 @@ const SingleEventPage: React.FC<SingleEventProps> = async ({ params }) => {
 
   if (!event) {
     return (
-      <div className="min-h-screen bg-[#001926] text-gray-100 p-8 flex items-center justify-center">
+      <div className="bg-[#001926] text-gray-100 p-8 flex items-center justify-center">
         <h1 className="text-3xl">Event not found</h1>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-transparent text-gray-100 p-8">
+    <div className="bg-transparent text-gray-100 p-8">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
           <h1 className="text-4xl sm:text-5xl pb-8 font-light bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text  font-[Satoshi Variable]">{event.name}</h1>
