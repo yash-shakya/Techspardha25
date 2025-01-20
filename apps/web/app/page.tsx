@@ -9,7 +9,6 @@ import {
   emailPlaceholder,
   buttonText,
   guestCardsData,
-  // eventCardsData,
 } from "./constants/landingpage";
 import { EVENTS as eventCardsData } from './constants/eventPage';
 import SponsorsCard from "./ui/components/SponsorsCard";
@@ -95,10 +94,10 @@ export default function Home() {
           <section className="sm:min-h-screen flex flex-col items-center justify-center">
             <EventGroup eventData={eventCardsData} />
           </section>
-          <section className="sm:min-h-screen flex flex-col items-center justify-center">
+          <section className="sm:min-h-screen flex flex-col items-center justify-center" id='lectures'>
             <Guestgroup cardsData={guestCardsData} />
           </section>
-          <section className="min-h-screen flex flex-col items-center justify-center">
+          <section className="min-h-screen flex flex-col items-center justify-center" id='sponsors'>
             <SponsorsCard
               SponsorsCard={sponsorsData}
               emailPlaceholder={emailPlaceholder}
