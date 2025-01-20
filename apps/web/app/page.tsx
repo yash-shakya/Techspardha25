@@ -9,8 +9,9 @@ import {
   emailPlaceholder,
   buttonText,
   guestCardsData,
-  eventCardsData,
+  // eventCardsData,
 } from "./constants/landingpage";
+import { EVENTS as eventCardsData } from './constants/eventPage';
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
 import EventGroup from "./ui/EventsGroup";
