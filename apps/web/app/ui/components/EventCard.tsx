@@ -8,9 +8,8 @@ export interface EventCardProps {
 }
 
 export default function EventCard({ name, img, isActive, id }: EventCardProps) {
-	console.log(id);
+
 	const handleUrl = () => {
-		
 		window.location.href = `/events/${id}`;
 	};
 
@@ -21,18 +20,19 @@ export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 					isActive ? "scale-95 shadow-lg" : ""
 				}`}
 			>
-				<div className="relative flex items-center justify-center w-full h-36 sm:h-80 md:h-96 overflow-hidden">
-					<Link href={`/events/${id}`}>
-						<Image
-							className="object-cover border-[1px] border-white  rounded-lg"
-							src={`/${img}`}
-							alt={`Image of ${name}`}
-							fill
-							sizes="(max-width: 768px) 100vw,
+				<div
+					className="relative flex items-center justify-center w-full h-36 sm:h-80 md:h-96 overflow-hidden"
+					onClick={handleUrl}
+				>
+					<Image
+						className="object-cover border-[1px] border-white  rounded-lg"
+						src={`/${img}`}
+						alt={`Image of ${name}`}
+						fill
+						sizes="(max-width: 768px) 100vw,
                  (max-width: 1200px) 80vw,
                  90vw"
-						/>
-					</Link>
+					/>
 				</div>
 
 				<div className="text-white text-lg text-center p-2 font-[Satoshi Variable] sm:text-3xl">

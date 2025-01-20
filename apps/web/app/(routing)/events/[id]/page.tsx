@@ -11,7 +11,7 @@ interface Event {
   coordinators: string[]
   rules: string[]
   description: string
-  image: string
+  img: string
 }
 
 interface SingleEventProps {
@@ -52,7 +52,7 @@ const SingleEventPage: React.FC<SingleEventProps> = async ({ params }) => {
         <div className="grid grid-cols-1 md:grid-cols-2  gap-8">
           <div className="rounded-lg overflow-hidden h-[80%] border-[1px]">
             <img
-              src={event.img}
+              src={`/${event.img}`}
               alt={`${event.name} event`}
               className="w-full h-auto object-contain"
             />
