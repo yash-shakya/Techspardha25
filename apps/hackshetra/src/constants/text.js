@@ -1,6 +1,6 @@
 export const hackshetra="HACKSHETRA" 
 
-export const tagline = "DESIGN | DEVELOP | DOMINATE"
+export const tagline = "Hack your way to innovation"
 
 export const what = "What is Hackshetra?"
 

@@ -21,7 +21,7 @@ function App() {
           lg:text-[4rem] 
           xl:text-[4rem] xl:[text-shadow:6px_6px_3px_#00cccc]`}>{hackshetra}</h1>
 
-          <div className='text-white lg:text-[2rem] font-blanka mt-14  backdrop-blur-sm rounded-3xl w-fit align-middle text-center  pb-2 px-5 mb-10
+          <div className='text-white lg:text-[2rem] font-kode uppercase mt-14  backdrop-blur-sm rounded-3xl w-fit align-middle text-center  p-2 px-5 mb-10
           sm:text-xl
           md:text-2xl
           text-md'>
