@@ -16,7 +16,7 @@ interface WallCardGroupProps {
 
 export default function WallCardGroup({testimonials }: WallCardGroupProps) {
   return (
-    <div className="w-full min-h-screen bg-transparent p-8">
+    <div className="w-full max-h-screen bg-transparent mb-0 p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-transparent mb-12  bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text  font-[Satoshi Variable]">{title}</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

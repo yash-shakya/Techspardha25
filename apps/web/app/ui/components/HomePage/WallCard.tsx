@@ -7,19 +7,19 @@ interface WallCardProps {
 
 export default function WallCard({ name, role, testimonial, imageUrl }: WallCardProps) {
   return (
-    <div className="relative p-6 rounded-lg bg-[#012436] text-white">
+    <div className="relative p-6 rounded-lg h-[406px] bg-[#191919BE] text-white">
       <div className="flex items-center gap-3 mb-4">
         <img
           src={imageUrl || "/placeholder.svg"}
           alt={`${name}'s profile`}
-          className="w-10 h-10 rounded-full object-cover"
+          className="w-10 h-10 rounded-full border-[#367CFF] border-[2px] object-cover"
         />
         <div>
           <h3 className="font-semibold">{name}</h3>
           <p className="text-xs text-gray-400">{role}</p>
         </div>
       </div>
-      <p className="text-sm leading-relaxed text-gray-300">{testimonial}</p>
+      <p className="text-sm leading-relaxed h-[85%] rounded-md px-2 pt-3 bg-[#012436] text-gray-300">{testimonial}</p>
     </div>
   )
 }
