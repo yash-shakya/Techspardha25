@@ -5,9 +5,15 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 
 interface EventsGroupProp {
-	id: string;
+	id: number;
 	name: string;
 	img: string;
+	startTime?: string;
+	endTime?: string;
+	coordinators?: string[];
+	rules?: string[];
+	description?: string;
+	category?: string;
 }
 
 interface EventsGroupProps {
@@ -67,6 +73,7 @@ export default function EventsGroup({ eventData }: EventsGroupProps) {
 							<EventCard
 								name={eventData[currentIndex].name}
 								img={eventData[currentIndex].img}
+								id={eventData[currentIndex].id}
 								isActive={true}
 							/>
 						</Link>
