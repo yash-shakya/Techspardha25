@@ -7,7 +7,7 @@ interface WallCardProps {
 
 export default function WallCard({ name, role, testimonial, imageUrl }: WallCardProps) {
   return (
-    <div className="relative p-6 rounded-lg h-[406px] bg-[#191919BE] text-white">
+    <div className="relative p-6 rounded-lg h-[406px] bg-[#0c1921c9] text-white">
       <div className="flex items-center gap-3 mb-4">
         <img
           src={imageUrl || "/placeholder.svg"}
