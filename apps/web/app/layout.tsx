@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "./fonts";
+import Footer from "./ui/components/HomePage/Footer";
 import Background from "./ui/background";
 import { NavItems } from "./constants/landingpage"; // This will be passed as a prop to the NavBar component
 import NavBar from "./ui/NavBar";
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
         </div>
         <Background />
+        <Footer></Footer>
         </AuthProvider>
       </body>
     </html>

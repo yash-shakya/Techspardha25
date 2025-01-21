@@ -3,6 +3,8 @@
 import { useAuth } from './lib/context/auth-context';
 import { signOutUser } from './lib/actions';
 import RubikWetHeading from "./ui/techspardha";
+import { WallcardData } from './constants/WallCard';
+import WallCardGroup from './ui/components/HomePage/WallCardGroup';
 import {
   TECHSPARDHA,
   sponsorsData,
@@ -103,6 +105,9 @@ export default function Home() {
               emailPlaceholder={emailPlaceholder}
               buttonText={buttonText}
             />
+          </section>
+          <section  id='testimonials'>
+            <WallCardGroup testimonials={WallcardData} ></WallCardGroup>
           </section>
         </div>
       </main>
