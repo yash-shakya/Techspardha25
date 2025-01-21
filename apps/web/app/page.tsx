@@ -4,7 +4,7 @@ import { useAuth } from './lib/context/auth-context';
 import { signOutUser } from './lib/actions';
 import RubikWetHeading from "./ui/techspardha";
 import { WallcardData } from './constants/WallCard';
-import WallCardGroup from './ui/components/HomePage/WallCardGroup';
+import WallCardGroup from './ui/components/WallCardGroup';
 import {
   TECHSPARDHA,
   sponsorsData,

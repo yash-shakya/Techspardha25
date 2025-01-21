@@ -1,5 +1,5 @@
 import WallCard from "./WallCard"
-import { title } from "../../../constants/WallCard"
+import { title } from "../../constants/WallCard"
 
 interface Testimonial {
   id: string

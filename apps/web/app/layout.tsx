@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { poppins } from "./fonts";
-import Footer from "./ui/components/HomePage/Footer";
+import Footer from "./ui/components/Footer";
 import Background from "./ui/background";
-import { NavItems } from "./constants/landingpage"; // This will be passed as a prop to the NavBar component
+import { NavItems, SOCIALS } from "./constants/landingpage"; // This will be passed as a prop to the NavBar component
 import NavBar from "./ui/NavBar";
 import { AuthProvider } from "./lib/context/auth-context";
 
@@ -25,9 +25,9 @@ export default function RootLayout({
         <div className="flex flex-col max-w-full mx-auto p-5 container">
           {children}
         </div>
-        <Background />
-        <Footer></Footer>
+        <Footer socials={SOCIALS} />
         </AuthProvider>
+        <Background />
       </body>
     </html>
   );
