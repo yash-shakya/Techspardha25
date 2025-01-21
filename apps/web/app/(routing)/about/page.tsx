@@ -22,19 +22,16 @@ export default function About() {
 			<div className="flex flex-col items-center space-y-4 w-full max-w-md mx-auto">
 				{aboutPageImages.map(
 					(img: { name: string; link: string }, index: number) => (
-            <div
-              key={index}
-              className="flex w-[90vw] p-2"
-            >
-              <Image
-                src={img.link || "/placeholder.svg"}
-                alt={`Guest ${index + 1}`}
-                width={1200}
-                height={1200}
-                sizes="100vw"
-                className="object-contain w-full rounded-lg shadow-md"
-              />
-            </div>
+						<div key={index} className="flex w-[90vw] p-2">
+							<Image
+								src={img.link || "/placeholder.svg"}
+								alt={`Guest ${index + 1}`}
+								width={1200}
+								height={1200}
+								sizes="100vw"
+								className="object-contain w-full rounded-lg shadow-md"
+							/>
+						</div>
 					)
 				)}
 			</div>
