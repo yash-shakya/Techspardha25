@@ -38,5 +38,13 @@ export const ThemeData = [
         title: "5",
         desc:
             "Lorem Ipsum "
+    },
+    {
+        id: 6,
+        bgColor: "#50e61e",
+        // icon: <FontAwesomeIcon icon={faHelicopter} size="3x" />,
+        title: "6",
+        desc:
+            "Lorem Ipsum "
     }
 ];
