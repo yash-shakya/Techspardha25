@@ -276,8 +276,9 @@ function Themes(props) {
 
 const SliderContent = (props) => {
 	return (
-		<div className="sliderContent">
-			{props.icon}
+		<div className="sliderContent flex flex-col items-center">
+			<img src={props.icon} alt="icon" width={100}/>
+			
 			<h2>{props.title}</h2>
 			<p>{props.desc}</p>
 		</div>
