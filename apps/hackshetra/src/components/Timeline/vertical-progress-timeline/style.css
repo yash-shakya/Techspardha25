@@ -1,0 +1,104 @@
+/* Background image for the entire page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Transparent wrapper to enhance the glassmorphism effect */
+.timeline-wrapper {
+  --bookmark-h-gap: 100px;
+  --bookmark-v-gap: 60px;
+  --marker-size: 24px;
+  --marker-bg: #0c6fefbb;
+  --thread-width: 8px;
+  --thread-bg: #ef0c0cbb;
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline layout */
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 20px 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr var(--bookmark-h-gap) 1fr;
+  grid-row-gap: var(--bookmark-v-gap);
+}
+
+/* Timeline item styles */
+.timeline-item {
+  position: relative;
+  color: #fff; /* Text remains white */
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background: #000; /* Dark black background for bookmarks */
+  box-shadow: none; /* Remove any shadow from the card itself */
+  border: 2px solid rgba(3, 123, 255, 0.5); /* Semi-transparent blue border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.05); /* Slight scaling effect */
+  border: 2px solid rgba(3, 123, 255, 0.8); /* Solid blue border on hover */
+}
+
+/* Glowing effect on border */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  z-index: -1;
+  border-radius: 12px;
+  background: rgba(14, 7, 7, 0); /* A semi-transparent background for glassmorphism */
+  filter: blur(8px);
+  opacity: 0.7;
+}
+
+/* Align items to their respective columns */
+.timeline-item:nth-child(even) {
+  grid-column: 3;
+}
+
+.timeline-item:nth-child(odd) {
+  grid-column: 1;
+}
+
+/* Dot marker styles */
+.timeline-dotmark {
+  grid-column: 2 / span 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot {
+  width: var(--marker-size);
+  height: var(--marker-size);
+  background-color: var(--marker-bg);
+  border-radius: 50%;
+}
+
+/* Thread styles */
+.timeline-connector {
+  position: absolute;
+  top: 0;
+  left: calc(50% - calc(var(--thread-width) / 2));
+  background-color: var(--thread-bg);
+  width: var(--thread-width);
+  height: 100%;
+}
