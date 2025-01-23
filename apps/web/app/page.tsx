@@ -10,7 +10,7 @@ import {
 	emailPlaceholder,
 	buttonText,
 	guestCardsData,
-  wallcardData as WallcardData
+	wallcardData as WallcardData,
 } from "./constants/landingpage";
 import { EVENTS as eventCardsData } from "./constants/eventPage";
 import SponsorsCard from "./ui/components/SponsorsCard";
@@ -50,7 +50,7 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="fixed top-4 right-4 flex items-center gap-4 z-50">
+			<div className="absolute top-4 right-4 flex items-center gap-4 z-50">
 				{user ? (
 					<>
 						<div className="flex items-center gap-3 bg-white/10 backdrop-blur-lg rounded-full px-4 py-2">
@@ -81,8 +81,8 @@ export default function Home() {
 				)}
 			</div>
 
-			<main>
-				<section className="sm:min-h-screen flex flex-col items-center gap-[22px]">
+			<main className="snap-y snap-mandatory w-full h-full">
+				<section className="snap-center sm:min-h-screen flex flex-col items-center gap-[22px]">
 					<RubikWetHeading text={TECHSPARDHA} />
 					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-medium font-['Satoshi Variable'] leading-[33px]">
 						Theme for fest!!!!
@@ -92,30 +92,28 @@ export default function Home() {
 					<Watermark />
 				</section>
 
-				<div className="content flex-col flex gap-12">
-					<section className="sm:min-h-screen flex flex-col items-center justify-center">
-						<EventGroup eventData={eventCardsData} />
-					</section>
-					<section
-						className="sm:min-h-screen flex flex-col items-center justify-center"
-						id="lectures"
-					>
-						<Guestgroup cardsData={guestCardsData} />
-					</section>
-					<section
-						className="min-h-screen flex flex-col items-center justify-center"
-						id="sponsors"
-					>
-						<SponsorsCard
-							SponsorsCard={sponsorsData}
-							emailPlaceholder={emailPlaceholder}
-							buttonText={buttonText}
-						/>
-					</section>
-					<section id="testimonials">
-						<WallCardGroup testimonials={WallcardData} />
-					</section>
-				</div>
+				<section className="snap-center sm:min-h-screen flex flex-col items-center justify-center">
+					<EventGroup eventData={eventCardsData} />
+				</section>
+				<section
+					className="snap-center sm:min-h-screen flex flex-col items-center justify-center"
+					id="lectures"
+				>
+					<Guestgroup cardsData={guestCardsData} />
+				</section>
+				<section
+					className="snap-start min-h-screen flex flex-col items-center justify-center"
+					id="sponsors"
+				>
+					<SponsorsCard
+						SponsorsCard={sponsorsData}
+						emailPlaceholder={emailPlaceholder}
+						buttonText={buttonText}
+					/>
+				</section>
+				<section className="" id="testimonials">
+					<WallCardGroup testimonials={WallcardData} />
+				</section>
 			</main>
 		</>
 	);
