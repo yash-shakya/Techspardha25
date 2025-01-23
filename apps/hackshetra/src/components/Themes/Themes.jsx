@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import "./Themes.css"
 
 function BigTheme(props) {
 	const [activeSlide, setActiveSlide] = useState(props.activeSlide);
