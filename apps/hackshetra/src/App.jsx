@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import './App.css'
 import Navbar from './components/Navbar/Navbar.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Register from './components/Resgister/Register.jsx'
 import Themes from './components/Themes/Themes.jsx'
-import Data from './components/Themes/Data.js'
-import './components/Themes/Themes.css'
+import Timeline from './components/Timeline/Timeline.jsx'
+import { aboutData, hackshetra, tagline, what } from './constants/text.js'
+import {ThemeData} from './constants/themeData.js'
+import {TimelineData} from "./constants/timelineData.js"
 
 function App() {
 
@@ -18,13 +18,13 @@ function App() {
           sm:text-[2.5rem]
           md:text-[3rem] 
           lg:text-[4rem] 
-          xl:text-[4rem] xl:[text-shadow:6px_6px_3px_#00cccc]`}>HACKSHETRA</h1>
+          xl:text-[4rem] xl:[text-shadow:6px_6px_3px_#00cccc]`}>{hackshetra}</h1>
 
-          <div className='text-white lg:text-[2rem] font-blanka mt-14  backdrop-blur-sm rounded-3xl w-fit align-middle text-center  pb-2 px-5 mb-10
+          <div className='text-white lg:text-[2rem] font-kode uppercase mt-14  backdrop-blur-sm rounded-3xl w-fit align-middle text-center  p-2 px-5 mb-10
           sm:text-xl
           md:text-2xl
           text-md'>
-            DESIGN | DEVELOP | DOMINATE
+            {tagline}
           </div>
 
           <div className=' w-fit h-min rounded-lg p-5 bg-cyan-400/5 backdrop-blur-xl
@@ -35,11 +35,10 @@ function App() {
 
           </div>
         </div>
-        <AboutUs />
-        <Themes data={Data} activeSlide={2}/>
+        <AboutUs data={aboutData} que={what}/>
+        <Themes data={ThemeData} activeSlide={2}/>
+        <Timeline data={TimelineData}/>
       </div>
-
-
     </>
   )
 }
