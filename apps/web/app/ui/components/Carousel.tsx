@@ -21,40 +21,36 @@ interface CarouselProps {
 
 export default function CarouselComponent({
 	children,
-	controls,
-	css,
-	delay,
-	toScroll,
-	speed,
-}: CarouselProps) {
-	if (!children) return null;
-	if (!controls) controls = false;
-	if (!toScroll) toScroll = true;
+	controls = false,
+	css = "basis-2/5", // Default value
+	delay = 1000, // Default delay for autoplay
+	toScroll = true, // Default to true
+	speed = 1, // Default speed for autoplay
+  }: CarouselProps) {
+	if (!children || children.length === 0) return null;
+  
 	return (
-		<>
-			<Carousel
-				opts={{
-					skipSnaps: true,
-					loop: true,
-				}}
-				plugins={[
-					toScroll
-						? AutoScroll({ speed: speed || 1 })
-						: Autoplay({ delay: delay || 1000 }),
-				]}
-			>
-				<CarouselContent>
-					{children.map((child, index) => {
-						return (
-							<CarouselItem key={index} className={`${css || "basis-1/4"}`}>
-								{child}
-							</CarouselItem>
-						);
-					})}
-				</CarouselContent>
-				{controls && <CarouselPrevious />}
-				{controls && <CarouselNext />}
-			</Carousel>
-		</>
+	  <>
+		<Carousel
+		  opts={{
+			skipSnaps: true,
+			loop: true,
+		  }}
+		  plugins={[
+			toScroll ? AutoScroll({ speed }) : Autoplay({ delay }),
+		  ]}
+		>
+		  <CarouselContent>
+			{children.map((child, index) => (
+			  <CarouselItem key={index} className={css}>
+				{child}
+			  </CarouselItem>
+			))}
+		  </CarouselContent>
+		  {controls && <CarouselPrevious />}
+		  {controls && <CarouselNext />}
+		</Carousel>
+	  </>
 	);
-}
+  }
+  

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import GuestLectureCard from "./components/GuestLectureCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Carousel from "./components/Carousel";
 
 interface CardData {
 	image?: string;
@@ -47,27 +48,32 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 				Guest Lectures
 			</h2>
 
-			<div
+			{/* PREV BUTTON */}
+			{/* <div
 				onClick={handlePrev}
 				className="m-4 absolute -left-12 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer p-3 bg-gray-200 rounded-full hover:text-gray-700 duration-500 text-gray-400"
 			>
 				<FaChevronLeft className="text-3xl" />
-			</div>
+			</div> */}
 
 			{/* Cards Container */}
 			{isClient && (
 				<div className="relative flex gap-8 w-full justify-center items-center h-auto">
-					{visibleCards.map((card, index) => (
-						<div
-							key={index}
-							className="guest-card-container relative transition-transform duration-500 ease-in-out"
-							style={{
-								width: "450px",
-								height: "530px",
-							}}
-						>
-							{card ? (
-								<div>
+					<Carousel
+						toScroll={false}
+						delay={1500}
+						css={`basis-${1/visibleCards.length}`}
+					>
+						{visibleCards.map((card, index) => (
+							<div
+								key={index}
+								className="guest-card-container relative transition-transform duration-500 ease-in-out"
+								style={{
+									width: "420px",
+									height: "530px",
+								}}
+							>
+								{card ? (
 									<GuestLectureCard
 										image={
 											card.image
@@ -83,23 +89,24 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 										date={card.date || "Default Date"}
 										description={card.description || "No description available"}
 									/>
-								</div>
-							) : (
-								<div className="text-white text-center">
-									Card data not available
-								</div>
-							)}
-						</div>
-					))}
+								) : (
+									<div className="text-white text-center">
+										Card data not available
+									</div>
+								)}
+							</div>
+						))}
+					</Carousel>
 				</div>
 			)}
 
-			<div
+			{/* NEXT BUTTON */}
+			{/* <div
 				onClick={handleNext}
 				className="absolute -right-12 m-4 top-1/2 transform -translate-y-1/2 cursor-pointer p-3 bg-gray-200 rounded-full hover:text-gray-700 duration-500 text-gray-400"
 			>
 				<FaChevronRight className="text-3xl" />
-			</div>
+			</div> */}
 		</div>
 	);
 };
