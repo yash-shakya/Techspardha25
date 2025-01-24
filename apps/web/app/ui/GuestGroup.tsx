@@ -36,11 +36,10 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 		setCurrentIndex((prevIndex) => (prevIndex + 1) % cardsData.length);
 	};
 
-	const visibleCards = [
-		cardsData[(currentIndex - 1 + cardsData.length) % cardsData.length],
-		cardsData[currentIndex],
-		cardsData[(currentIndex + 1) % cardsData.length],
-	];
+	const visibleCards = [];
+	for (let i = 0; i < Math.min(6, cardsData.length); i++) {
+		visibleCards.push(cardsData[(currentIndex + i) % cardsData.length]);
+	}
 
 	return (
 		<div className="relative flex flex-col items-center w-4/5 sm:h-auto gap-8 mx-auto">
@@ -48,26 +47,17 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 				Guest Lectures
 			</h2>
 
-			{/* PREV BUTTON */}
-			{/* <div
-				onClick={handlePrev}
-				className="m-4 absolute -left-12 top-1/2 transform -translate-y-1/2 z-10 cursor-pointer p-3 bg-gray-200 rounded-full hover:text-gray-700 duration-500 text-gray-400"
-			>
-				<FaChevronLeft className="text-3xl" />
-			</div> */}
-
-			{/* Cards Container */}
 			{isClient && (
 				<div className="relative flex gap-8 w-full justify-center items-center h-auto">
 					<Carousel
 						toScroll={false}
 						delay={1500}
-						css={`basis-${1/visibleCards.length}`}
+						css={`basis-${visibleCards.length}`}
 					>
 						{visibleCards.map((card, index) => (
 							<div
 								key={index}
-								className="guest-card-container relative transition-transform duration-500 ease-in-out"
+								className="guest-card-container relative transition-transform duration-500 ease-in-out w-full sm:w-[420px] h-auto sm:h-[530px]"
 								style={{
 									width: "420px",
 									height: "530px",
@@ -82,12 +72,13 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 										}
 										backGroundImage={
 											backgroundImages[
-												(currentIndex + index) % backgroundImages.length
+											(currentIndex + index) % backgroundImages.length
 											] || "/GuestBackground/Blue.png"
 										}
 										name={card.name || "Default Name"}
 										date={card.date || "Default Date"}
 										description={card.description || "No description available"}
+										
 									/>
 								) : (
 									<div className="text-white text-center">
@@ -99,14 +90,6 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 					</Carousel>
 				</div>
 			)}
-
-			{/* NEXT BUTTON */}
-			{/* <div
-				onClick={handleNext}
-				className="absolute -right-12 m-4 top-1/2 transform -translate-y-1/2 cursor-pointer p-3 bg-gray-200 rounded-full hover:text-gray-700 duration-500 text-gray-400"
-			>
-				<FaChevronRight className="text-3xl" />
-			</div> */}
 		</div>
 	);
 };

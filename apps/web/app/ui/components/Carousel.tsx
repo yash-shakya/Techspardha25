@@ -1,5 +1,4 @@
 "use client";
-import { type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import AutoScroll from "embla-carousel-auto-scroll";
 import {
@@ -22,7 +21,7 @@ interface CarouselProps {
 export default function CarouselComponent({
 	children,
 	controls = false,
-	css = "basis-2/5", // Default value
+	css = "basis-1/3", // Default value
 	delay = 1000, // Default delay for autoplay
 	toScroll = true, // Default to true
 	speed = 1, // Default speed for autoplay
@@ -33,12 +32,15 @@ export default function CarouselComponent({
 	  <>
 		<Carousel
 		  opts={{
+			align: "center",
 			skipSnaps: true,
 			loop: true,
+			dragFree: false,
 		  }}
 		  plugins={[
 			toScroll ? AutoScroll({ speed }) : Autoplay({ delay }),
 		  ]}
+		  className="w-full"
 		>
 		  <CarouselContent>
 			{children.map((child, index) => (

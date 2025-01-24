@@ -53,21 +53,14 @@ export const guestCardsData = [
 	},
 	{
 		image: "/GuestLecturer/Guestlecture.jpg",
-		name: "AMAN DATTARWAL",
+		name: "AMAN DATTARWALsss",
 		date: "Feb 5, 2025",
 		description:
 			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
 	},
 	{
 		image: "/GuestLecturer/Guestlecture.jpg",
-		name: "AMAN DATTARWAL",
-		date: "Feb 5, 2025",
-		description:
-			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
-	},
-	{
-		image: "/GuestLecturer/Guestlecture.jpg",
-		name: "Jane Smith",
+		name: "AMAN DATTARWALs",
 		date: "Feb 5, 2025",
 		description:
 			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
@@ -75,6 +68,13 @@ export const guestCardsData = [
 	{
 		image: "/GuestLecturer/Guestlecture.jpg",
 		name: "Jane Smith",
+		date: "Feb 5, 2025",
+		description:
+			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
+	},
+	{
+		image: "/GuestLecturer/Guestlecture.jpg",
+		name: "Jane Smiths",
 		date: "Feb 5, 2025",
 		description:
 			"Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.Build RAG based internal and external chatbots that speak facts without hallucination. Build RAG based internal and external chatbots that speak facts without hallucination.",
