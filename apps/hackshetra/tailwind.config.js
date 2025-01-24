@@ -19,6 +19,9 @@ export default {
         "diplomata":['"Diplomata", serif'],
         "dm-serif-display":['"DM Serif Display", serif'],
         "dm-sans":['"DM Sans", serif']
+      },
+      perspective: {
+        300: '300px',
       }
     }
   },
