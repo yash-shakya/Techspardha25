@@ -1,16 +1,14 @@
 import TeamCard from "../../ui/components/TeamCard";
-import { TEAMS } from "../../constants/teampage";
+import SERVICES from "../../server/actions/services";
 
-export default function Teams() {
-	// store TEAMS in a const var devs in reverse order
-	// Make an array of all teams
-	const teamNames = Object.keys(TEAMS);
-	const teamArray = Object.values(TEAMS);
-	const teams = teamArray.map((team, index) => ({
+export default async function Teams() {
+	const teamsD = await SERVICES.getAllTechspardhaTeams();
+	if (!teamsD) return;
+	const teams = Object.entries(teamsD).map(([id, team]) => ({
+		id,
 		...team,
-		id: teamNames[index],
 	}));
-
+	// console.log(teams);
 	return (
 		<>
 			<div className="w-[85%] m-auto">
