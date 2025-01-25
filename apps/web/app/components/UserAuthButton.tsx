@@ -1,12 +1,12 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useAuth } from '../lib/context/auth-context';
 import { signInWithGoogle, signOutUser } from '../lib/actions';
 import { useRouter } from 'next/navigation'
-import { Menu } from 'lucide-react';
-import { doc, setDoc, getFirestore } from 'firebase/firestore';
+import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore';
 import firebase_app from '../lib/firebase';
+import { Menu } from 'lucide-react';
 
 const db = getFirestore(firebase_app);
 
@@ -22,8 +22,46 @@ export default function UserAuthButton() {
         year: ''
     });
     const [showProfileCompletion, setShowProfileCompletion] = useState(false);
+    const [userData, setUserData] = useState({
+        email: '',
+        mobile: '',
+        collegeName: '',
+        year: ''
+    });
 
     const router = useRouter()
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            if (!user) return;
+    
+            try {
+                const userDocRef = doc(db, 'users', user.uid);
+                const userDoc = await getDoc(userDocRef);
+    
+                if (userDoc.exists()) {
+                    const data = userDoc.data();
+                    setUserData({
+                        email: data.email || user.email || '',
+                        mobile: data.mobile || '',
+                        collegeName: data.collegeName || '',
+                        year: data.year || ''
+                    });
+                    setFormData({
+                        mobile: data.mobile || '',
+                        collegeName: data.collegeName || '',
+                        year: data.year || ''
+                    });
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        };
+    
+        if (showProfileCompletion) {
+            fetchUserData();
+        }
+    }, [user, showProfileCompletion]);
 
     const handleGoogleSignIn = async () => {
         try {
@@ -51,8 +89,9 @@ export default function UserAuthButton() {
         try {
             const userDocRef = doc(db, 'users', user.uid);
             await setDoc(userDocRef, {
-                email: user.email,
-                ...formData
+                mobile: formData.mobile || userData.mobile,
+                collegeName: formData.collegeName || userData.collegeName,
+                year: formData.year || userData.year
             }, { merge: true });
 
             setShowProfileCompletion(false);
@@ -109,6 +148,20 @@ export default function UserAuthButton() {
 
                     <form onSubmit={handleProfileSubmit} className="space-y-6 flex flex-col justify-center items-center">
                         <div className="space-y-2 border w-[90%] md:w-[521px] border-light-ocean-blue bg-light-ocean-blue rounded-2xl py-3 px-4">
+                            <label htmlFor="email" className="block text-sm md:text-base text-[#515F73]">
+                                Email
+                            </label>
+                            <input
+                                id="email"
+                                type="email"
+                                readOnly
+                                value={userData.email || user?.email || ''}
+                                className="w-full h-[15px] bg-light-ocean-blue text-xs md:text-base text-gray-200 focus:outline-none"
+                            />
+                        </div>
+
+
+                        <div className="space-y-2 border w-[90%] md:w-[521px] border-light-ocean-blue bg-light-ocean-blue rounded-2xl py-3 px-4">
                             <label htmlFor="mobile" className="block text-sm md:text-base text-[#515F73]">
                                 Mobile No.
                             </label>
@@ -119,11 +172,10 @@ export default function UserAuthButton() {
                                 onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                                 className="w-full h-[15px] bg-light-ocean-blue text-xs md:text-base text-gray-200 focus:outline-none"
                                 placeholder="Enter your mobile number"
-                                required
                             />
                         </div>
 
-                       
+
                         <div className="space-y-2 border w-[90%] md:w-[521px] border-light-ocean-blue bg-light-ocean-blue rounded-2xl py-3 px-4">
                             <label htmlFor="collegeName" className="block text-sm md:text-base text-[#515F73]">
                                 College Name
@@ -135,11 +187,10 @@ export default function UserAuthButton() {
                                 onChange={(e) => setFormData({ ...formData, collegeName: e.target.value })}
                                 className="w-full h-[15px] bg-light-ocean-blue text-xs md:text-base text-gray-200 focus:outline-none"
                                 placeholder="Enter your college name"
-                                required
                             />
                         </div>
 
-                        
+
                         <div className="space-y-2 border w-[90%] md:w-[521px] border-light-ocean-blue bg-light-ocean-blue rounded-2xl py-3 px-4">
                             <label htmlFor="year" className="block text-sm md:text-base text-[#515F73]">
                                 Year
@@ -151,7 +202,6 @@ export default function UserAuthButton() {
                                 onChange={(e) => setFormData({ ...formData, year: e.target.value })}
                                 className="w-full h-[15px] bg-light-ocean-blue text-xs md:text-base text-gray-200 focus:outline-none"
                                 placeholder="Enter your year"
-                                required
                             />
                         </div>
 
@@ -159,7 +209,6 @@ export default function UserAuthButton() {
                             <div className="text-red-500 text-sm text-center">{error}</div>
                         )}
 
-                        
                         <button
                             type="submit"
                             className="w-[70%] max-w-[130px] h-[36px] px-0 rounded-3xl bg-light-ocean-blue text-sm md:text-base"
@@ -179,7 +228,7 @@ export default function UserAuthButton() {
     if (user) {
         return (
             <>
-                
+
                 <div className="hidden md:flex items-center gap-3 mt-[-20px]">
                     <div className="flex items-center gap-2 bg-white/10 backdrop-blur-lg rounded-full px-4 py-2">
                         <Image
@@ -200,7 +249,7 @@ export default function UserAuthButton() {
                     </button>
                 </div>
 
-                
+
                 <div className="md:hidden relative">
                     <button
                         onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}

@@ -50,9 +50,9 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="absolute top-1 right-4 flex items-center gap-4 z-50">
+			{/* <div className="absolute top-1 right-4 flex items-center gap-4 z-50">
 				<UserAuthButton/>
-			</div>
+			</div> */}
 
 			<main className="snap-y snap-mandatory w-full h-full">
 				<section className="snap-center sm:min-h-screen flex flex-col items-center gap-[22px]">
