@@ -5,7 +5,7 @@ export const DEVS = [
         id: "aboutAppDevs",
         members: [
             {
-                name: "Debatreya Das",
+                name: "Utkarsh Swaroop Srivastava",
                 year: "Pre-Final",
                 github: "https://github.com/Debatreya",
                 insta: "https://www.instagram.com/debatreya_das/",
@@ -13,7 +13,7 @@ export const DEVS = [
                 imageUrl: "https://i.ibb.co/4MYfDJh/Debatreya-img.jpg"
             },
             {
-                name: "Rick Das",
+                name: "Santa Clause",
                 year: "Final",
                 github: "https://github.com/Debatreya",
                 insta: "https://www.instagram.com/debatreya_das/",
@@ -34,7 +34,7 @@ export const DEVS = [
                 imageUrl: "https://i.ibb.co/4MYfDJh/Debatreya-img.jpg"
             },
             {
-                name: "Rick Das",
+                name: "Steve Smith",
                 year: "Sophomore",
                 github: "https://github.com/Debatreya",
                 insta: "https://www.instagram.com/debatreya_das/",
@@ -51,4 +51,12 @@ export const DEVS = [
             }
         ]
     }    
+]
+
+export const THEMES = [
+    "blue",
+    "red",
+    "green",
+    "cyan",
+    "orange"
 ]
