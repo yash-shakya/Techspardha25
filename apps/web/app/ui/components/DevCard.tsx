@@ -24,12 +24,14 @@ interface DevCardProps {
 }
 
 // Component that displays a card with information about a developer.
-export default function DevCard({ dev, theme = "cyan" }: DevCardProps) {
+export default function DevCard({ dev, theme = "stone" }: DevCardProps) {
     // Check if the Links are valid URLs
     const isGithubValid = isValidURL(dev.github ?? "");
     const isInstaValid = isValidURL(dev.insta ?? "");
     const isLinkedinValid = isValidURL(dev.linkedin ?? "");
     const anyLinkValid = isGithubValid || isInstaValid || isLinkedinValid;
+    // Forcing the theme
+    theme = "slate";
     return (
         <>
             <div className={`w-[350px] h-[500px] rounded-2xl relative shadow-lg shadow-${theme}-900`}>
@@ -50,8 +52,10 @@ export default function DevCard({ dev, theme = "cyan" }: DevCardProps) {
                     <Image
                         src={dev.imageUrl ?? "/dev.png"}
                         alt={dev.name}
-                        width={200}
-                        height={200}
+                        // width={200}
+                        // height={200}
+                        fill={true}
+                        objectFit="cover"
                         className="rounded-full"
                     />
                 </div>
