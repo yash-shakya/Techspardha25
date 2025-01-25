@@ -5,7 +5,11 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": ".", // Set baseUrl to the root directory
+    "paths": {
+      "@/*": ["./*"] // This tells TypeScript to resolve @/* to the root folder
+    }
   },
   "include": [
     "**/*.ts",
