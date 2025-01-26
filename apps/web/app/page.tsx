@@ -68,7 +68,7 @@ export default function Home() {
 				</section>
 
 				<section className="snap-center sm:min-h-[10vh] flex flex-col items-center justify-center  mb-10 md:mb-0">
-					<EventCarousel/>
+					<EventCarousel />
 				</section>
 				<section
 					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
@@ -86,10 +86,9 @@ export default function Home() {
 						buttonText={buttonText}
 					/>
 				</section>
-				
+
 				<section className="" id="testimonials">
-					<WallCardCarousal></WallCardCarousal>
-					
+					<WallCardCarousal />
 				</section>
 			</main>
 		</>

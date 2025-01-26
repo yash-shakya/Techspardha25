@@ -15,7 +15,7 @@ export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 	return (
 		<>
 			<div
-				className={`flex flex-col rounded-md h-[80%] border-[.5px] border-[#00629666]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] ${
+				className={`flex flex-col rounded-md h-[80%] border-[.5px] border-[#006196]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] ${
 					isActive ? "scale-95 shadow-lg" : ""
 				}`}
 			>
