@@ -40,7 +40,7 @@ export default function CarouselComponent({
 		  plugins={[
 			toScroll ? AutoScroll({ speed }) : Autoplay({ delay }),
 		  ]}
-		  className="w-full"
+		  className="w-[100vw]"
 		>
 		  <CarouselContent>
 			{children.map((child, index) => (
