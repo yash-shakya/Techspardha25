@@ -22,8 +22,8 @@ import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import UserAuthButton from "./components/UserAuthButton";
 
 export default function Home() {
 	const { user } = useAuth();
@@ -52,36 +52,9 @@ export default function Home() {
 
 	return (
 		<>
-			<div className="absolute top-4 right-4 flex items-center gap-4 z-50">
-				{user ? (
-					<>
-						<div className="flex items-center gap-3 bg-white/10 backdrop-blur-lg rounded-full px-4 py-2">
-							<Image
-								src={user.photoURL || "/default-avatar.png"}
-								alt="Profile"
-								width={32}
-								height={32}
-								className="rounded-full"
-								priority
-							/>
-							<span className="text-white text-sm">{user.displayName}</span>
-						</div>
-						<button
-							onClick={handleLogout}
-							className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-full text-sm"
-						>
-							Logout
-						</button>
-					</>
-				) : (
-					<button
-						onClick={() => router.push("/login")}
-						className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-full text-sm"
-					>
-						Login
-					</button>
-				)}
-			</div>
+			{/* <div className="absolute top-1 right-4 flex items-center gap-4 z-50">
+				<UserAuthButton/>
+			</div> */}
 
 			<main className="snap-y snap-mandatory w-full h-full">
 				<section className="snap-center min-h-[95vh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
