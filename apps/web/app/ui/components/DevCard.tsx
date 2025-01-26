@@ -34,8 +34,8 @@ export default function DevCard({ dev, theme = "stone" }: DevCardProps) {
     theme = "slate";
     return (
         <>
-            <div className={`w-[350px] h-[500px] rounded-2xl relative shadow-lg shadow-${theme}-900`}>
-                <div className={`h-[55%] bg-${theme}-500 rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative`}>
+            <div className={`w-[350px] h-[500px] rounded-2xl relative shadow-lg shadow-slate-900 todo-theme`}>
+                <div className={`h-[55%] bg-slate-500 rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative todo-theme`}>
                     {/* A small notch */}
                     <div className="absolute w-[100px] h-3 bg-gray-800 rounded-3xl top-3"></div>
                     {/* Dev Name */}
@@ -48,7 +48,7 @@ export default function DevCard({ dev, theme = "stone" }: DevCardProps) {
                     </div>
                 </div>
                 {/* Dev Image */}
-                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-400 rounded-full w-[200px] h-[200px] shadow-md shadow-${theme}-500`}>
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-400 rounded-full w-[200px] h-[200px] shadow-md shadow-slate-500 todo-theme`}>
                     <Image
                         src={dev.imageUrl ?? "/dev.png"}
                         alt={dev.name}
@@ -62,29 +62,29 @@ export default function DevCard({ dev, theme = "stone" }: DevCardProps) {
                 <div className="h-[45%] bg-gray-900 rounded-b-2xl pt-5 flex flex-col gap-3">
                     <div className="p-4 grow flex flex-col">
                         {/* Dev Year */}
-                        <div className={`text-3xl text-${theme}-500 mt-auto text-center`}>
+                        <div className={`text-3xl text-slate-500 mt-auto text-center todo-theme`}>
                             {dev.year}
                         </div>
                     </div>
                     {/* SOCIAL LINKS */}
                     {anyLinkValid && (
-                        <div className={`flex justify-center gap-7 w-fit mx-auto px-8 mt-auto border-t py-3 border-${theme}-500`}>
+                        <div className={`flex justify-center gap-7 w-fit mx-auto px-8 mt-auto border-t py-3 border-slate-500 todo-theme`}>
                             {isGithubValid && (
                                 <Link href={dev.github ?? ""}>
                                     {" "}
-                                    <TbBrandGithubCopilot className={`text-${theme}-500 text-4xl cursor-pointer`} />{" "}
+                                    <TbBrandGithubCopilot className={`text-slate-500 text-4xl cursor-pointer todo-theme`} />{" "}
                                 </Link>
                             )}
                             {isInstaValid && (
                                 <Link href={dev.insta ?? ""}>
                                     {" "}
-                                    <TbBrandInstagramFilled className={`text-${theme}-500 text-4xl cursor-pointer`} />{" "}
+                                    <TbBrandInstagramFilled className={`text-slate-500 text-4xl cursor-pointer todo-theme`} />{" "}
                                 </Link>
                             )}
                             {isLinkedinValid && (
                                 <Link href={dev.linkedin ?? ""}>
                                     {" "}
-                                    <TbBrandLinkedinFilled className={`text-${theme}-500 text-4xl cursor-pointer`} />{" "}
+                                    <TbBrandLinkedinFilled className={`text-slate-500 text-4xl cursor-pointer todo-theme`} />{" "}
                                 </Link>
                             )}
                         </div>
