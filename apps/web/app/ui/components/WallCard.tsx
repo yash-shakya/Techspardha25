@@ -19,7 +19,7 @@ export default function WallCard({ name, role, testimonial, imageUrl }: WallCard
           <p className="text-[7px] md:text-xs text-gray-400">{role}</p>
         </div>
       </div>
-      <p className="text-[9px] md:text-sm leading-relaxed h-[85%] rounded-md px-2 pt-3 text-xs bg-[#012436] text-gray-300">{testimonial}</p>
+      <p className="text-[8px] md:text-sm leading-relaxed h-[85%] rounded-md px-2 pt-3 text-xs bg-[#012436] text-gray-300">{testimonial}</p>
     </div>
   )
 }

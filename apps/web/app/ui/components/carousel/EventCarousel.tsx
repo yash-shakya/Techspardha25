@@ -16,14 +16,13 @@ export default function EventCarousel() {
   }, []);
 
   return (
-    <div className="mb-10 h-full w-full flex flex-col items-center justify-center">
+    <div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center">
       <h1 className="text-3xl font-bold md:text-4xl pb-5 bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text font-[Satoshi Variable] md:mb-[5vh]">
         Events
       </h1>
       <div className="relative w-full h-[325px] md:h-[523px] overflow-hidden">
 
-      <div className="absolute right-0 top-0 h-full w-[200px] bg-gradient-to-l from-[#001926] to-transparent z-10" />
-      <div className="absolute left-0 top-0 h-full w-[200px] bg-gradient-to-r from-[#001926] to-transparent z-10" />
+      
 
 
         <div className="hidden lg:block h-full w-[200px] absolute top-0 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00]" />
@@ -47,7 +46,7 @@ export default function EventCarousel() {
                 className={`absolute transition-all duration-500 ${
                   position === "center"
                     ? "opacity-100 scale-100 z-10"
-                    : "opacity-50 scale-75 z-0"
+                    : "opacity-50 scale-90 z-0"
                 } ${position === "left" ? "-translate-x-full" : ""} ${
                   position === "right" ? "translate-x-full" : ""
                 }`}
