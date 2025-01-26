@@ -3,9 +3,9 @@ import React, { useEffect, useRef, useState } from "react";
 import EventCard from "../EventCard";
 import { EVENTS } from "../../../constants/eventPage";
 import Link from "next/link";
+
 export default function EventCarousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const scArr = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -24,17 +24,16 @@ export default function EventCarousel() {
 				<div className="hidden lg:block h-full w-[200px] absolute top-0 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00]" />
 				<div className="hidden lg:block h-full w-[200px] absolute top-0 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00]" />
 
-				<div
-					ref={scArr}
-					className="flex items-center justify-center h-full relative"
-				>
+				<div className="flex items-center justify-center h-full relative">
 					{EVENTS.map((data, index) => {
 						const position =
 							index === currentIndex
 								? "center"
-								: index === (currentIndex + EVENTS.length - 1) % EVENTS.length
-									? "left"
-									: "right";
+								: index === (currentIndex - 1 + EVENTS.length) % EVENTS.length
+								? "left"
+								: index === (currentIndex + 1) % EVENTS.length
+								? "right"
+								: "hidden";
 
 						return (
 							<div
@@ -43,9 +42,9 @@ export default function EventCarousel() {
 									position === "center"
 										? "opacity-100 scale-100 z-10"
 										: "opacity-50 scale-90 z-0"
-								} ${position === "left" ? "-translate-x-full" : ""} ${
-									position === "right" ? "translate-x-full" : ""
-								}`}
+								} ${position === "left" ? "-translate-x-[120%]" : ""} ${
+									position === "right" ? "translate-x-[120%]" : ""
+								} ${position === "hidden" ? "hidden" : ""}`}
 								style={{
 									transition: "transform 0.5s ease, opacity 0.5s ease",
 								}}
