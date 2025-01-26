@@ -146,7 +146,7 @@ export default function Login() {
               />
             </div>
 
-            {/* Year Field */}
+      
             <div className="space-y-2 border w-[90%] md:w-[521px] border-light-ocean-blue bg-light-ocean-blue rounded-2xl py-3 px-4">
               <label htmlFor="year" className="block text-sm md:text-base text-[#515F73]">
                 Year
@@ -161,7 +161,7 @@ export default function Login() {
               />
             </div>
 
-            {/* Submit Button */}
+        
             <button
               type="submit"
               className="w-[70%] max-w-[130px] h-[36px] px-0 rounded-3xl bg-light-ocean-blue text-sm md:text-base"

@@ -17,7 +17,6 @@ interface CarouselProps {
 	toScroll?: boolean; // To scroll the carousel items, default is false
 	speed?: number; // Speed for auto scroll, default is 1
 }
-
 export default function CarouselComponent({
 	children,
 	controls = false,
@@ -25,34 +24,32 @@ export default function CarouselComponent({
 	delay = 1000, // Default delay for autoplay
 	toScroll = true, // Default to true
 	speed = 1, // Default speed for autoplay
-  }: CarouselProps) {
+}: CarouselProps) {
 	if (!children || children.length === 0) return null;
-  
+
 	return (
-	  <>
-		<Carousel
-		  opts={{
-			align: "center",
-			skipSnaps: true,
-			loop: true,
-			dragFree: false,
-		  }}
-		  plugins={[
-			toScroll ? AutoScroll({ speed }) : Autoplay({ delay }),
-		  ]}
-		  className="w-full"
-		>
-		  <CarouselContent>
-			{children.map((child, index) => (
-			  <CarouselItem key={index} className={css}>
-				{child}
-			  </CarouselItem>
-			))}
-		  </CarouselContent>
-		  {controls && <CarouselPrevious />}
-		  {controls && <CarouselNext />}
-		</Carousel>
-	  </>
+		<>
+			<Carousel
+				opts={{
+					align: "start", // Ensure items align correctly without overlap
+					skipSnaps: false, // Ensure items snap correctly
+					loop: true,
+					dragFree: false,
+				}}
+				plugins={[toScroll ? AutoScroll({ speed }) : Autoplay({ delay })]}
+				className="w-[100vw]"
+			>
+				{/* Add padding and gap to the container */}
+				<CarouselContent className="md:gap-x-4 md:px-4">
+					{children.map((child, index) => (
+						<CarouselItem key={index} className={`shrink-0 ${css}`}>
+							{child}
+						</CarouselItem>
+					))}
+				</CarouselContent>
+				{controls && <CarouselPrevious />}
+				{controls && <CarouselNext />}
+			</Carousel>
+		</>
 	);
-  }
-  
+}
