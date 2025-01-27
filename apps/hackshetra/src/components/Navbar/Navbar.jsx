@@ -43,7 +43,7 @@ function DropMenu() {
                 <button onClick={()=>scrollToSection("#about")}>
                     About
                 </button>
-                <button onClick={()=>scrollToSection("#theme")}>
+                <button onClick={()=>scrollToSection("#theme2")}>
                     Theme
                 </button>
                 <button onClick={()=>scrollToSection("#schedule")}>
