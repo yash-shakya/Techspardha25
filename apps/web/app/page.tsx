@@ -17,7 +17,7 @@ import { EVENTS as eventCardsData } from "./constants/eventPage";
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
 import EventGroup from "./ui/EventsGroup";
-import EventCarousel from "./ui/components/carousel/EventCarousel";
+import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
@@ -68,7 +68,7 @@ export default function Home() {
 				</section>
 
 				<section className="snap-center sm:min-h-[10vh] flex flex-col items-center justify-center  mb-10 md:mb-0">
-					<EventCarousel />
+					<EventCarouselServer />
 				</section>
 				<section
 					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
