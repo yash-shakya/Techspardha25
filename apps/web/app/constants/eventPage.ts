@@ -17,7 +17,7 @@ export const EVENTS = [
     coordinators: ["Alice Smith", "Bob Johnson"],
     rules: ["Join 10 minutes early", "Keep your mic muted unless speaking"],
     description: "A comprehensive workshop on Python programming for beginners.",
-    img: "carouselEvent.png",
+    img: "events2.png",
     category: "Coding Events",
   },
   {
@@ -29,7 +29,7 @@ export const EVENTS = [
     coordinators: ["Charlie Brown", "Diana Prince"],
     rules: ["Registration is mandatory", "Follow the event schedule"],
     description: "An in-depth conference discussing React and its ecosystem.",
-    img: "carouselEvent.png",
+    img: "events.png",
     category: "Coding Events",
   },
   {
@@ -53,7 +53,7 @@ export const EVENTS = [
     coordinators: ["Grace Lee", "Hank Miller"],
     rules: ["Bring your own laptop", "Complete pre-event assignments"],
     description: "Master digital marketing strategies and tools in this interactive session.",
-    img: "carouselEvent.png",
+    img: "events2.png",
     category: "Marketing Events",
   },
   {
@@ -77,7 +77,7 @@ export const EVENTS = [
     coordinators: ["Kim Lopez", "Liam Green"],
     rules: ["No recordings allowed", "Ask questions during Q&A sessions"],
     description: "Dive into the latest advancements in AI and machine learning.",
-    img: "carouselEvent.png",
+    img: "events.png",
     category: "Tech Events",
   },
   {
@@ -89,7 +89,7 @@ export const EVENTS = [
     coordinators: ["Nina Brown", "Oscar King"],
     rules: ["Laptop required", "Install required software beforehand"],
     description: "Explore modern web development practices and tools.",
-    img: "carouselEvent.png",
+    img: "events2.png",
     category: "Coding Events",
   },
   {
@@ -113,7 +113,7 @@ export const EVENTS = [
     coordinators: ["Rachel Green", "Sam Carter"],
     rules: ["Bring your own device", "Follow workshop instructions"],
     description: "A summit dedicated to mobile app development trends and technologies.",
-    img: "carouselEvent.png",
+    img: "events.png",
     category: "Tech Events",
   },
 ];
