@@ -23,7 +23,7 @@ export default function CarouselEventCard({ name, img, isActive, id }: EventCard
         onClick={handleUrl}
       >
         <Image
-          className="object-cover border-[1px] border-white rounded-lg"
+          className="object-cover border-[1px] border-[#001926] rounded-lg"
           src={`/${img}`}
           alt={`Image of ${name}`}
           fill

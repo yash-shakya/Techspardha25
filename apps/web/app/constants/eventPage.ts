@@ -17,7 +17,7 @@ export const EVENTS = [
     coordinators: ["Alice Smith", "Bob Johnson"],
     rules: ["Join 10 minutes early", "Keep your mic muted unless speaking"],
     description: "A comprehensive workshop on Python programming for beginners.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Coding Events",
   },
   {
@@ -29,7 +29,7 @@ export const EVENTS = [
     coordinators: ["Charlie Brown", "Diana Prince"],
     rules: ["Registration is mandatory", "Follow the event schedule"],
     description: "An in-depth conference discussing React and its ecosystem.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Coding Events",
   },
   {
@@ -41,7 +41,7 @@ export const EVENTS = [
     coordinators: ["Eve Davis", "Frank Moore"],
     rules: ["Bring a sketchbook", "Be prepared to share your designs"],
     description: "Learn the fundamentals of UI/UX design with hands-on activities.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Design Events",
   },
   {
@@ -53,7 +53,7 @@ export const EVENTS = [
     coordinators: ["Grace Lee", "Hank Miller"],
     rules: ["Bring your own laptop", "Complete pre-event assignments"],
     description: "Master digital marketing strategies and tools in this interactive session.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Marketing Events",
   },
   {
@@ -65,7 +65,7 @@ export const EVENTS = [
     coordinators: ["Ivy Scott", "Jake White"],
     rules: ["Business casual attire", "Networking encouraged"],
     description: "A summit to connect startups with investors and industry leaders.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Business Events",
   },
   {
@@ -77,7 +77,7 @@ export const EVENTS = [
     coordinators: ["Kim Lopez", "Liam Green"],
     rules: ["No recordings allowed", "Ask questions during Q&A sessions"],
     description: "Dive into the latest advancements in AI and machine learning.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Tech Events",
   },
   {
@@ -89,7 +89,7 @@ export const EVENTS = [
     coordinators: ["Nina Brown", "Oscar King"],
     rules: ["Laptop required", "Install required software beforehand"],
     description: "Explore modern web development practices and tools.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Coding Events",
   },
   {
@@ -101,7 +101,7 @@ export const EVENTS = [
     coordinators: ["Pamela Walker", "Quincy Adams"],
     rules: ["Be ready to present ideas", "Teamwork is encouraged"],
     description: "Learn how to build a strong brand strategy from experts.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Marketing Events",
   },
   {
@@ -113,7 +113,7 @@ export const EVENTS = [
     coordinators: ["Rachel Green", "Sam Carter"],
     rules: ["Bring your own device", "Follow workshop instructions"],
     description: "A summit dedicated to mobile app development trends and technologies.",
-    img: "events.png",
+    img: "carouselEvent.png",
     category: "Tech Events",
   },
 ];
