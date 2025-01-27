@@ -25,10 +25,10 @@ export default function ContactCard({
 	return (
 		<>
 			<div
-				className={`max-w-[350px] min-w-[300px] h-[500px] rounded-2xl relative shadow-lg shadow-${theme}-900`}
+				className={`max-w-[350px] min-w-[300px] h-[500px] rounded-2xl relative shadow-lg ${theme === "stone" ? "shadow-stone-900" : "shadow-slate-900"}`}
 			>
 				<div
-					className={`h-[55%] bg-${theme}-500 rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative`}
+					className={`h-[55%] ${theme === "stone" ? "bg-stone-500" : "bg-slate-500"} rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative`}
 				>
 					{/* A small notch */}
 					<div className="absolute w-[100px] h-3 bg-gray-800 rounded-3xl top-3"></div>
@@ -58,7 +58,7 @@ export default function ContactCard({
 				<div className="h-[45%] bg-gray-900 rounded-b-2xl pt-5 flex flex-col gap-3">
 					<div className="p-4 grow flex flex-col">
 						{/* Conatct Post */}
-						<div className={`text-3xl text-${theme}-500 my-auto text-center ${contact.post === "Convenor" ? "font-bold" : ""}`}>
+						<div className={`text-3xl ${theme === "stone" ? "text-stone-500" : "text-slate-500"} my-auto text-center ${contact.post === "Convenor" ? "font-bold" : ""}`}>
 							{contact.post}
 						</div>
 					</div>
