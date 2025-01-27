@@ -34,11 +34,11 @@ export default function UserAuthButton() {
     useEffect(() => {
         const fetchUserData = async () => {
             if (!user) return;
-    
+
             try {
                 const userDocRef = doc(db, 'users', user.uid);
                 const userDoc = await getDoc(userDocRef);
-    
+
                 if (userDoc.exists()) {
                     const data = userDoc.data();
                     setUserData({
@@ -57,7 +57,7 @@ export default function UserAuthButton() {
                 console.error('Error fetching user data:', error);
             }
         };
-    
+
         if (showProfileCompletion) {
             fetchUserData();
         }
@@ -297,12 +297,19 @@ export default function UserAuthButton() {
 
     return (
         <>
-            <button
-                onClick={() => setIsLoginPopupOpen(true)}
-                className="bg-[#296E93] hover:bg-[#3A8AB8] text-white px-4 py-2 rounded-full text-sm"
-            >
-                Login
-            </button>
+            <div className="relative h-32 w-32 mt-[-20] lg:mr-24">
+                <div className="absolute top-0 right-8 w-px h-8 bg-white transform rotate-12"></div>
+                <div className="absolute top-14 right-0 transform -rotate-45 transition-transform hover:-rotate-30">
+                    <button
+                        onClick={() => setIsLoginPopupOpen(true)}
+                        className="bg-zinc-600/40 hover:bg-zinc-700 text-zinc-200 font-semibold px-6 py-2 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border border-zinc-800/50 transition-all duration-300 hover:scale-110 hover:shadow-[0px_0px_20px_5px_rgba(0,51,102,1.00)] w-[145px] h-12 backdrop-blur-[14.10px]"
+                    >
+                        LOGIN NOW
+                    </button>
+                </div>
+            </div>
+
+
 
             {isLoginPopupOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
