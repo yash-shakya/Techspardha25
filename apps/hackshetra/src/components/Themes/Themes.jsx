@@ -100,22 +100,13 @@ function BigTheme(props) {
 					{props.data.map((item, i) => (
 						<React.Fragment key={item.id}>
 							<div
-								className="slide m-2 p-4 w-80 h-64 transition-all duration-500 absolute t-0 rounded-xl"
+								className="slide m-2 p-4 w-80 h-64 transition-all duration-500 absolute t-0 rounded-xl bg-gray-900 shadow-[0px_0px_10px_0px_#3cb7dd] flex justify-center"
 								style={{
-									background: item.bgColor,
-									borderRadius: "10px",
 									...getStyles(i).styles,
 								}}
 							>
 								<SliderContent {...item} />
 							</div>
-							<div
-								className="absolute w-80 h-14 -bottom-12 rounded-xl transition-all duration-500"
-								style={{
-									background: `linear-gradient(to bottom, ${item.bgColor}40, transparent)`,
-									...getStyles(i).styles,
-								}}
-							/>
 						</React.Fragment>
 					))}
 				</div>
@@ -212,7 +203,7 @@ function SmallTheme(props) {
 	return (
 		<section
 			className="md:hidden flex flex-col justify-center items-center text-white w-full mt-8 p-4 font-kode rounded-lg"
-			id="theme"
+			id="theme2"
 		>
 			{/* Carousel */}
 			<h3 className="text-center font-kode text-2xl mb-5">Themes</h3>
@@ -220,22 +211,13 @@ function SmallTheme(props) {
 				{props.data.map((item, i) => (
 					<React.Fragment key={item.id}>
 						<div
-							className="slide m-2 p-3 w-[50%] h-32 transition-all duration-500 absolute t-0 rounded-lg"
+							className="slide m-2 p-3 w-[50%] h-40 transition-all duration-500 absolute t-0 rounded-lg bg-gray-900 shadow-[0px_0px_10px_0px_#3cb7dd] flex justify-center items-center"
 							style={{
-								background: item.bgColor,
-								borderRadius: "8px",
 								...getStyles(i).styles,
 							}}
 						>
 							<SliderContent {...item} />
 						</div>
-						<div
-							className="absolute w-[50%] h-12 bottom-2 rounded-lg transition-all duration-500"
-							style={{
-								background: `linear-gradient(to bottom, ${item.bgColor}40, transparent)`,
-								...getStyles(i).styles,
-							}}
-						/>
 					</React.Fragment>
 				))}
 			</div>
@@ -277,11 +259,9 @@ function Themes(props) {
 
 const SliderContent = (props) => {
 	return (
-		<div className="sliderContent flex flex-col items-center">
-			<img src={props.icon} alt="icon" width={100}/>
-			
-			<h2>{props.title}</h2>
-			<p>{props.desc}</p>
+		<div className="sliderContent flex flex-col items-center justify-center">
+			<img src={props.icon} alt="icon" className="invert md:w-24 max-md:w-14"/>
+			<h2 className="md:text-2xl text-center max-md:text-base">{props.title}</h2>
 		</div>
 	);
 };
