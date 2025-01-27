@@ -119,17 +119,28 @@ const SERVICES = {
   },
   getAllEventCategories: async (): Promise<Array<string>> => {
     try {
-      const eventsRef = ref(database, "events");
+      const eventsRef = ref(database, "eventCategories");
       const snapshot = await get(eventsRef);
       if (!snapshot.exists()) {
         return [];
       }
-      return Object.keys(snapshot.val());
+      return Object.keys(snapshot.val()).map((key) => snapshot.val()[key]);
     } catch (error) {
       console.error("Error fetching event categories: ", error);
       throw new Error("Failed to fetch event categories");
     }
   },
+  getEventById: async (id: string): Promise<Event> => {
+    try {
+      const eventsRef = ref(database, "events");
+      const snapshot = await get(eventsRef);
+      return snapshot.val()[id];
+    } catch (error) {
+      console.error("Error fetching event by id", id);
+      throw new Error("Failed to fetch event");
+    }
+  },
+  // TODO: complete it after done with admin panel
   getAllDevelopers: async (): Promise<Array<GetAllDevelopers>> => {
     try {
       const devsRef = ref(database, "devs");
