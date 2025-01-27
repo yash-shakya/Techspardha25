@@ -9,6 +9,8 @@ export type Event = {
   rules: string[];
   startTime: number;
   venue: string;
+  eventCategory: string;
+  id: string;
 };
 
 export type EventMap = {

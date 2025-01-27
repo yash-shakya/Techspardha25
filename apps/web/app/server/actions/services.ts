@@ -1,13 +1,10 @@
-import { db } from "../../db";
-import { getDocs, collection } from "firebase/firestore";
+import { database, set, get, ref } from "../../db";
 import {
   Sponsor,
   Event,
   EventMap,
   Lecture,
-  TechspardhaTeam,
   TechspardhaTeamsDTO,
-  Notification,
   NotificationsDTO,
   GetAllDetailedEvents,
   GetAllNotifications,
@@ -17,12 +14,12 @@ import {
 const SERVICES = {
   getAllTechspardhaTeams: async (): Promise<TechspardhaTeamsDTO> => {
     try {
-      const querySnapshot = await getDocs(collection(db, "contacts"));
-      const data: TechspardhaTeamsDTO = {};
-      querySnapshot.forEach((doc) => {
-        data[doc.id] = doc.data() as TechspardhaTeam;
-      });
-      return data;
+      const teamsRef = ref(database, "contacts");
+      const snapshot = await get(teamsRef);
+      if (snapshot.exists()) {
+        return snapshot.val() as TechspardhaTeamsDTO;
+      }
+      return {};
     } catch (error) {
       console.error("Error fetching techspardha teams: ", error);
       throw new Error("Failed to fetch techspardha teams");
@@ -30,22 +27,27 @@ const SERVICES = {
   },
   getAllSponsors: async (): Promise<Array<Sponsor>> => {
     try {
-      const sponsorsCollectionRef = collection(db, "sponsors");
-      const sponsorDocsSnapshot = await getDocs(sponsorsCollectionRef);
+      const sponsorsRef = ref(database, "sponsors");
+      const snapshot = await get(sponsorsRef);
+      if (!snapshot.exists()) {
+        return [];
+      }
+      const sponsorsData = snapshot.val();
       const allSponsors: Sponsor[] = [];
-      sponsorDocsSnapshot.forEach((docSnapshot) => {
-        const sponsorCategory = docSnapshot.id; // Document ID is the category
-        const sponsors = docSnapshot.data(); // All sponsors under this category
-        for (const sponsorId in sponsors) {
-          if (sponsors.hasOwnProperty(sponsorId)) {
-            allSponsors.push({
-              ...sponsors[sponsorId],
-              category: sponsorCategory,
-              id: sponsorId,
-            });
+      for (const sponsorCategory in sponsorsData) {
+        if (sponsorsData.hasOwnProperty(sponsorCategory)) {
+          const categorySponsors = sponsorsData[sponsorCategory];
+          for (const sponsorId in categorySponsors) {
+            if (categorySponsors.hasOwnProperty(sponsorId)) {
+              allSponsors.push({
+                ...categorySponsors[sponsorId],
+                category: sponsorCategory,
+                id: sponsorId,
+              });
+            }
           }
         }
-      });
+      }
       console.log("Fetched all sponsors successfully.");
       return allSponsors;
     } catch (error) {
@@ -55,12 +57,12 @@ const SERVICES = {
   },
   getAllNotifications: async (): Promise<GetAllNotifications> => {
     try {
-      const querySnapshot = await getDocs(collection(db, "notifications"));
-      const notifications: NotificationsDTO = {};
-      querySnapshot.forEach((doc) => {
-        notifications[doc.id] = doc.data() as Notification;
-      });
-      return notifications;
+      const notificationsRef = ref(database, "notifications");
+      const snapshot = await get(notificationsRef);
+      if (snapshot.exists()) {
+        return snapshot.val() as NotificationsDTO;
+      }
+      return {};
     } catch (error) {
       console.error("Error fetching notifications: ", error);
       throw new Error("Failed to fetch notifications");
@@ -68,12 +70,13 @@ const SERVICES = {
   },
   getAllLectures: async (): Promise<Array<Lecture>> => {
     try {
-      const lecturesCollection = collection(db, "lectures");
-      const snapshot = await getDocs(lecturesCollection);
-      const lectures = snapshot.docs.map((doc) => {
-        const data = doc.data();
-        return {
-          id: doc.id,
+      const lecturesRef = ref(database, "lectures");
+      const snapshot = await get(lecturesRef);
+
+      if (snapshot.exists()) {
+        const lecturesData = snapshot.val();
+        return Object.entries(lecturesData).map(([id, data]: [string, any]) => ({
+          id,
           date: data.date,
           desc: data.desc,
           facebook: data.facebook,
@@ -83,50 +86,45 @@ const SERVICES = {
           link: data.link,
           name: data.name,
           time: data.time,
-        } as Lecture;
-      });
-      return lectures;
+        })) as Lecture[];
+      } else {
+        return [];
+      }
     } catch (error) {
       console.error("Error fetching lectures:", error);
       throw new Error("Error fetching lectures");
     }
   },
   getAllDetailedEvents: async (): Promise<GetAllDetailedEvents> => {
-    const eventMap: EventMap = {};
-    const categoriesSnapshot = await getDocs(
-      collection(db, "eventDescription")
-    );
-    categoriesSnapshot.forEach((categoryDoc) => {
-      const categoryName = categoryDoc.id;
-      const events = categoryDoc.data();
-      eventMap[categoryName] = {};
-      Object.entries(events).forEach(([eventName, eventData]) => {
-        if (eventMap[categoryName]) {
-          eventMap[categoryName][eventName] = eventData as Event;
-        }
-      });
-    });
-
-    return eventMap;
-  },
-  getAllEvents: async (): Promise<
-    Array<{ eventName: string; eventCategory: string }>
-  > => {
-    return []; // TODO: complete this after events are completed in other repo
-  },
-  getEventByCategoryAndName: async () => {
-    return null; // TODO: complete this after events are completed in other repo
+    try {
+      const eventDescriptionRef = ref(database, "events");
+      const snapshot = await get(eventDescriptionRef);
+      if (!snapshot.exists()) {
+        return {};
+      }
+      const data = snapshot.val();
+      const eventMap: EventMap = {};
+      for (const [categoryName, events] of Object.entries(data)) {
+        eventMap[categoryName] = {};
+        Object.entries(events as object).forEach(([eventName, eventData]) => {
+          if (eventMap[categoryName])
+            eventMap[categoryName][eventName] = eventData as Event;
+        });
+      }
+      return eventMap;
+    } catch (error) {
+      console.error("Error fetching detailed events:", error);
+      throw new Error("Failed to fetch detailed events");
+    }
   },
   getAllEventCategories: async (): Promise<Array<string>> => {
-    const categories: string[] = [];
     try {
-      const eventsCollectionRef = collection(db, "events");
-      const snapshot = await getDocs(eventsCollectionRef);
-      snapshot.forEach((doc) => {
-        categories.push(doc.id);
-      });
-      console.log("Event categories fetched successfully:", categories);
-      return categories;
+      const eventsRef = ref(database, "events");
+      const snapshot = await get(eventsRef);
+      if (!snapshot.exists()) {
+        return [];
+      }
+      return Object.keys(snapshot.val());
     } catch (error) {
       console.error("Error fetching event categories: ", error);
       throw new Error("Failed to fetch event categories");
@@ -134,9 +132,16 @@ const SERVICES = {
   },
   getAllDevelopers: async (): Promise<Array<GetAllDevelopers>> => {
     try {
-      const devTeamRef = collection(db, "devs");
-      const snapshot = await getDocs(devTeamRef);
-      return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })) as any;
+      const devsRef = ref(database, "devs");
+      const snapshot = await get(devsRef);
+      if (!snapshot.exists()) {
+        return [];
+      }
+      const data = snapshot.val();
+      return Object.entries(data).map(([id, dev]: [string, any]) => ({
+        id,
+        ...dev,
+      })) as GetAllDevelopers[];
     } catch (error) {
       console.error("Error getting dev team members:", error);
       throw new Error("Failed to fetch developers");

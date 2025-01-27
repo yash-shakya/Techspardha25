@@ -1,7 +1,8 @@
 import { getFirestore } from "firebase/firestore";
-import fireapp from "../firebase.config";
+import { getDatabase, set, ref, update, remove, get, child, push, query, orderByChild, equalTo } from "firebase/database";
+import fireapp from "@/app/firebase.config";
 
 // Get Firestore instance
-const db = getFirestore(fireapp);
-
-export { db };
+const db = getFirestore(fireapp); // this is firestore, redundant now
+const database = getDatabase(fireapp);
+export { db, database, set, ref, update, remove, get, child, push, query, orderByChild, equalTo };
