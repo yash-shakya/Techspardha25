@@ -203,7 +203,7 @@ function SmallTheme(props) {
 	return (
 		<section
 			className="md:hidden flex flex-col justify-center items-center text-white w-full mt-8 p-4 font-kode rounded-lg"
-			id="theme"
+			id="theme2"
 		>
 			{/* Carousel */}
 			<h3 className="text-center font-kode text-2xl mb-5">Themes</h3>
