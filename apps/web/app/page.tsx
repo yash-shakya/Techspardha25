@@ -1,7 +1,7 @@
-"use client";
+// "use client";
 
-import { useAuth } from "./lib/context/auth-context";
-import { signOutUser } from "./lib/actions";
+// import { useAuth } from "./lib/context/auth-context";
+// import { signOutUser } from "./lib/actions";
 import RubikWetHeading from "./ui/techspardha";
 import WallCardCarousal from "./ui/components/carousel/WallCardCarousel";
 import WallCardGroup from "./ui/WallCardGroup";
@@ -21,34 +21,34 @@ import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+// import { useRouter } from "next/navigation";
+// import { useEffect, useState } from "react";
 import UserAuthButton from "./components/UserAuthButton";
 
 export default function Home() {
-	const { user } = useAuth();
-	const router = useRouter();
-	const [isMounted, setIsMounted] = useState(false);
+	// const { user } = useAuth();
+	// const router = useRouter();
+	// const [isMounted, setIsMounted] = useState(false);
 
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
+	// useEffect(() => {
+	// 	setIsMounted(true);
+	// }, []);
 
-	const handleLogout = async () => {
-		try {
-			const result = await signOutUser();
-			if (result.success) {
-				router.push("/");
-			}
-		} catch (error) {
-			console.error("Logout failed:", error);
-		}
-	};
+	// const handleLogout = async () => {
+	// 	try {
+	// 		const result = await signOutUser();
+	// 		if (result.success) {
+	// 			router.push("/");
+	// 		}
+	// 	} catch (error) {
+	// 		console.error("Logout failed:", error);
+	// 	}
+	// };
 
 	// Prevent hydration mismatch by not rendering user-dependent content until mounted
-	if (!isMounted) {
-		return null; // or a loading skeleton
-	}
+	// if (!isMounted) {
+	// 	return null; // or a loading skeleton
+	// }
 
 	return (
 		<>
