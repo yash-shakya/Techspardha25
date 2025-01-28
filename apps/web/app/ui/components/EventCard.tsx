@@ -2,7 +2,7 @@ import Image from "next/image";
 export interface EventCardProps {
 	name: string;
 	img: string;
-	id?: number;
+	id?: string;
 	isActive: boolean;
 }
 
@@ -25,7 +25,7 @@ export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 				>
 					<Image
 						className="object-cover border-[1px] border-white  rounded-lg"
-						src={`/${img}`}
+						src={img}
 						alt={`Image of ${name}`}
 						fill
 						sizes="(max-width: 768px) 100vw,
