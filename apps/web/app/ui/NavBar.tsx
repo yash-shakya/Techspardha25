@@ -39,7 +39,7 @@ export default function NavBar({ navitems }: NavBarProps) {
 		<nav className="relative">
 			{/* Desktop View */}
 			<div className="hidden md:flex items-center justify-center mt-[36px]">
-				<div className="h-16 px-12 py-2 md:bg-zinc-800/40 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border-b border-zinc-800/50 backdrop-blur-[14.10px] justify-center items-center gap-8 inline-flex">
+				<div className="h-16 px-12 md:bg-zinc-800/40 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border-b border-zinc-800/50 backdrop-blur-[14.10px] justify-center items-center gap-8 inline-flex">
 					{navitems.map((item, i) => {
 						if (item.name === "logo")
 							return (
