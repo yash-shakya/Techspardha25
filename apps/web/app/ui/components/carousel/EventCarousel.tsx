@@ -24,7 +24,7 @@ export default function StoriesCarousel() {
         Events
       </h1>
 
-      <div className="relative flex justify-center items-center w-[100vw] md:h-[507px]">
+      <div className="relative flex justify-center items-center w-[100vw] md:h-[507px] overflow-hidden">
         <div className="hidden lg:block h-[86%] w-[300px] absolute top-9 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20" />
         <div className="hidden lg:block h-[86%] w-[300px] absolute top-9 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
 
