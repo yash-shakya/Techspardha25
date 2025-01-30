@@ -17,7 +17,7 @@ function AboutUs(props) {
     }, [activeSlide])
 
     return (
-        <section className='text-white w-[75%] max-md:w-[90%] mt-11  backdrop-blur-sm md:p-4 font-kode rounded-lg bg-cyan-800/20 shadow-[0px_0px_10px_0px_#3cb7dd]' id='about'>
+        <section className='text-white w-[75%] max-md:w-[90%] mt-11  backdrop-blur-xl md:p-4 font-kode rounded-lg shadow-[0px_0px_10px_0px_#3cb7dd]' id='about'>
             <h3 className='text-center text-4xl my-6'>{props.que}</h3>
             <div className='flex flex-col justify-center items-center md:justify-between md:flex-row'>
                 <div id="slider" className='w-[45vw] h-[21vw] max-md:w-[90vw] max-md:h-[40vw] mb-3'>
@@ -57,11 +57,11 @@ function AboutUs(props) {
                         onChange={() => { setActiveSlide(5); timer() }}
                     />
 
-                    <label id="slide1" htmlFor="s1" className='backdrop-blur-lg rounded-xl'><img src="/img1.JPG" alt="img1" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg'/></label>
-                    <label id="slide2" htmlFor="s2" className='backdrop-blur-lg rounded-xl'><img src="/img2.JPG" alt="img2" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg'/></label>
-                    <label id="slide3" htmlFor="s3" className='backdrop-blur-lg rounded-xl'><img src="/img3.JPG" alt="img3" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg'/></label>
-                    <label id="slide4" htmlFor="s4" className='backdrop-blur-lg rounded-xl'><img src="/img4.jpg" alt="img4" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg'/></label>
-                    <label id="slide5" htmlFor="s5" className='backdrop-blur-lg rounded-xl'><img src="/img5.jpg" alt="img5" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg'/></label>
+                    <label id="slide1" htmlFor="s1" className='backdrop-blur-lg rounded-xl'><img src="/img1.JPG" alt="img1" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide2" htmlFor="s2" className='backdrop-blur-lg rounded-xl'><img src="/img2.JPG" alt="img2" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide3" htmlFor="s3" className='backdrop-blur-lg rounded-xl'><img src="/img3.JPG" alt="img3" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide4" htmlFor="s4" className='backdrop-blur-lg rounded-xl'><img src="/img4.jpg" alt="img4" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide5" htmlFor="s5" className='backdrop-blur-lg rounded-xl'><img src="/img5.jpg" alt="img5" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
                 </div>
                 <p className='about-event w-[75%] lg:w-[35%] my-6 h-56 lg:h-fit overflow-y-auto scroll scroll-smooth '>
                     {props.data}
