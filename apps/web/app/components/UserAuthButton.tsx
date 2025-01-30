@@ -6,8 +6,6 @@ import { signInWithGoogle, signOutUser } from '../lib/actions';
 import { useRouter } from 'next/navigation'
 import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore';
 import firebase_app from '../lib/firebase';
-import { Menu } from 'lucide-react';
-
 const db = getFirestore(firebase_app);
 
 export default function UserAuthButton() {
@@ -34,11 +32,11 @@ export default function UserAuthButton() {
     useEffect(() => {
         const fetchUserData = async () => {
             if (!user) return;
-    
+
             try {
                 const userDocRef = doc(db, 'users', user.uid);
                 const userDoc = await getDoc(userDocRef);
-    
+
                 if (userDoc.exists()) {
                     const data = userDoc.data();
                     setUserData({
@@ -57,7 +55,7 @@ export default function UserAuthButton() {
                 console.error('Error fetching user data:', error);
             }
         };
-    
+
         if (showProfileCompletion) {
             fetchUserData();
         }
@@ -107,7 +105,7 @@ export default function UserAuthButton() {
             const result = await signOutUser();
             if (result.success) {
                 router.push('/');
-                setIsUserMenuOpen(false);
+                setShowProfileCompletion(false);
             }
         } catch (error) {
             console.error("Logout failed:", error);
@@ -137,13 +135,20 @@ export default function UserAuthButton() {
                                     alt="Profile Picture"
                                     width={30}
                                     height={30}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover "
                                 />
                             </div>
                             <h1 className="text-2xl md:text-3xl text-[#AEBCCA] font-semibold">
                                 {user?.displayName}
                             </h1>
+
                         </div>
+                        <button
+                            onClick={handleLogout}
+                            className="bg-[#296E93] hover:bg-[#3A8AB8] text-white px-4 py-2 rounded-full text-sm"
+                        >
+                            Logout
+                        </button>
                     </div>
 
                     <form onSubmit={handleProfileSubmit} className="space-y-6 flex flex-col justify-center items-center">
@@ -228,81 +233,41 @@ export default function UserAuthButton() {
     if (user) {
         return (
             <>
+                <div className="relative h-32 w-32 mt-[-20] lg:mr-[180px]">
+                    <div className="absolute top-0 right-8 w-px h-8 bg-white transform rotate-12"></div>
 
-                <div className="hidden md:flex items-center gap-3 mt-[-20px]">
-                    <div className="flex items-center gap-2 bg-white/10 backdrop-blur-lg rounded-full px-4 py-2">
+                    <div className="absolute top-8 right-3 transform transition-transform hover:-rotate-30 border-2 border-zinc-800/50 hover:shadow-[0px_0px_20px_5px_rgba(0,51,102,1.00)] shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] duration-300 hover:scale-110 rounded-full">
                         <Image
                             src={user.photoURL || "/default-avatar.png"}
                             alt="Profile"
-                            width={32}
-                            height={32}
-                            className="rounded-full"
+                            width={54}
+                            height={54}
+                            className="rounded-full cursor-pointer"
                             priority
+                            onClick={() => setShowProfileCompletion(!showProfileCompletion)}
                         />
-                        <span className="text-white text-sm">{user.displayName}</span>
                     </div>
-                    <button
-                        onClick={handleLogout}
-                        className="bg-[#296E93] hover:bg-[#3A8AB8] text-white px-4 py-2 rounded-full text-sm"
-                    >
-                        Logout
-                    </button>
                 </div>
 
 
-                <div className="md:hidden relative">
-                    <button
-                        onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                        className="text-white"
-                    >
-                        <Menu size={24} />
-                    </button>
-
-                    {isUserMenuOpen && (
-                        <div className="fixed inset-0 z-50 bg-[#001926]/75 backdrop-blur-sm flex items-center justify-center">
-                            <div className="bg-[#001926] border border-[#296E93]/30 rounded-lg shadow-2xl p-6 w-[90%] max-w-sm">
-                                <div className="flex items-center gap-4 mb-4">
-                                    <Image
-                                        src={user.photoURL || "/default-avatar.png"}
-                                        alt="Profile"
-                                        width={48}
-                                        height={48}
-                                        className="rounded-full"
-                                        priority
-                                    />
-                                    <div>
-                                        <span className="text-lg font-semibold block text-white">{user.displayName}</span>
-                                        <span className="text-[#296E93] text-sm">{user.email}</span>
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={handleLogout}
-                                    className="w-full bg-[#296E93] hover:bg-[#3A8AB8] text-white px-4 py-3 rounded-full text-sm mb-3"
-                                >
-                                    Logout
-                                </button>
-                                <button
-                                    onClick={() => setIsUserMenuOpen(false)}
-                                    className="w-full bg-white/10 hover:bg-white/20 text-white px-4 py-3 rounded-full text-sm"
-                                >
-                                    Cancel
-                                </button>
-                            </div>
-                        </div>
-                    )}
-                </div>
             </>
         );
     }
 
     return (
         <>
-            <button
-                onClick={() => setIsLoginPopupOpen(true)}
-                className="bg-[#296E93] hover:bg-[#3A8AB8] text-white px-4 py-2 rounded-full text-sm"
-            >
-                Login
-            </button>
+            <div className="relative h-32 w-32 mt-[-20] lg:mr-[180px]">
+                <div className="absolute top-0 right-8 w-px h-8 bg-white transform rotate-12"></div>
+                <div className="absolute top-14 right-0 transform -rotate-45 transition-transform hover:-rotate-30">
+                    <button
+                        onClick={() => setIsLoginPopupOpen(true)}
+                        className="bg-zinc-600/40 hover:bg-zinc-700 text-zinc-200 font-semibold px-6 py-2 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border border-zinc-800/50 transition-all duration-300 hover:scale-110 hover:shadow-[0px_0px_20px_5px_rgba(0,51,102,1.00)] w-[145px] h-10 backdrop-blur-[14.10px]"
+                    >
+                        LOGIN NOW
+                    </button>
+                </div>
+            </div>
+
 
             {isLoginPopupOpen && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
