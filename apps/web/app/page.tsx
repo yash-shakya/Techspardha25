@@ -1,10 +1,8 @@
 "use client";
 
 import { useAuth } from "./lib/context/auth-context";
-import { signOutUser } from "./lib/actions";
 import RubikWetHeading from "./ui/techspardha";
 import WallCardCarousal from "./ui/components/carousel/WallCardCarousel";
-import WallCardGroup from "./ui/WallCardGroup";
 import {
 	TECHSPARDHA,
 	sponsorsData,
@@ -13,17 +11,14 @@ import {
 	guestCardsData,
 	wallcardData as WallcardData,
 } from "./constants/landingpage";
-import { EVENTS as eventCardsData } from "./constants/eventPage";
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
-import EventGroup from "./ui/EventsGroup";
 import EventCarousel from "./ui/components/carousel/EventCarousel";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import UserAuthButton from "./components/UserAuthButton";
 
 export default function Home() {
 	const { user } = useAuth();
@@ -34,17 +29,6 @@ export default function Home() {
 		setIsMounted(true);
 	}, []);
 
-	const handleLogout = async () => {
-		try {
-			const result = await signOutUser();
-			if (result.success) {
-				router.push("/");
-			}
-		} catch (error) {
-			console.error("Logout failed:", error);
-		}
-	};
-
 	// Prevent hydration mismatch by not rendering user-dependent content until mounted
 	if (!isMounted) {
 		return null; // or a loading skeleton
@@ -52,10 +36,7 @@ export default function Home() {
 
 	return (
 		<>
-			{/* <div className="absolute top-1 right-4 flex items-center gap-4 z-50">
-				<UserAuthButton/>
-			</div> */}
-
+			
 			<main className="snap-y snap-mandatory w-full h-full">
 				<section className="snap-center min-h-[95vh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
 					<RubikWetHeading text={TECHSPARDHA} />
