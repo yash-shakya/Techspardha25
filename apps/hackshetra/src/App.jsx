@@ -3,9 +3,11 @@ import AboutUs from './components/AboutUs/AboutUs.jsx'
 import Register from './components/Resgister/Register.jsx'
 import Themes from './components/Themes/Themes.jsx'
 import Timeline from './components/Timeline/Timeline.jsx'
+import Rules from './components/Rules/Rules.jsx'
 import { aboutData, hackshetra, tagline, what } from './constants/text.js'
 import {ThemeData} from './constants/themeData.js'
 import {TimelineData} from "./constants/timelineData.js"
+import { rulesData } from './constants/rulesData.js'
 
 function App() {
 
@@ -38,6 +40,7 @@ function App() {
         <AboutUs data={aboutData} que={what}/>
         <Themes data={ThemeData} activeSlide={2}/>
         <Timeline data={TimelineData}/>
+        <Rules data={rulesData}/>
       </div>
     </>
   )
