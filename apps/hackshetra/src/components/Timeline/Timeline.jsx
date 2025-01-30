@@ -16,7 +16,7 @@ const Card = ({ side, initialX, date, name, detail }) => {
   return (
     <div
       ref={ref}
-      className={`timeline-card-container relative w-[80%] max-md:w-full mx-auto p-2 px-1 overflow-hidden ${side === "left" ? "pr-[42%] md:pl-[10%] max-md:pr-[calc(50%+1rem)] text-right" : "pl-[42%] md:pr-[10%] max-md:pl-[calc(50%+1rem)] text-left"
+      className={`timeline-card-container relative w-[80%] max-md:w-full mx-auto p-2 px-1 overflow-hidden ${side === "left" ? "pr-[42%] md:pl-[4%] max-md:pr-[calc(50%+1rem)] text-right" : "pl-[42%] md:pr-[4%] max-md:pl-[calc(50%+1rem)] text-left"
         }`}
     >
       <motion.div
@@ -51,7 +51,7 @@ const Card = ({ side, initialX, date, name, detail }) => {
 
 export default function Timeline(props) {
   return (
-    <section className="w-[98%] backdrop-blur-[20px] shadow-[0_0_0_rgba(0,0,0,0.893)] text-[#d5d5d5] rounded-[20px] p-5 max-md:px-2 text-center max-md:w-[95%]" id="schedule">
+    <section className="w-[75%] backdrop-blur-xl text-[#d5d5d5] rounded-lg p-5 max-md:px-2 text-center max-md:w-[95%] shadow-[0px_0px_10px_0px_#3cb7dd]" id="schedule">
       <h2 className="m-12 max-md:mb-8 max-md:mt-4 font-kode max-md:text-2xl md:text-4xl tracking-[2px] font-normal">Schedule</h2>
       <div className="timeline-container my-0 relative max-md:w-[100%]">
         <div className="timeline-line absolute left-1/2 top-0 h-full w-2 bg-[#3cb7dd] -translate-x-1/2"></div>
