@@ -14,7 +14,7 @@ export default function Teams() {
 	return (
 		<>
 			<div className="w-[85%] m-auto">
-				<h1 className="p-4 sm:text-5xl text-4xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
+				<h1 className="text-center p-4 sm:text-5xl text-4xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text max-sm:mt-5">
 					Techapardha Teams
 				</h1>
 				<div className="flex flex-col gap-12 p-4">

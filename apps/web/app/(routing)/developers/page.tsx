@@ -15,9 +15,9 @@ export default function Developers() {
 				<div className="flex flex-col gap-12 p-4">
 					{devs.map((devGroup, index) => (
 						<div key={index} className="flex flex-col gap-4">
-							<h2 className="text-4xl tracking-wider font-mono">
+							{/* <h2 className="text-4xl tracking-wider font-mono">
                                 {devGroup.id === "aboutAppDevs" ? "App Developers" : "Developers"}
-                            </h2>
+                            </h2> */}
 							<div className="flex flex-wrap gap-4">
 								{devGroup.members.map((dev, index) => (
 									<DevCard
