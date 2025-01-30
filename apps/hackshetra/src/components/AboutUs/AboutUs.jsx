@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { imageData } from '../../constants/imageData';
 import "./AboutUs.css"
 
 function AboutUs(props) {
@@ -57,11 +58,11 @@ function AboutUs(props) {
                         onChange={() => { setActiveSlide(5); timer() }}
                     />
 
-                    <label id="slide1" htmlFor="s1" className='backdrop-blur-lg rounded-xl'><img src="/img1.JPG" alt="img1" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
-                    <label id="slide2" htmlFor="s2" className='backdrop-blur-lg rounded-xl'><img src="/img2.JPG" alt="img2" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
-                    <label id="slide3" htmlFor="s3" className='backdrop-blur-lg rounded-xl'><img src="/img3.JPG" alt="img3" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
-                    <label id="slide4" htmlFor="s4" className='backdrop-blur-lg rounded-xl'><img src="/img4.jpg" alt="img4" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
-                    <label id="slide5" htmlFor="s5" className='backdrop-blur-lg rounded-xl'><img src="/img5.jpg" alt="img5" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide1" htmlFor="s1" className='backdrop-blur-lg rounded-xl'><img src={imageData[0]} alt="img1" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide2" htmlFor="s2" className='backdrop-blur-lg rounded-xl'><img src={imageData[1]} alt="img2" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide3" htmlFor="s3" className='backdrop-blur-lg rounded-xl'><img src={imageData[2]} alt="img3" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide4" htmlFor="s4" className='backdrop-blur-lg rounded-xl'><img src={imageData[3]} alt="img4" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
+                    <label id="slide5" htmlFor="s5" className='backdrop-blur-lg rounded-xl'><img src={imageData[4]} alt="img5" className='border border-cyan-400 bg-cyan-800/20 shadow-[0px_0px_15px_0px_#3cb7dd] rounded-lg' loading='lazy'/></label>
                 </div>
                 <p className='about-event w-[75%] lg:w-[35%] my-6 h-56 lg:h-fit overflow-y-auto scroll scroll-smooth '>
                     {props.data}
