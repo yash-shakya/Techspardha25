@@ -1,8 +1,14 @@
 import React from "react";
+import Link from "next/link";
 
-type SponsorCategory = {
+export type SponsorCategory = {
 	title: string;
-	logos: string[];
+	sponsors: {
+		name: string;
+		imageUrl: string;
+		alt: string;
+		targetUrl: string;
+	}[];
 };
 
 interface SponsorsCardProps {
@@ -32,13 +38,15 @@ const SponsorsCard: React.FC<SponsorsCardProps> = ({
 
 						{/* Sponsor Logos */}
 						<div className="flex flex-wrap justify-center gap-6 mt-4">
-							{category.logos.map((logo, idx) => (
-								<img
-									key={idx}
-									src={logo}
-									alt={`${category.title} Logo ${idx + 1}`}
-									className="w-40 h-auto max-w-full"
-								/>
+							{category.sponsors.map((logo, idx) => (
+								<Link key={idx} href={logo.targetUrl} passHref className="cursor-pointer flex items-center justify-center flex-col bg-white p-2 rounded-lg shadow-lg">
+									<img
+										src={logo.imageUrl}
+										alt={logo.alt}
+										className="w-40 h-auto max-w-full"
+									/>
+									<span className="sr-only">{logo.name}</span>
+								</Link>
 							))}
 						</div>
 					</div>

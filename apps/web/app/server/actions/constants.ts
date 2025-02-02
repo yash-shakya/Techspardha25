@@ -25,12 +25,16 @@ type Coordinator = {
 };
 
 export type Sponsor = {
-  category: string;
+  category?: string;
   alt: string;
   imageUrl: string;
   name: string;
   targetUrl: string;
-  id: string;
+  id?: string;
+};
+
+export type SponsorByCategory = {
+  [category: string | number | symbol]: Sponsor;
 };
 
 export type TechspardhaTeam = {

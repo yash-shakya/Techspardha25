@@ -7,7 +7,7 @@ import {
 	buttonText,
 	guestCardsData,
 } from "./constants/landingpage";
-import SponsorsCard from "./ui/components/SponsorsCard";
+import SponsorsCard, { SponsorCategory } from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
 import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
@@ -32,11 +32,34 @@ async function getLectures(){
 				name: lecture.name,
 			}
 		})
-		console.log(modifiedLectures);
 		return modifiedLectures;
 	} catch (error) {
 		console.error("Error fetching lectures: ", error);
 		return guestCardsData;
+	}
+}
+
+async function getSponsors(){
+	try {
+		const sponsors = await SERVICES.getAllSponsors();
+		console.log(sponsors);
+		const modifiedSponsors = Object.keys(sponsors).map((key) => {
+			return {
+				title: key,
+				sponsors: (sponsors[key] || []).map((sponsor) => {
+					return {
+						name: sponsor.name || "",
+						imageUrl: sponsor.imageUrl || "https://www.printastic.com/data/theme/slider/436/sponsorships@2x.webp",
+						alt: sponsor.alt || "",
+						targetUrl: sponsor.targetUrl || "/",
+					}
+				})
+			}
+		})
+		return modifiedSponsors as SponsorCategory[];
+	} catch (error) {
+		console.error("Error fetching sponsors: ", error);
+		throw new Error("Error fetching sponsors");
 	}
 }
 
@@ -45,7 +68,7 @@ export default async function Home() {
 	// Fetching All Lectures
 	const lectures = await getLectures();
 	// Fetching All Sponsors
-
+	const sponsors = await getSponsors();
 
 	return (
 		<>
@@ -75,7 +98,7 @@ export default async function Home() {
 					id="sponsors"
 				>
 					<SponsorsCard
-						SponsorsCard={sponsorsData}
+						SponsorsCard={sponsors}
 						emailPlaceholder={emailPlaceholder}
 						buttonText={buttonText}
 					/>

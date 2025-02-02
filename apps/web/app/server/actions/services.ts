@@ -1,6 +1,7 @@
 import { database, set, get, ref } from "../../db";
 import {
   Sponsor,
+  SponsorByCategory,
   Event,
   EventMap,
   Lecture,
@@ -25,31 +26,42 @@ const SERVICES = {
       throw new Error("Failed to fetch techspardha teams");
     }
   },
-  getAllSponsors: async (): Promise<Array<Sponsor>> => {
+  getAllSponsors: async (): Promise<{ [key: string]: SponsorByCategory[] }> => {
     try {
       const sponsorsRef = ref(database, "sponsors");
       const snapshot = await get(sponsorsRef);
       if (!snapshot.exists()) {
-        return [];
+        return { "": [] };
       }
       const sponsorsData = snapshot.val();
       const allSponsors: Sponsor[] = [];
+      const allSponsorsByCategory: { [key: string]: SponsorByCategory[] } = {};
       for (const sponsorCategory in sponsorsData) {
         if (sponsorsData.hasOwnProperty(sponsorCategory)) {
           const categorySponsors = sponsorsData[sponsorCategory];
+          // Get all sponsors by category (2D array)
+          allSponsorsByCategory[sponsorCategory] = [];
+          // Get all sponsors in a single array
           for (const sponsorId in categorySponsors) {
             if (categorySponsors.hasOwnProperty(sponsorId)) {
-              allSponsors.push({
+              const singleSponsor = {
                 ...categorySponsors[sponsorId],
-                category: sponsorCategory,
+                category: sponsorCategory.trim(),
                 id: sponsorId,
-              });
+              };
+              
+              // Pushing sponsors to their respective categories
+              allSponsorsByCategory[sponsorCategory].push(singleSponsor);
+              // Pushing all sponsors to a single array
+              allSponsors.push(singleSponsor);
+              
             }
           }
         }
       }
       console.log("Fetched all sponsors successfully.");
-      return allSponsors;
+      // return allSponsors; TODO: This is not the usecase currently
+      return allSponsorsByCategory;
     } catch (error) {
       console.error("Error fetching sponsors:", error);
       throw new Error("Unable to fetch sponsors");
