@@ -1,6 +1,3 @@
-"use client";
-
-import { useAuth } from "./lib/context/auth-context";
 import RubikWetHeading from "./ui/techspardha";
 import WallCardCarousal from "./ui/components/carousel/WallCardCarousel";
 import {
@@ -9,31 +6,15 @@ import {
 	emailPlaceholder,
 	buttonText,
 	guestCardsData,
-	wallcardData as WallcardData,
 } from "./constants/landingpage";
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
-import EventCarousel from "./ui/components/carousel/EventCarousel";
+import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-	const { user } = useAuth();
-	const router = useRouter();
-	const [isMounted, setIsMounted] = useState(false);
-
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
-
-	// Prevent hydration mismatch by not rendering user-dependent content until mounted
-	if (!isMounted) {
-		return null; // or a loading skeleton
-	}
-
 	return (
 		<>
 			
@@ -49,7 +30,7 @@ export default function Home() {
 				</section>
 
 				<section className="snap-center sm:min-h-[10vh] flex flex-col items-center justify-center  mb-10 md:mb-0">
-					<EventCarousel />
+					<EventCarouselServer />
 				</section>
 				<section
 					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
