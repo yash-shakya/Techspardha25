@@ -8,7 +8,7 @@ export default async function Teams() {
 		id,
 		...team,
 	}));
-	// console.log(teams);
+	// console.log(teams); TODO: Images are not showing up because the photos has been deleted from IMGBB
 	return (
 		<>
 			<div className="w-[85%] m-auto">

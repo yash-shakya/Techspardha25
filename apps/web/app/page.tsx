@@ -42,7 +42,6 @@ async function getLectures(){
 async function getSponsors(){
 	try {
 		const sponsors = await SERVICES.getAllSponsors();
-		console.log(sponsors);
 		const modifiedSponsors = Object.keys(sponsors).map((key) => {
 			return {
 				title: key,
