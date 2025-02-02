@@ -14,7 +14,39 @@ import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
 
-export default function Home() {
+// ACTIONS
+import SERVICES from "./server/actions/services";
+
+async function getLectures(){
+	try {
+		const lectures = await SERVICES.getAllLectures();
+		const modifiedLectures = lectures.map((lecture) => {
+			return {
+				date: `${lecture.date} ${lecture.time}`,
+				description: lecture.desc,
+				facebook: lecture.facebook || "",
+				image: lecture.imageUrl || "/GuestLecturer/Guestlecture.jpg",
+				insta: lecture.insta || "",
+				link: lecture.link || "/",
+				linkedin: lecture.linkedin || "",
+				name: lecture.name,
+			}
+		})
+		console.log(modifiedLectures);
+		return modifiedLectures;
+	} catch (error) {
+		console.error("Error fetching lectures: ", error);
+		return guestCardsData;
+	}
+}
+
+export default async function Home() {
+
+	// Fetching All Lectures
+	const lectures = await getLectures();
+	// Fetching All Sponsors
+
+
 	return (
 		<>
 			
@@ -36,7 +68,7 @@ export default function Home() {
 					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
 					id="lectures"
 				>
-					<Guestgroup cardsData={guestCardsData} />
+					<Guestgroup cardsData={lectures} />
 				</section>
 				<section
 					className="snap-start min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
