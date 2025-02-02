@@ -8,6 +8,8 @@ export interface EventCardProps {
 
 export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 
+	img = img || "/events.png";
+
 	const handleUrl = () => {
 		window.location.href = `/events/${id}`;
 	};

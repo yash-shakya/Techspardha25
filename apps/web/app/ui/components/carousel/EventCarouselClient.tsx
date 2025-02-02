@@ -34,7 +34,6 @@ export default function EventCarouselClient({events}: {events: Event[]}) {
 								: index === (currentIndex + 1) % events.length
 								? "right"
 								: "hidden";
-
 						return (
 							<div
 								key={index}

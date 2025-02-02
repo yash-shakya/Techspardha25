@@ -97,7 +97,7 @@ const SERVICES = {
   },
   getAllDetailedEvents: async (): Promise<GetAllDetailedEvents> => {
     try {
-      const eventDescriptionRef = ref(database, "events");
+      const eventDescriptionRef = ref(database, "eventDescription");
       const snapshot = await get(eventDescriptionRef);
       if (!snapshot.exists()) {
         return {};
@@ -119,7 +119,7 @@ const SERVICES = {
   },
   getAllEventCategories: async (): Promise<Array<string>> => {
     try {
-      const eventsRef = ref(database, "eventCategories");
+      const eventsRef = ref(database, "events");
       const snapshot = await get(eventsRef);
       if (!snapshot.exists()) {
         return [];
