@@ -258,12 +258,18 @@ export default function UserAuthButton() {
         <>
             <div className="relative h-32 w-32 mt-[-20] lg:mr-[180px]">
                 <div className="absolute top-0 right-8 w-px h-8 bg-white transform rotate-12"></div>
-                <div className="absolute top-14 right-0 transform -rotate-45 transition-transform hover:-rotate-30">
+                <div className="absolute top-14 right-0 transform  -rotate-45 transition-transform hover:-rotate-30">
                     <button
                         onClick={() => setIsLoginPopupOpen(true)}
-                        className="bg-zinc-600/40 hover:bg-zinc-700 text-zinc-200 font-semibold px-6 py-2 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border border-zinc-800/50 transition-all duration-300 hover:scale-110 hover:shadow-[0px_0px_20px_5px_rgba(0,51,102,1.00)] w-[145px] h-10 backdrop-blur-[14.10px]"
+                        className="bg-zinc-600/40 hidden md:block hover:bg-zinc-700 text-zinc-200 font-semibold px-6 py-2 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border border-zinc-800/50 transition-all duration-300 hover:scale-110 hover:shadow-[0px_0px_20px_5px_rgba(0,51,102,1.00)] w-[145px] h-10 backdrop-blur-[14.10px]"
                     >
                         LOGIN NOW
+                    </button>
+                    <button
+                        onClick={() => setIsLoginPopupOpen(true)}
+                        className="bg-zinc-600/40 md:hidden hover:bg-zinc-700 text-zinc-200 font-semibold px-6 py-2 rounded-full shadow-[0px_0px_15px_0px_rgba(0,51,102,1.00)] border border-zinc-800/50  transition-all duration-300 hover:scale-110 hover:shadow-[0px_0px_20px_5px_rgba(0,51,102,1.00)] w-[105px] h-10 backdrop-blur-[14.10px]"
+                    >
+                        Sign In
                     </button>
                 </div>
             </div>
