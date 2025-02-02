@@ -4,7 +4,6 @@
 // import { signOutUser } from "./lib/actions";
 import RubikWetHeading from "./ui/techspardha";
 import WallCardCarousal from "./ui/components/carousel/WallCardCarousel";
-import WallCardGroup from "./ui/WallCardGroup";
 import {
 	TECHSPARDHA,
 	sponsorsData,
@@ -13,7 +12,6 @@ import {
 	guestCardsData,
 	wallcardData as WallcardData,
 } from "./constants/landingpage";
-import { EVENTS as eventCardsData } from "./constants/eventPage";
 import SponsorsCard from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
 import EventGroup from "./ui/EventsGroup";
@@ -52,15 +50,12 @@ export default function Home() {
 
 	return (
 		<>
-			{/* <div className="absolute top-1 right-4 flex items-center gap-4 z-50">
-				<UserAuthButton/>
-			</div> */}
-
+			
 			<main className="snap-y snap-mandatory w-full h-full">
 				<section className="snap-center min-h-[95vh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
 					<RubikWetHeading text={TECHSPARDHA} />
 					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-medium font-['Satoshi Variable'] leading-[33px]">
-						Theme for fest!!!!
+						Frontier Reimagination
 					</h2>
 					<PresentedBy />
 					<NotificationCard />
