@@ -131,10 +131,20 @@ const SERVICES = {
     }
   },
   getEventById: async (id: string): Promise<Event> => {
+    // id should me matched with eventDescription[category][id] iterating through all categories
     try {
-      const eventsRef = ref(database, "events");
+      const eventsRef = ref(database, "eventDescription");
       const snapshot = await get(eventsRef);
-      return snapshot.val()[id];
+      let event: Event = {} as Event;
+      Object.entries(snapshot.val() as Record<string, Record<string, Event>>).forEach(([category, events]: [string, Record<string, Event>]) => {
+        if (events.hasOwnProperty(id)) {
+          console.log("Fetched event by id successfully.", events[id]);
+          if (events[id]) {
+            event = events[id];
+          }
+        }
+      });
+      return event;
     } catch (error) {
       console.error("Error fetching event by id", id);
       throw new Error("Failed to fetch event");

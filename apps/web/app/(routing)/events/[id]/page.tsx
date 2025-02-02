@@ -7,9 +7,14 @@ interface SingleEventProps {
 }
 
 const SingleEventPage: React.FC<SingleEventProps> = async ({ params }) => {
-  const id = (await params).id;
+  let id = (await params).id;
+  console.log(id);
+  // Id may have '%20' in it, so we need to replace it with ' '
+  id = id.replace(/%20/g, " ");
+  console.log(id);
   const event = await SERVICES.getEventById(id);
-  const rules = (event.rules as any as string).split("|");
+  console.log(event);
+  const rules = typeof event.rules == 'string' ? (event.rules as any as string).split("|") : event.rules;
   event.rules = rules;
   return <SingleEventClient event={event} />
 }
