@@ -1,9 +1,9 @@
 import DevCard from "../../ui/components/DevCard";
 import { DEVS, THEMES } from "../../constants/devpage";
+import SERVICES from "../../server/actions/services";
 
-export default function Developers() {
-	// store DEVS in a const var devs in reverse order
-	const devs = DEVS.slice().reverse();
+export default async function Developers() {
+	const devs = await SERVICES.getAllDevelopers();
 
 	return (
 		<>
@@ -15,9 +15,9 @@ export default function Developers() {
 				<div className="flex flex-col gap-12 p-4">
 					{devs.map((devGroup, index) => (
 						<div key={index} className="flex flex-col gap-4">
-							<h2 className="text-4xl tracking-wider font-mono">
+							{/* <h2 className="text-4xl tracking-wider font-mono">
                                 {devGroup.id === "aboutAppDevs" ? "App Developers" : "Developers"}
-                            </h2>
+                            </h2> */}
 							<div className="flex flex-wrap gap-4">
 								{devGroup.members.map((dev, index) => (
 									<DevCard
