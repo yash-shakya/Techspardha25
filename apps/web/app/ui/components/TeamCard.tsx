@@ -25,7 +25,7 @@ export default function ContactCard({
 	return (
 		<>
 			<div
-				className={`max-w-[350px] min-w-[300px] h-[500px] rounded-2xl relative shadow-lg ${theme === "stone" ? "shadow-stone-900" : "shadow-slate-900"}`}
+				className={`w-[350px] h-[500px] rounded-2xl relative shadow-lg ${theme === "stone" ? "shadow-stone-900" : "shadow-slate-900"}`}
 			>
 				<div
 					className={`h-[55%] ${theme === "stone" ? "bg-stone-500" : "bg-slate-500"} rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative`}
