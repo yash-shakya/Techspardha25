@@ -1,9 +1,9 @@
 import DevCard from "../../ui/components/DevCard";
 import { DEVS, THEMES } from "../../constants/devpage";
+import SERVICES from "../../server/actions/services";
 
-export default function Developers() {
-	// store DEVS in a const var devs in reverse order
-	const devs = DEVS.slice().reverse();
+export default async function Developers() {
+	const devs = await SERVICES.getAllDevelopers();
 
 	return (
 		<>

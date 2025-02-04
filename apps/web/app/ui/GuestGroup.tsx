@@ -5,10 +5,14 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Carousel from "./components/Carousel";
 
 interface CardData {
-	image?: string;
-	name: string;
 	date: string;
 	description: string;
+	facebook?: string;
+	image?: string;
+	insta?: string;
+	link?: string,
+	linkedin?: string;
+	name: string;
 }
 
 import "./GuestLecture.css";
@@ -68,7 +72,7 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 										image={
 											card.image
 												? card.image
-												: "https://via.placeholder.com/300x150"
+												: "https://placehold.co/600x400.png"
 										}
 										backGroundImage={
 											backgroundImages[
@@ -78,7 +82,10 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 										name={card.name || "Default Name"}
 										date={card.date || "Default Date"}
 										description={card.description || "No description available"}
-										
+										facebook={card.facebook}
+										insta={card.insta}
+										link={card.link}
+										linkedin={card.linkedin}
 									/>
 								) : (
 									<div className="text-white text-center">

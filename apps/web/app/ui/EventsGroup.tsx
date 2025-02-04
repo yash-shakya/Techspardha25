@@ -1,4 +1,5 @@
 "use client";
+// TODO do this component dynamic as well
 import { useState, useEffect } from "react";
 import EventCard from "./components/EventCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
@@ -73,7 +74,7 @@ export default function EventsGroup({ eventData }: EventsGroupProps) {
 							<EventCard
 								name={eventData[currentIndex].name}
 								img={eventData[currentIndex].img}
-								id={eventData[currentIndex].id}
+								id={eventData[currentIndex].id.toString()}
 								isActive={true}
 							/>
 						</Link>
