@@ -83,17 +83,17 @@ export default async function Home() {
 					<Watermark />
 				</section>
 
-				<section className="snap-center sm:min-h-[100vh] flex flex-col items-center justify-center  my-10 md:mb-0">
+				<section className="snap-center sm:min-h-screen flex flex-col items-center justify-center  sm:my-10 mb-10 md:mb-0">
 					<EventCarouselServer />
 				</section>
 				<section
-					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
+					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10"
 					id="lectures"
 				>
 					<Guestgroup cardsData={lectures} />
 				</section>
 				<section
-					className="snap-start min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
+					className="snap-start min-h-screen flex flex-col items-center justify-center  max-sm:py-16"
 					id="sponsors"
 				>
 					<SponsorsCard
@@ -103,7 +103,7 @@ export default async function Home() {
 					/>
 				</section>
 
-				<section className="" id="testimonials">
+				<section className="sm:pt-16" id="testimonials">
 					<WallCardCarousal />
 				</section>
 			</main>
