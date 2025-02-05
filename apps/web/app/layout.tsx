@@ -26,7 +26,7 @@ export default function RootLayout({
         <div className="absolute top-4 right-4 z-50 mt-[-30px]">
             <UserAuthButton />
           </div>
-        <div className="flex flex-col max-w-full mx-auto p-5 container">
+        <div className="flex flex-col max-w-full mx-auto container">
           {children}
         </div>
         <Footer socials={SOCIALS} />
