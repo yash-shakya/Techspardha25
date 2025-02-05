@@ -142,6 +142,28 @@ const SERVICES = {
       throw new Error("Failed to fetch event categories");
     }
   },
+  getEventsByCategory: async () => {
+    try {
+      const eventsRef = ref(database, "events");
+      const snapshot = await get(eventsRef);
+      // Will create an array of {name: string, img: string} objects
+      if (!snapshot.exists()) {
+        return [];
+      }
+      const data = snapshot.val();
+      
+      return Object.keys(data).map((key) => {
+        return {
+          name: key,
+          img: data[key].imgUrl
+        }
+      })
+      
+    } catch (error) {
+      console.error("Error fetching events by category:", error);
+      throw new Error("Failed to fetch events");
+    }
+  },
   getEventById: async (id: string): Promise<Event> => {
     // id should me matched with eventDescription[category][id] iterating through all categories
     try {
