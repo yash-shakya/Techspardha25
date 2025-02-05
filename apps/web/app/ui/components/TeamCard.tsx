@@ -5,7 +5,7 @@ import Image from "next/image";
 interface Contacts {
 	name: string;
 	post: string;
-	imageURL?: string;
+	imageUrl?: string;
 }
 
 interface ContactCardProps {
@@ -46,7 +46,7 @@ export default function ContactCard({
 					className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-400 rounded-full w-[200px] h-[200px] shadow-md shadow-${theme}-500`}
 				>
 					<Image
-						src={contact.imageURL ?? "/dev.png"}
+						src={contact.imageUrl ?? "/dev.png"}
 						alt={contact.name}
 						// width={200}
 						// height={200}

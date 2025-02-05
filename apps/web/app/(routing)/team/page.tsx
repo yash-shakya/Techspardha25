@@ -4,7 +4,7 @@ import SERVICES from "../../server/actions/services";
 export default async function Teams() {
 	const teamsD = await SERVICES.getAllTechspardhaTeams();
 	if (!teamsD) return;
-	const teams = Object.entries(teamsD).map(([id, team]) => ({
+	const teams = Object.entries(teamsD).reverse().map(([id, team]) => ({
 		id,
 		...team,
 	}));
@@ -18,7 +18,7 @@ export default async function Teams() {
 				<div className="flex flex-col gap-12 p-4">
 					{teams.map((team, index) => (
 						<div key={index} className="flex flex-col gap-4 sm:border-l-8 sm:border-stone-500 sm:p-4 p-2 rounded-2xl">
-							<h2 className="sm:text-4xl text-3xl tracking-wider font-mono">{team.id}</h2>
+							<h2 className="sm:text-4xl text-3xl tracking-wider font-[Satoshi Variable]">{team.id}</h2>
 							<div className="flex flex-wrap gap-4">
 								{team.contacts.map((contact, index) => (
 									<TeamCard key={index} contact={contact} />
