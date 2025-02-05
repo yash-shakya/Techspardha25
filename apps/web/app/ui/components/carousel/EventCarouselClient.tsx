@@ -32,46 +32,46 @@ export default function EventCarouselClient({ events }: { events: Event[] }) {
 	}, []);
 
 	return (
-		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center">
-			<h1 className="text-3xl font-bold md:text-4xl bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text font-[Satoshi Variable] md:mb-[5vh]">
+		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center gap-8 relative">
+			<h1 className="text-3xl font-bold md:text-4xl bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text font-[Satoshi Variable]">
 				Events
 			</h1>
 
-			<div className="w-full md:h-[517px] flex justify-start relative overflow-hidden">
-				<div className=" h-[900px] lg:w-[400px] w-12 absolute top-2 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20" />
-				<div className=" h-[900px] lg:w-[400px] w-12 absolute top-2 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
+			{/* <div className="w-full md:h-[517px] flex justify-start relative overflow-hidden"> */}
+				<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20" />
+				<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
 
 				<div
 					ref={scArr}
 					className="h-full w-[100vw] flex gap-[28px] md:gap-[40px] overflow-x-hidden items-start snap-x snap-mandatory relative"
 				>
-					<div className="flex gap-[28px] md:gap-[40px] h-full">
-						{events.map((data: Event, index) => (
-							<EventCard
-								id={data.id}
-								name={data.eventName}
-								key={index}
-								img={data.poster}
-								isActive={true}
-							/>
-						))}
-					</div>
 					<div className="flex gap-[28px] md:gap-[40px]">
 						{events.map((data: Event, index) => (
 							<EventCard
 								id={data.id}
 								name={data.eventName}
+								key={index}
+								img={data.poster}
+								isActive={true}
+							/>
+						))}
+					{/* </div> */}
+					{/* <div className="flex gap-[28px] md:gap-[40px]"> */}
+						{events.map((data: Event, index) => (
+							<EventCard
+								id={data.id}
+								name={data.eventName}
 								img={data.poster}
 								key={index}
 								isActive={true}
 							/>
 						))}
 					</div>
-				</div>
+				{/* </div> */}
 			</div>
 
 			<Link href={"/events"}>
-				<div className="px-4 py-1.5 mt-4 md:mt-0 bg-white/10 rounded-[32px] border border-white/10 justify-start items-center gap-2.5 inline-flex overflow-hidden">
+				<div className="px-4 py-1.5 md:mt-0 bg-white/10 rounded-[32px] border border-white/10 justify-start items-center gap-2.5 inline-flex overflow-hidden">
 					<div className="text-white text-sm font-bold font-['Satoshi Variable'] leading-normal">
 						View Them All
 					</div>
