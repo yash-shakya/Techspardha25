@@ -211,7 +211,7 @@ function SmallTheme(props) {
 				{props.data.map((item, i) => (
 					<React.Fragment key={item.id}>
 						<div
-							className="slide m-2 p-3 w-[50%] h-40 transition-all duration-500 absolute t-0 rounded-lg bg-gradient-to-b from-slate-800 to-slate-950shadow-[0px_0px_10px_0px_#3cb7dd] flex justify-center items-center"
+							className="slide m-2 p-3 w-[50%] h-40 transition-all duration-500 absolute t-0 rounded-lg bg-gradient-to-b from-slate-800 to-slate-950 shadow-[0px_0px_10px_0px_#3cb7dd] flex justify-center items-center"
 							style={{
 								...getStyles(i).styles,
 							}}
