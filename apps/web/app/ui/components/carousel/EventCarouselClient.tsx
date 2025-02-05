@@ -2,9 +2,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import EventCard from "../EventCard";
 import Link from "next/link";
-import { Event } from "@/app/server/actions/constants";
+import EventCategoryCard from "../EventCategoryCard";
 
-export default function EventCarouselClient({ events }: { events: Event[] }) {
+type EventCategory = {
+	name: string;
+	img: string;
+};
+
+type EventCarouselClientProps = {
+	eventCategory: EventCategory[];
+};
+
+export default function EventCarouselClient({
+	eventCategory,
+}: EventCarouselClientProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
 	const scArr = useRef<HTMLDivElement>(null);
@@ -32,41 +43,29 @@ export default function EventCarouselClient({ events }: { events: Event[] }) {
 	}, []);
 
 	return (
-		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center gap-8 relative">
-			<h1 className="text-3xl font-bold md:text-4xl bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text font-[Satoshi Variable]">
+		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center relative">
+			<h1 className="text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
 				Events
 			</h1>
 
 			{/* <div className="w-full md:h-[517px] flex justify-start relative overflow-hidden"> */}
-				<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20" />
-				<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
+			<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20" />
+			<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
 
-				<div
-					ref={scArr}
-					className="h-full w-[100vw] flex gap-[28px] md:gap-[40px] overflow-x-hidden items-start snap-x snap-mandatory relative"
-				>
-					<div className="flex gap-[28px] md:gap-[40px]">
-						{events.map((data: Event, index) => (
-							<EventCard
-								id={data.id}
-								name={data.eventName}
-								key={index}
-								img={data.poster}
-								isActive={true}
-							/>
-						))}
+			<div
+				ref={scArr}
+				className="py-14 pb-16 w-[100vw] flex gap-[28px] md:gap-[40px] overflow-x-hidden items-start snap-x snap-mandatory relative"
+			>
+				<div className="flex gap-[28px] md:gap-[40px]">
+					{eventCategory.map((data: EventCategory, index) => (
+						<EventCategoryCard name={data.name} img={data.img} key={index} />
+					))}
 					{/* </div> */}
 					{/* <div className="flex gap-[28px] md:gap-[40px]"> */}
-						{events.map((data: Event, index) => (
-							<EventCard
-								id={data.id}
-								name={data.eventName}
-								img={data.poster}
-								key={index}
-								isActive={true}
-							/>
-						))}
-					</div>
+					{eventCategory.map((data: EventCategory, index) => (
+						<EventCategoryCard name={data.name} img={data.img} key={index} />
+					))}
+				</div>
 				{/* </div> */}
 			</div>
 

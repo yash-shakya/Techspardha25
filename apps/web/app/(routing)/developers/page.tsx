@@ -12,7 +12,7 @@ export default async function Developers() {
 					Our Developers
 				</h1>
 				{/* {DEVS[0]?.members[0] && <DevCard dev={DEVS[0].members[0]} theme={THEMES[3]} />} */}
-				<div className="flex flex-col gap-12 p-4">
+				<div className="flex flex-col gap-12 p-4 max-sm:justify-center max-sm:items-center">
 					{devs.map((devGroup, index) => (
 						<div key={index} className="flex flex-col gap-4">
 							{/* <h2 className="text-4xl tracking-wider font-mono">

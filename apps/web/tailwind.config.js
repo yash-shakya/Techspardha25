@@ -69,6 +69,13 @@ export default {
 					'0px 76px 45px rgba(0,0,0,0.15)',
 					'0px 134px 54px rgba(0,0,0,0.04)',
 					'0px 210px 59px rgba(0,0,0,0.01)'
+				],
+				event: [
+					'0px 4px 10px rgba(0,0,0,0.29)',
+					'0px 17px 20px rgba(0,0,0,0.26)',
+					'0px 34px 25px rgba(0,0,0,0.15)',
+					'0px 78px 30px rgba(0,0,0,0.04)',
+					'0px 105px 35px rgba(0,0,0,0.01)'
 				]
 			},
 			borderRadius: {

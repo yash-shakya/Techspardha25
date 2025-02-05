@@ -56,7 +56,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
 }) => {
   return (
     <div className="w-full max-w-xs rounded-2xl sm:max-w-sm md:max-w-md lg:max-w-lg shadow-guest">
-      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col min-h-[70svh]">
+      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col sm:min-h-[70svh]">
         <Link href="/" passHref>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full z-0">

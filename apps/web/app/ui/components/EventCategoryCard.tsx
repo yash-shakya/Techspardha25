@@ -1,31 +1,30 @@
 import Image from "next/image";
-export interface EventCardProps {
+export interface EventCategoryCardProps {
 	name: string;
 	img: string;
-	id?: string;
-	isActive: boolean;
 }
 
-export default function EventCard({ name, img, isActive, id }: EventCardProps) {
+export default function EventCategoryCard({
+	name,
+	img,
+}: EventCategoryCardProps) {
 	img = img || "/events.png";
 
 	const handleUrl = () => {
-		window.location.href = `/events/${id}`;
+		window.location.href = `/events`;
 	};
 
 	return (
 		<>
 			<div
-				className={`flex flex-col cursor-pointer  rounded-md h-[80%] border-[.5px] border-[#00629666]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] shadow-guest ${
-					isActive ? "scale-95 shadow-lg" : ""
-				}`}
+				className={`flex flex-col cursor-pointer  rounded-md h-[80%] border-[.5px] border-[#006196ab]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] shadow-event`}
 			>
 				<div
 					className="relative flex items-center justify-center w-full h-36 sm:h-80 md:h-96 overflow-hidden"
 					onClick={handleUrl}
 				>
 					<Image
-						className="object-cover border-[1px] border-white  rounded-lg"
+						className="object-cover rounded-lg"
 						src={img}
 						alt={`Image of ${name}`}
 						fill
