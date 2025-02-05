@@ -31,24 +31,27 @@ export default function DevCard({ dev, theme = "stone" }: DevCardProps) {
     const isLinkedinValid = isValidURL(dev.linkedin ?? "");
     const anyLinkValid = isGithubValid || isInstaValid || isLinkedinValid;
     // Forcing the theme
-    theme = "slate";
+    
+    if(dev.year === "Sophomore")
+        theme = "slate";
+
     return (
         <>
-            <div className={`w-[350px] h-[500px] rounded-2xl relative shadow-lg shadow-slate-900 todo-theme`}>
-                <div className={`h-[55%] bg-slate-500 rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative todo-theme`}>
+            <div className={`w-[280px] h-[400px] rounded-2xl relative shadow-lg shadow-slate-900 todo-theme`}>
+                <div className={`h-[55%] ${theme === "slate" ? "bg-slate-500" : "bg-stone-500"} rounded-t-2xl text-gray-900 flex flex-wrap items-center justify-center relative todo-theme`}>
                     {/* A small notch */}
                     <div className="absolute w-[100px] h-3 bg-gray-800 rounded-3xl top-3"></div>
                     {/* Dev Name */}
                     <div
                         className={`${
-                            dev.name.length > 20 ? "text-4xl" : "text-5xl"
-                        } font-black text-center flex flex-wrap items-center justify-center w-fit mx-auto mb-[7rem] bg-gradient-to-b from-gray-700 to-gray-950 text-transparent bg-clip-text filter drop-shadow-sm`}
+                            dev.name.length > 15 ? "text-2xl" : "text-3xl"
+                        } font-black text-center flex flex-wrap items-center justify-center w-fit mx-auto mb-[5rem] bg-gradient-to-b from-gray-700 to-gray-950 text-transparent bg-clip-text filter drop-shadow-sm`}
                     >
                         {dev.name}
                     </div>
                 </div>
                 {/* Dev Image */}
-                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-400 rounded-full w-[200px] h-[200px] shadow-md shadow-slate-500 todo-theme`}>
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-400 rounded-full w-[150px] h-[150px] shadow-md shadow-slate-500 todo-theme`}>
                     <Image
                         src={dev.imageUrl ?? "/dev.png"}
                         alt={dev.name}
@@ -60,9 +63,9 @@ export default function DevCard({ dev, theme = "stone" }: DevCardProps) {
                     />
                 </div>
                 <div className="h-[45%] bg-gray-900 rounded-b-2xl pt-5 flex flex-col gap-3">
-                    <div className="p-4 grow flex flex-col">
+                    <div className="p-2 grow flex flex-col">
                         {/* Dev Year */}
-                        <div className={`text-3xl text-slate-500 mt-auto text-center todo-theme`}>
+                        <div className={`text-2xl text-slate-500 mt-auto text-center todo-theme`}>
                             {dev.year}
                         </div>
                     </div>

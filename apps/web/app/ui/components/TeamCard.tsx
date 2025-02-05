@@ -15,7 +15,7 @@ interface ContactCardProps {
 // Component that displays a card with information about a developer.
 export default function ContactCard({ contact }: ContactCardProps) {
 	let theme = "slate";
-	if (contact.post === "Convenor") {
+	if (contact.post === "Convener" || contact.post === "Convenor") {
 		theme = "stone";
 	}
 
@@ -42,7 +42,7 @@ export default function ContactCard({ contact }: ContactCardProps) {
 				</div>
 				{/* Contact Image */}
 				<div
-					className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-400 rounded-full w-[150px] h-[150px] max-sm:w-[100px] max-sm:h-[100px] shadow-md shadow-${theme}-500`}
+					className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gray-800 rounded-full w-[150px] h-[150px] max-sm:w-[100px] max-sm:h-[100px] shadow-md shadow-${theme}-500`}
 				>
 					<Image
 						src={contact.imageUrl ?? "/dev.png"}
