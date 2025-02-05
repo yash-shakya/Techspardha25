@@ -277,7 +277,7 @@ export default function UserAuthButton() {
 
 	return (
 		<>
-			<div className="relative h-32 w-32 mt-[-20] lg:mr-[180px]">
+			<div className="relative h-32 w-32 mt-[-20px] lg:mr-[180px]">
 				<div className="absolute top-0 right-8 w-px h-8 bg-white transform rotate-12"></div>
 				<div className="absolute top-14 right-0 transform  -rotate-45 transition-transform hover:-rotate-30">
 					<button

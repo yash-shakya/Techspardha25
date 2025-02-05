@@ -17,7 +17,7 @@ import PresentedBy from "./ui/components/PresentedBy";
 // ACTIONS
 import SERVICES from "./server/actions/services";
 
-async function getLectures(){
+async function getLectures() {
 	try {
 		const lectures = await SERVICES.getAllLectures();
 		const modifiedLectures = lectures.map((lecture) => {
@@ -30,8 +30,8 @@ async function getLectures(){
 				link: lecture.link || "/",
 				linkedin: lecture.linkedin || "",
 				name: lecture.name,
-			}
-		})
+			};
+		});
 		return modifiedLectures;
 	} catch (error) {
 		console.error("Error fetching lectures: ", error);
@@ -39,7 +39,7 @@ async function getLectures(){
 	}
 }
 
-async function getSponsors(){
+async function getSponsors() {
 	try {
 		const sponsors = await SERVICES.getAllSponsors();
 		const modifiedSponsors = Object.keys(sponsors).map((key) => {
@@ -48,13 +48,15 @@ async function getSponsors(){
 				sponsors: (sponsors[key] || []).map((sponsor) => {
 					return {
 						name: sponsor.name || "",
-						imageUrl: sponsor.imageUrl || "https://www.printastic.com/data/theme/slider/436/sponsorships@2x.webp",
+						imageUrl:
+							sponsor.imageUrl ||
+							"https://www.printastic.com/data/theme/slider/436/sponsorships@2x.webp",
 						alt: sponsor.alt || "",
 						targetUrl: sponsor.targetUrl || "/",
-					}
-				})
-			}
-		})
+					};
+				}),
+			};
+		});
 		return modifiedSponsors as SponsorCategory[];
 	} catch (error) {
 		console.error("Error fetching sponsors: ", error);
@@ -63,7 +65,6 @@ async function getSponsors(){
 }
 
 export default async function Home() {
-
 	// Fetching All Lectures
 	const lectures = await getLectures();
 	// Fetching All Sponsors
@@ -71,12 +72,11 @@ export default async function Home() {
 
 	return (
 		<>
-			
 			<main className="snap-y snap-mandatory w-full h-full">
 				<section className="snap-center min-h-[95vh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
 					<RubikWetHeading text={TECHSPARDHA} />
-					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-medium font-['Satoshi Variable'] leading-[33px]">
-						Frontier Reimagination
+					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-semibold font-sans leading-[33px]">
+						Frontier Reimagined
 					</h2>
 					<PresentedBy />
 					<NotificationCard />

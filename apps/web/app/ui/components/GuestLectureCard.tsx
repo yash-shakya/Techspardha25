@@ -64,7 +64,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={backGroundImage}
               alt="Background"
               fill
-              className="object-cover opacity-70"
+              className="object-cover opacity-70 bg-cover"
             />
           </div>
 
@@ -74,7 +74,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={image}
               alt="Person"
               fill
-              className="object-cover rounded-t-2xl"
+              className="object-fill object-top rounded-t-2xl"
             />
           </div>
         </Link>
