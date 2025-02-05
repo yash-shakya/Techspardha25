@@ -54,3 +54,4 @@ export const DEVS = [
 ];
 
 export const THEMES = ["blue", "red", "green", "cyan", "orange"];
+// debu, utk, swastik, manvi, yash-shakya, agrawal vansh, suyash shukla, mohak, soumil, kunalgarg, ayush, kirti, navneetK , ayush
