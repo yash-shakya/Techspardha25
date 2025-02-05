@@ -3,7 +3,7 @@ import { tempNotifications } from "../../constants/landingpage";
 
 export default function NotificationCard() {
 	return (
-		<div className="w-[270px] h-[auto] flex-col justify-start items-center gap-[50px] inline-flex">
+		<div className="w-[270px] h-[auto] flex-col justify-start items-center gap-[30px] inline-flex">
 			<div className="w-[270px] h-[168px] flex flex-col gap-[20px]">
 				{tempNotifications.map((tempNoti, i) => {
 					return (

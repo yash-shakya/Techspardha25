@@ -83,7 +83,7 @@ export default async function Home() {
 					<Watermark />
 				</section>
 
-				<section className="snap-center sm:min-h-[10vh] flex flex-col items-center justify-center  my-10 md:mb-0">
+				<section className="snap-center sm:min-h-[100vh] flex flex-col items-center justify-center  my-10 md:mb-0">
 					<EventCarouselServer />
 				</section>
 				<section
