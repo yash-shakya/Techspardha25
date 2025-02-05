@@ -3,7 +3,7 @@ import { DEVS, THEMES } from "../../constants/devpage";
 import SERVICES from "../../server/actions/services";
 
 export default async function Developers() {
-	const devs = await SERVICES.getAllDevelopers();
+	const devs = DEVS;
 
 	return (
 		<>
