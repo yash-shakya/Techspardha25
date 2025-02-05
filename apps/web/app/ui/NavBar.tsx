@@ -44,14 +44,14 @@ export default function NavBar({ navitems }: NavBarProps) {
           {navitems.map((item, i) => {
             if (item.name === "logo")
               return (
-                <Link href="/" key={i}>
+                <Link href="/" key={i} className="hover:cursor-pointer hover:scale-105 duration-300">
                   <Image alt="Logo" src={logo} height={45} width={45} />
                 </Link>
               );
             else if (item.name === "LECTURES" || item.name === "SPONSORS") {
               return (
                 <span
-                  className="cursor-pointer text-center text-white text-xs font-bold font-['Satoshi Variable'] uppercase leading-normal tracking-widest"
+                  className="cursor-pointer hover:scale-105 duration-300 text-center text-white text-xs font-bold font-['Satoshi Variable'] uppercase leading-normal tracking-widest"
                   key={i}
                   onClick={() => {
                     // redirect to home page
@@ -75,7 +75,7 @@ export default function NavBar({ navitems }: NavBarProps) {
               return (
                 <Link
                   href={item.link}
-                  className="text-center text-white text-xs font-bold font-['Satoshi Variable'] uppercase leading-normal tracking-widest"
+                  className="text-center text-white text-xs font-bold font-['Satoshi Variable'] uppercase leading-normal tracking-widest hover:cursor-pointer hover:scale-105 duration-300"
                   key={i}
                 >
                   {item.name}
