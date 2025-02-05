@@ -33,7 +33,7 @@ export default function EventCarouselClient({ events }: { events: Event[] }) {
 
 	return (
 		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center gap-8 relative">
-			<h1 className="text-3xl font-bold md:text-4xl bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text font-[Satoshi Variable]">
+			<h1 className="text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
 				Events
 			</h1>
 
