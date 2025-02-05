@@ -10,13 +10,13 @@ export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 	img = img || "/events.png";
 
 	const handleUrl = () => {
-		window.location.href = `/events/${id}`;
+		window.location.href = `/events`;
 	};
 
 	return (
 		<>
 			<div
-				className={`flex flex-col cursor-pointer  rounded-md h-[80%] border-[.5px] border-[#00629666]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] ${
+				className={`flex flex-col cursor-pointer  rounded-md h-[80%] border-[.5px] border-[#00629666]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] shadow-guest ${
 					isActive ? "scale-95 shadow-lg" : ""
 				}`}
 			>
