@@ -6,7 +6,7 @@ export default function About() {
 	return (
 		<>
 			<div className="space-y-12">
-				<section className="space-y-6 p-4">
+				<section className="space-y-6 p-8">
 					<h2 className="text-2xl md:text-3xl font-semibold">
 						What is Techspardha 2024?
 					</h2>

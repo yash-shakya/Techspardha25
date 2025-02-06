@@ -55,8 +55,8 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
   link
 }) => {
   return (
-    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col min-h-[70svh]">
+    <div className="w-full max-w-xs rounded-2xl sm:max-w-sm md:max-w-md lg:max-w-lg shadow-guest">
+      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col sm:min-h-[70svh]">
         <Link href="/" passHref>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full z-0">
@@ -64,7 +64,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={backGroundImage}
               alt="Background"
               fill
-              className="object-cover opacity-70"
+              className="object-cover opacity-70 bg-cover"
             />
           </div>
 
@@ -74,7 +74,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={image}
               alt="Person"
               fill
-              className="object-cover rounded-t-2xl"
+              className="object-fill object-top rounded-t-2xl"
             />
           </div>
         </Link>

@@ -52,7 +52,7 @@ const Guestgroup = ({ cardsData }: { cardsData: CardData[] }) => {
 			</h2>
 
 			{isClient && (
-				<div className="relative flex gap-8 w-full justify-center items-center h-auto">
+				<div className="relative flex gap-8 justify-center items-center h-auto w-screen overflow-x-clip">
 					<Carousel
 						toScroll={false}
 						delay={1500}

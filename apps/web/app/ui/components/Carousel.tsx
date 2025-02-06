@@ -41,8 +41,8 @@ export default function CarouselComponent({
 				className="w-[100vw]"
 			>
 				
-        <div className="hidden lg:block h-[88%] w-[200px] absolute top-0 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20"  />
-        <div className="hidden lg:block h-[88%] w-[200px] absolute top-0 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
+        <div className="hidden lg:block h-[120%] w-[200px] absolute top-0 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20"  />
+        <div className="hidden lg:block h-[120%] w-[200px] absolute top-0 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
 
 				{/* Add padding and gap to the container */}
 				<CarouselContent className="md:gap-x-4 md:px-4">
