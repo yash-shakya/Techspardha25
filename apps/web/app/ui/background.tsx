@@ -8,8 +8,8 @@ export default function Background() {
 				<Image
 					src="/bg.svg"
 					alt="Techspardha Background"
-					layout="fill"
-					objectFit="cover"
+					fill
+					style={{objectFit: "cover"}}
 					priority // Ensures the image loads quickly
 				/>
 			</div>

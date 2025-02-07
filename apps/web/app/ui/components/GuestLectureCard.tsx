@@ -78,10 +78,8 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
           <Image
             src={backGroundImage}
             alt="Background"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            style={{ filter: "brightness(0.7)" }} 
+            fill
+            style={{ filter: "brightness(0.7)",objectFit: "cover",objectPosition: "center" }} 
           />
         </div>
         <div className="relative">
@@ -92,8 +90,8 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
             <Image
               src={image}
               alt="Person"
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{objectFit: "cover"}}
               className="rounded-t-2xl h-64"
             />
           </div>
