@@ -26,9 +26,19 @@
   }
 }
 
+*{
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
   background-image: url(./assets/background.svg);
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
 }

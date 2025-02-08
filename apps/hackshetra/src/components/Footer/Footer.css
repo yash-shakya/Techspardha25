@@ -1,0 +1,27 @@
+.footerCover::before {
+    content: "";
+    width: 15vw;
+    height: 15vw;
+    position: absolute;
+    background-image: conic-gradient(#06c3af 60deg,  transparent 120deg);
+    left: -10%;
+    top: -150%;
+
+}
+
+@media not all and (min-width: 821px) {
+    .footerCover::before {
+        content: "";
+        width: 190px;
+        height: 190px;
+        position: absolute;
+        background-image: conic-gradient(#06c3af 60deg,  transparent 120deg);
+        left: -10%;
+        top: -110%;
+    
+    }
+}
+
+.footText{
+    word-spacing: clamp(10px, 1rem, 20px);
+}
