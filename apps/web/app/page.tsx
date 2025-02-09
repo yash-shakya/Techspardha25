@@ -103,7 +103,7 @@ export default async function Home() {
 					/>
 				</section>
 
-				<section className="sm:pt-16" id="testimonials">
+				<section className="my-10" id="testimonials">
 					<WallCardCarousal />
 				</section>
 			</main>
