@@ -25,7 +25,7 @@ export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 					
 				>
 					<Image
-						className="object-cover border-[1px] border-white  rounded-lg"
+						className="object-fill border-[1px] border-white  rounded-lg"
 						src={img}
 						alt={`Image of ${name}`}
 						fill
