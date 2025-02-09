@@ -55,7 +55,7 @@ export const DEVS = [
 				imageUrl: "https://avatars.githubusercontent.com/u/161924049",
 			},
 			{
-				name: "Ayush Singhl",
+				name: "Ayush Singhal",
 				year: "Sophomore",
 				github: "https://github.com/Ayush-2603",
 				insta: "https://www.instagram.com/singhl_ayush",
