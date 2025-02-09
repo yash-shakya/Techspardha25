@@ -23,12 +23,12 @@ const SponsorsCard: React.FC<SponsorsCardProps> = ({
   buttonText,
 }) => {
   return (
-    <div className="text-white py-10 px-4 flex flex-col items-center">
+    <div className="text-white w-full py-10 flex flex-col items-center">
       <h2 className="text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text mb-8">
         Our Sponsors
       </h2>
 
-      <div className="flex flex-wrap justify-center gap-8 max-w-6xl">
+      <div className="flex flex-wrap w-full justify-center gap-8 max-w-6xl">
         {SponsorsCard.map((category, index) => (
           <div key={index} className="w-[450px] flex flex-col items-center">
             <div className="text-center font-semibold text-lg">
@@ -46,7 +46,7 @@ const SponsorsCard: React.FC<SponsorsCardProps> = ({
                   <img
                     src={logo.imageUrl}
                     alt={logo.alt}
-                    className="w-40 h-auto max-w-full"
+                    className="w-40 max-md:w-36 h-auto max-w-full"
                   />
                   <span className="sr-only">{logo.name}</span>
                 </Link>

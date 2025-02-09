@@ -93,7 +93,7 @@ export default async function Home() {
 					<Guestgroup cardsData={lectures} />
 				</section>
 				<section
-					className="snap-start flex flex-col items-center justify-center  max-sm:py-16"
+					className="snap-start w-[100vw] flex flex-col items-center justify-center  max-sm:py-16"
 					id="sponsors"
 				>
 					<SponsorsCard
