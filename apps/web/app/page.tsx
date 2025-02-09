@@ -73,7 +73,7 @@ export default async function Home() {
 	return (
 		<>
 			<main className="snap-y snap-mandatory w-full h-full">
-				<section className="snap-center min-h-[95vh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
+				<section className="snap-center min-h-[100svh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
 					<RubikWetHeading text={TECHSPARDHA} />
 					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-semibold font-sans leading-[33px]">
 						Frontier Reimagined
