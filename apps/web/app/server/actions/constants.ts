@@ -10,7 +10,7 @@ export type Event = {
   startTime: number;
   venue: string;
   eventCategory: string;
-  id: string;
+  id?: string;
 };
 
 export type EventMap = {
@@ -26,15 +26,20 @@ type Coordinator = {
 
 export type Sponsor = {
   category?: string;
-  alt: string;
+  alt?: string;
   imageUrl: string;
   name: string;
   targetUrl: string;
   id?: string;
 };
 
+// export type SponsorByCategory = {
+//   [sponsorSection: string | number | symbol]: Sponsor;
+// };
+
 export type SponsorByCategory = {
-  [category: string | number | symbol]: Sponsor;
+  sponsorSection: string;
+  sponsors: Sponsor[];
 };
 
 export type TechspardhaTeam = {
@@ -50,8 +55,8 @@ type Contacts = {
 };
 
 enum Post {
-  Convenor = "Convenor",
-  CoConvenor = "Co-Convenor",
+  Convenor = "Convener",
+  CoConvenor = "Co-Convener",
 }
 
 export type TechspardhaTeamsDTO = {
@@ -72,7 +77,7 @@ export type NotificationsDTO = {
 };
 
 export type Lecture = {
-  id: string;
+  id?: string;
   date: string;
   desc: string;
   facebook: string;
@@ -105,3 +110,6 @@ export type GetAllDevelopers = {
     linkedin: string;
   }[];
 };
+
+
+export const BaseURL = "https://us-central1-techspardha-87928.cloudfunctions.net/api2"
