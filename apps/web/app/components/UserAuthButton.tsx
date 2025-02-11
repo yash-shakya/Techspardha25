@@ -120,16 +120,7 @@ export default function UserAuthButton() {
 		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
 			<div className="rounded-3xl w-[80%] max-w-[648px] h-[80vh] max-h-[651px] flex items-center justify-center bg-ocean-blue/60 shadow-xl">
 				<div className="w-full max-w-md p-8">
-					<div className="flex justify-center mb-6">
-						<Image
-							src="/logo.svg"
-							alt="Logo"
-							width={48}
-							height={48}
-							className="w-12 h-12"
-						/>
-					</div>
-
+					
 					<div className="text-center mb-6">
 						<h2 className="text-lg md:text-xl text-[#6F8294] mb-4">
 							Complete Your Profile
@@ -305,28 +296,18 @@ export default function UserAuthButton() {
 							&times;
 						</button>
 						<div className="w-full max-w-md p-8">
-							<div className="flex justify-center mb-6">
-								<Image
-									src="/logo.svg"
-									alt="Logo"
-									width={48}
-									height={48}
-									className="w-12 h-12"
-								/>
-							</div>
-
-							<div className="text-center">
+														<div className="text-center">
 								<h2 className="text-lg md:text-xl text-[#6F8294] mb-4">
 									Hey there,
 								</h2>
 								<div className="flex items-center justify-center space-x-3 mb-4">
-									<div className="w-9 h-9 rounded-full overflow-hidden border-2 border-[#367CFF]">
+									<div className="w-9 h-9 rounded-full overflow-hidden">
 										<Image
-											src="/placeholder.svg"
+											src="/logo.png"
 											alt="Profile Picture"
-											width={300}
-											height={300}
-											className="w-full h-full object-cover"
+											width={500}
+											height={500}
+											className="w-full h-full object-cover mr-2"
 										/>
 									</div>
 									<h1 className="text-2xl md:text-3xl text-[#AEBCCA] font-semibold">
