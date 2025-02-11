@@ -2,11 +2,12 @@ import Image from "next/image";
 export interface EventCardProps {
 	name: string;
 	img: string;
-	id?: number;
+	id?: string;
 	isActive: boolean;
 }
 
 export default function EventCard({ name, img, isActive, id }: EventCardProps) {
+	img = img || "/events.png";
 
 	const handleUrl = () => {
 		window.location.href = `/events/${id}`;
@@ -15,17 +16,16 @@ export default function EventCard({ name, img, isActive, id }: EventCardProps) {
 	return (
 		<>
 			<div
-				className={`flex flex-col cursor-pointer  rounded-md h-[80%] border-[.5px] border-[#00629666]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] ${
+				className={`flex flex-col cursor-pointer  rounded-md h-[80%] border-[5px] border-[#00629666]  bg-[#012436] transition-transform duration-300 sm:w-[750px] w-[350px] shadow-guest ${
 					isActive ? "scale-95 shadow-lg" : ""
-				}`}
+				}`} onClick={handleUrl}
 			>
 				<div
 					className="relative flex items-center justify-center w-full h-36 sm:h-80 md:h-96 overflow-hidden"
-					onClick={handleUrl}
 				>
 					<Image
-						className="object-cover border-[1px] border-white  rounded-lg"
-						src={`/${img}`}
+						className="object-fill border-[1px] border-white  rounded-lg"
+						src={img}
 						alt={`Image of ${name}`}
 						fill
 						sizes="(max-width: 768px) 100vw,

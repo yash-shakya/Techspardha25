@@ -1,6 +1,3 @@
-"use client";
-
-import { useAuth } from "./lib/context/auth-context";
 import RubikWetHeading from "./ui/techspardha";
 import WallCardCarousal from "./ui/components/carousel/WallCardCarousel";
 import {
@@ -9,66 +6,110 @@ import {
 	emailPlaceholder,
 	buttonText,
 	guestCardsData,
-	wallcardData as WallcardData,
 } from "./constants/landingpage";
-import SponsorsCard from "./ui/components/SponsorsCard";
+import SponsorsCard, { SponsorCategory } from "./ui/components/SponsorsCard";
 import Guestgroup from "./ui/GuestGroup";
-import EventCarousel from "./ui/components/carousel/EventCarousel";
+import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
 import PresentedBy from "./ui/components/PresentedBy";
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
-export default function Home() {
-	const { user } = useAuth();
-	const router = useRouter();
-	const [isMounted, setIsMounted] = useState(false);
+// ACTIONS
+import SERVICES from "./server/actions/services";
 
-	useEffect(() => {
-		setIsMounted(true);
-	}, []);
-
-	// Prevent hydration mismatch by not rendering user-dependent content until mounted
-	if (!isMounted) {
-		return null; // or a loading skeleton
+async function getLectures() {
+	try {
+		const lectures = await SERVICES.getAllLectures();
+		const modifiedLectures = lectures.map((lecture) => {
+			return {
+				date: `${lecture.date} ${lecture.time}`,
+				description: lecture.desc,
+				facebook: lecture.facebook || "",
+				image: lecture.imageUrl || "/GuestLecturer/Guestlecture.jpg",
+				insta: lecture.insta || "",
+				link: lecture.link || "/",
+				linkedin: lecture.linkedin || "",
+				name: lecture.name,
+			};
+		});
+		return modifiedLectures;
+	} catch (error) {
+		console.error("Error fetching lectures: ", error);
+		return guestCardsData;
 	}
+}
+
+async function getSponsors() {
+	try {
+		const sponsors = await SERVICES.getAllSponsors();
+		// sponsors = [
+		// 	{
+		// 		"sponsorSection": "Platinum",
+		// 		"sponsor": { // Sponsor Object}
+		// 	},
+		// ]
+		const modifiedSponsors = sponsors.map((sponsorCategory) => {
+			return {
+				title: sponsorCategory.sponsorSection,
+				sponsors: (sponsorCategory.sponsors || []).map((sponsor) => {
+					return {
+						name: sponsor.name || "",
+						imageUrl:
+							sponsor.imageUrl ||
+							"https://www.printastic.com/data/theme/slider/436/sponsorships@2x.webp",
+						alt: sponsor.alt || sponsor.name || "Sponsor Logo",
+						targetUrl: sponsor.targetUrl || "/",
+					};
+				}),
+			};
+		})
+		return modifiedSponsors as SponsorCategory[];
+	} catch (error) {
+		console.error("Error fetching sponsors: ", error);
+		throw new Error("Error fetching sponsors");
+	}
+}
+
+export default async function Home() {
+	// Fetching All Lectures
+	const lectures = await getLectures();
+	// Fetching All Sponsors
+	const sponsors = await getSponsors();
 
 	return (
 		<>
-			
 			<main className="snap-y snap-mandatory w-full h-full">
-				<section className="snap-center min-h-[95vh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
+				<section className="snap-center min-h-[100svh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
 					<RubikWetHeading text={TECHSPARDHA} />
-					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-medium font-['Satoshi Variable'] leading-[33px]">
-						Frontier Reimagination
+					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-semibold font-sans leading-[33px]">
+						Frontier Reimagined
 					</h2>
 					<PresentedBy />
 					<NotificationCard />
 					<Watermark />
 				</section>
 
-				<section className="snap-center sm:min-h-[10vh] flex flex-col items-center justify-center  mb-10 md:mb-0">
-					<EventCarousel />
+				<section className="snap-center flex flex-col items-center justify-center  sm:my-10 mb-10 md:mb-0">
+					<EventCarouselServer />
 				</section>
 				<section
-					className="snap-center sm:min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
+					className="snap-center flex flex-col items-center justify-center  mb-10"
 					id="lectures"
 				>
-					<Guestgroup cardsData={guestCardsData} />
+					<Guestgroup cardsData={lectures} />
 				</section>
 				<section
-					className="snap-start min-h-screen flex flex-col items-center justify-center  mb-10 md:mb-0"
+					className="snap-start flex flex-col items-center justify-center  max-sm:py-16"
 					id="sponsors"
 				>
 					<SponsorsCard
-						SponsorsCard={sponsorsData}
+						SponsorsCard={sponsors}
 						emailPlaceholder={emailPlaceholder}
 						buttonText={buttonText}
 					/>
 				</section>
 
-				<section className="" id="testimonials">
+				<section className="my-10" id="testimonials">
 					<WallCardCarousal />
 				</section>
 			</main>

@@ -1,9 +1,10 @@
 import Navbar from './components/Navbar/Navbar.jsx'
 import AboutUs from './components/AboutUs/AboutUs.jsx'
-import Register from './components/Resgister/Register.jsx'
+import Register from './components/Register/Register.jsx'
 import Themes from './components/Themes/Themes.jsx'
 import Timeline from './components/Timeline/Timeline.jsx'
 import Rules from './components/Rules/Rules.jsx'
+import Footer from './components/Footer/Footer.jsx'
 import { aboutData, hackshetra, tagline, what } from './constants/text.js'
 import {ThemeData} from './constants/themeData.js'
 import {TimelineData} from "./constants/timelineData.js"
@@ -41,6 +42,7 @@ function App() {
         <Themes data={ThemeData} activeSlide={2}/>
         <Timeline data={TimelineData}/>
         <Rules data={rulesData}/>
+        <Footer/>
       </div>
     </>
   )

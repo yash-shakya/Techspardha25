@@ -5,7 +5,7 @@ function Register() {
   return (
     <div className='register'>
     <button>
-        <a href="https://unstop.com/p/excalibur-technobyte-nit-kurukshetra-techspardha-national-institute-of-technology-nit-kurukshetra-910091" target='_blanck'>Register Here</a>
+        <a href="https://unstop.com/p/excalibur-2025-national-institute-of-technology-nit-kurukshetra-1392944" target='_blanck'>Register Here</a>
     </button>
     </div>
   );

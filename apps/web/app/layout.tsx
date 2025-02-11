@@ -23,10 +23,10 @@ export default function RootLayout({
       <body className={`${poppins.className} bg-gray-900 text-white relative h-screen w-screen overflow-x-hidden`}>
         <AuthProvider>
         <NavBar navitems={NavItems} />
-        <div className="absolute top-4 right-4 z-50 mt-[-30px]">
+        <div className="absolute top-3 right-10 w-32 z-50 mt-[-30px]">
             <UserAuthButton />
           </div>
-        <div className="flex flex-col max-w-full mx-auto p-5 container">
+        <div className="flex flex-col max-w-full mx-auto container">
           {children}
         </div>
         <Footer socials={SOCIALS} />

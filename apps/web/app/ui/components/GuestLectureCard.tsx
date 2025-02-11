@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { FaFacebook } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { AiFillInstagram } from "react-icons/ai";
+import { LuExternalLink } from "react-icons/lu";
 
 interface GuestLectureCardProps {
   backGroundImage: string;
@@ -11,6 +12,10 @@ interface GuestLectureCardProps {
   name: string;
   date: string;
   description: string;
+  facebook?: string;
+  insta?: string;
+  linkedin?: string;
+  link?: string;
 }
 
 const ExpandableDescription: React.FC<{ description: string }> = ({ description }) => {
@@ -44,18 +49,22 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
   name,
   date,
   description,
+  facebook,
+  insta,
+  linkedin,
+  link
 }) => {
   return (
-    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative">
-        <Link href="/guest-lecture/john-doe" passHref>
+    <div className="w-full max-w-xs rounded-2xl sm:max-w-sm md:max-w-md lg:max-w-lg shadow-guest h-full">
+      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col h-full">
+        <Link href="/" passHref>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full z-0">
             <Image
               src={backGroundImage}
               alt="Background"
               fill
-              className="object-cover opacity-70"
+              className="object-cover opacity-70 bg-cover"
             />
           </div>
 
@@ -65,28 +74,29 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={image}
               alt="Person"
               fill
-              className="object-cover rounded-t-2xl"
+              className="object-fill object-top rounded-t-2xl"
             />
           </div>
         </Link>
 
-        <div className="p-4 relative z-10 bg-black bg-opacity-60">
+        <div className="p-4 relative z-10 bg-opacity-60 flex-grow flex flex-col">
           <div className="mb-3">
             <h2 className="text-lg font-bold text-white">{name}</h2>
             <p className="text-sm text-gray-200">{date}</p>
           </div>
 
           {/* Description Section */}
-          <div className="mb-3">
+          <div>
             <ExpandableDescription description={description} />
           </div>
 
           {/* Social Media Links */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 mt-auto">
             {[
-              { Icon: IoLogoLinkedin, href: "https://linkedin.com" },
-              { Icon: AiFillInstagram, href: "https://instagram.com" },
-              { Icon: FaFacebook, href: "https://facebook.com" }
+              { Icon: IoLogoLinkedin, href: linkedin || "https://linkedin.com" },
+              { Icon: AiFillInstagram, href: insta || "https://instagram.com" },
+              { Icon: FaFacebook, href: facebook || "https://facebook.com" },
+              { Icon: LuExternalLink, href: link || "/" }
             ].map(({ Icon, href }, index) => (
               <Link key={index} href={href} passHref>
                 <div className="hover:scale-125 transition-transform duration-300 cursor-pointer">
