@@ -45,7 +45,7 @@ const SponsorsCard: React.FC<SponsorsCardProps> = ({
                 >
                   <img
                     src={logo.imageUrl}
-                    alt={logo.alt}
+                    alt={logo.alt || "Sponsor Logo"}
                     className="w-40 h-auto max-w-full"
                   />
                   <span className="sr-only">{logo.name}</span>
