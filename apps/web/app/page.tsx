@@ -42,21 +42,27 @@ async function getLectures() {
 async function getSponsors() {
 	try {
 		const sponsors = await SERVICES.getAllSponsors();
-		const modifiedSponsors = Object.keys(sponsors).map((key) => {
+		// sponsors = [
+		// 	{
+		// 		"sponsorSection": "Platinum",
+		// 		"sponsor": { // Sponsor Object}
+		// 	},
+		// ]
+		const modifiedSponsors = sponsors.map((sponsorCategory) => {
 			return {
-				title: key,
-				sponsors: (sponsors[key] || []).map((sponsor) => {
+				title: sponsorCategory.sponsorSection,
+				sponsors: (sponsorCategory.sponsors || []).map((sponsor) => {
 					return {
 						name: sponsor.name || "",
 						imageUrl:
 							sponsor.imageUrl ||
 							"https://www.printastic.com/data/theme/slider/436/sponsorships@2x.webp",
-						alt: sponsor.alt || "",
+						alt: sponsor.alt || sponsor.name || "Sponsor Logo",
 						targetUrl: sponsor.targetUrl || "/",
 					};
 				}),
 			};
-		});
+		})
 		return modifiedSponsors as SponsorCategory[];
 	} catch (error) {
 		console.error("Error fetching sponsors: ", error);
