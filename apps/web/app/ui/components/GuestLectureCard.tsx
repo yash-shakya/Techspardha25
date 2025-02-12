@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaFacebook } from "react-icons/fa";
@@ -20,10 +20,22 @@ interface GuestLectureCardProps {
 
 const ExpandableDescription: React.FC<{ description: string }> = ({ description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [maxLength, setMaxLength] = useState(130);
+
+  useEffect(() => {
+    const updateMaxLength = () => {
+      setMaxLength(window.innerWidth < 640 ? 130 : 200);
+    };
+
+    updateMaxLength();
+    window.addEventListener("resize", updateMaxLength);
+
+    return () => window.removeEventListener("resize", updateMaxLength);
+  }, []);
 
   return (
-    <div className="relative">
-      <p 
+    <div className="relative overflow-y-auto max-sm:h-20 h-36">
+      <p
         className={`
           text-white text-xs leading-relaxed 
           ${isExpanded ? 'line-clamp-none' : 'line-clamp-3'}
@@ -31,7 +43,7 @@ const ExpandableDescription: React.FC<{ description: string }> = ({ description 
       >
         {description}
       </p>
-      {description.length > 100 && (
+      {description.length > maxLength && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="text-blue-300 text-xs underline mt-1 block"
