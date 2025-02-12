@@ -1,63 +1,79 @@
 /* Mobile Styles for Phone Only */
 @media (max-width: 550px) {
-    .guest-card-container {
-      width: 90% !important; 
-      height: 350px !important; 
-    }
-    .heading{
-      font-size: 1.5rem !important; 
-      margin-bottom: 1px !important;
-    }
-    .guest-button-left, .guest-button-right {
-      top: 55% !important; 
-    }
-    .guest-card {
-      transform: translateX(-50px); 
-    }
-  
-    .guest-card-container:hover {
-      transform: translateX(50px); 
-    }
-    .py-10 {
-        padding-top: 10px; /* Adjust padding for smaller screens */
-        padding-bottom: 10px;
-      }
-    
-      .w-full {
-        width: 100%; /* Ensures the container spans full width */
-      }
-    
-      .guest-card-container {
-        width: 300px; /* Adjust card width for mobile */
-        height: 450px; /* Make card height responsive */
-        margin: 0 auto; /* Center the card on smaller screens */
-      }
-    
-      /* Make the card container fit better in the gray background */
-      .bg-gray-500 {
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-  
-    /* .guest-button-left,
+  .guest-card-container {
+    width: 90% !important;
+    height: 400px !important;
+  }
+
+  .heading {
+    font-size: 1.5rem !important;
+    margin-bottom: 1px !important;
+  }
+
+  .guest-button-left,
+  .guest-button-right {
+    top: 55% !important;
+  }
+
+  .guest-card {
+    transform: translateX(-50px);
+  }
+
+  .guest-card-container:hover {
+    transform: translateX(50px);
+  }
+
+  .py-10 {
+    padding-top: 10px;
+    /* Adjust padding for smaller screens */
+    padding-bottom: 10px;
+  }
+
+  .w-full {
+    width: 100%;
+    /* Ensures the container spans full width */
+  }
+
+  .guest-card-container {
+    width: 300px;
+    /* Adjust card width for mobile */
+    height: 450px;
+    /* Make card height responsive */
+    margin: 0 auto;
+    /* Center the card on smaller screens */
+  }
+
+  /* Make the card container fit better in the gray background */
+  .bg-gray-500 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* .guest-button-left,
     .guest-button-right {
     } */
-  
-    .guest-card-container:nth-child(n+2) {
-      display: none; /* Hide all cards except the first one */
-    }
-  
-    .guest-card-container:first-child {
-      display: block;
-      margin: auto; /* Center the single card */
-    }
+
+  .guest-card-container:nth-child(n+2) {
+    display: none;
+    /* Hide all cards except the first one */
   }
+
+  .guest-card-container:first-child {
+    display: block;
+    margin: auto;
+    /* Center the single card */
+  }
+}
+
 @media (max-width: 343px) {
-    .guest-card-container {
-        display: none !important; /* Hide the entire card */
-    }
-    .guest-button-left,
-    .guest-button-right {
-        display: none !important; /* Hide navigation buttons */
-    }
+  .guest-card-container {
+    display: none !important;
+    /* Hide the entire card */
+  }
+
+  .guest-button-left,
+  .guest-button-right {
+    display: none !important;
+    /* Hide navigation buttons */
+  }
 }
