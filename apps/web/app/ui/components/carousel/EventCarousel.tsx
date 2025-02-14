@@ -30,7 +30,7 @@ export default function StoriesCarousel() {
 
         <div className="flex items-center justify-center gap-6 relative w-full">
           <div
-            className="opacity-70 transition-opacity md:duration-[8000] duration-500"
+            className="opacity-70 transition-opacity md:duration-[8000ms] duration-500"
             style={{ zIndex: 1 }}
           >
             <CarouselEventCard
@@ -42,7 +42,7 @@ export default function StoriesCarousel() {
           </div>
 
           <div
-            className="mx-4 transition-all scale-105 md:duration-[8000] duration-500"
+            className="mx-4 transition-all scale-105 md:duration-[8000ms] duration-500"
             style={{ zIndex: 2 }}
           >
             <CarouselEventCard
@@ -54,7 +54,7 @@ export default function StoriesCarousel() {
           </div>
 
           <div
-            className="opacity-70 transition-opacity md:duration-[8000] duration-500"
+            className="opacity-70 transition-opacity md:duration-[8000ms] duration-500"
             style={{ zIndex: 1 }}
           >
             <CarouselEventCard

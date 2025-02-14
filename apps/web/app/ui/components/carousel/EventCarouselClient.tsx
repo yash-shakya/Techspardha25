@@ -2,65 +2,75 @@
 import React, { useEffect, useRef, useState } from "react";
 import EventCard from "../EventCard";
 import Link from "next/link";
-import { Event } from "@/app/server/actions/constants";
+import EventCategoryCard from "../EventCategoryCard";
 
-export default function EventCarouselClient({events}: {events: Event[]}) {
+type EventCategory = {
+	name: string;
+	img: string;
+};
+
+type EventCarouselClientProps = {
+	eventCategory: EventCategory[];
+};
+
+export default function EventCarouselClient({
+	eventCategory,
+}: EventCarouselClientProps) {
 	const [currentIndex, setCurrentIndex] = useState(0);
 
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentIndex((prevIndex) => (prevIndex + 1) % events.length);
-		}, 3000);
+	const scArr = useRef<HTMLDivElement>(null);
 
-		return () => clearInterval(interval);
+	useEffect(() => {
+		let animationFrameId: number;
+
+		// Start continuous scrolling
+		const startScroll = () => {
+			if (scArr.current) {
+				scArr.current.scrollLeft += window.innerWidth < 600 ? 1 : 2; // Adjust speed by modifying this value
+				if (scArr.current.scrollLeft >= scArr.current.scrollWidth / 2) {
+					// Reset scrolling to start for seamless looping
+					scArr.current.scrollLeft = 0;
+				}
+			}
+			animationFrameId = requestAnimationFrame(startScroll);
+		};
+
+		// Start the animation
+		animationFrameId = requestAnimationFrame(startScroll);
+
+		// Cleanup on unmount
+		return () => cancelAnimationFrame(animationFrameId);
 	}, []);
 
 	return (
-		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center">
-			<h1 className="text-3xl font-bold md:text-4xl pb-5 bg-gradient-to-b from-[#FDFDFD] to-[rgba(250, 250, 250, .1)] text-transparent bg-clip-text font-[Satoshi Variable] md:mb-[5vh]">
+		<div className="mb-10 h-full w-[100vw] flex flex-col items-center justify-center relative">
+			<h1 className="text-center text-5xl font-[Satoshi Variable] font-black bg-gradient-to-b from-gray-50 to-gray-50/40 text-transparent bg-clip-text">
 				Events
 			</h1>
-			<div className="relative w-full h-[325px] md:h-[523px] overflow-hidden">
-				<div className="hidden lg:block h-full w-[200px] absolute top-0 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00]" />
-				<div className="hidden lg:block h-full w-[200px] absolute top-0 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00]" />
 
-				<div className="flex items-center justify-center h-full relative">
-					{events.map((data: Event, index) => {
-						const position =
-							index === currentIndex
-								? "center"
-								: index === (currentIndex - 1 + events.length) % events.length
-								? "left"
-								: index === (currentIndex + 1) % events.length
-								? "right"
-								: "hidden";
-						return (
-							<div
-								key={index}
-								className={`absolute transition-all duration-500 ${
-									position === "center"
-										? "opacity-100 scale-100 z-10"
-										: "opacity-50 scale-90 z-0"
-								} ${position === "left" ? "-translate-x-[120%]" : ""} ${
-									position === "right" ? "translate-x-[120%]" : ""
-								} ${position === "hidden" ? "hidden" : ""}`}
-								style={{
-									transition: "transform 0.5s ease, opacity 0.5s ease",
-								}}
-							>
-								<EventCard
-									id={data.id}
-									name={data.eventName}
-									img={data.poster}
-									isActive={position === "center"}
-								/>
-							</div>
-						);
-					})}
+			{/* <div className="w-full md:h-[517px] flex justify-start relative overflow-hidden"> */}
+			<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 left-0 bg-gradient-to-r from-[#001926] to-[#F3F9FF00] z-20" />
+			<div className=" sm:h-full h-[200px] lg:w-[400px] w-12 absolute max-sm:top-16 right-0 bg-gradient-to-l from-[#001926] to-[#F3F9FF00] z-20" />
+
+			<div
+				ref={scArr}
+				className="py-14 pb-16 w-[100vw] flex gap-[28px] md:gap-[40px] overflow-x-hidden items-start snap-x snap-mandatory relative"
+			>
+				<div className="flex gap-[28px] md:gap-[40px]">
+					{eventCategory.map((data: EventCategory, index) => (
+						<EventCategoryCard name={data.name} img={data.img} key={index} />
+					))}
+					{/* </div> */}
+					{/* <div className="flex gap-[28px] md:gap-[40px]"> */}
+					{eventCategory.map((data: EventCategory, index) => (
+						<EventCategoryCard name={data.name} img={data.img} key={index} />
+					))}
 				</div>
+				{/* </div> */}
 			</div>
+
 			<Link href={"/events"}>
-				<div className="px-4 py-1.5 bg-white/10 rounded-[32px] border border-white/10 justify-start items-center gap-2.5 inline-flex overflow-hidden">
+				<div className="px-4 py-1.5 md:mt-0 bg-white/10 rounded-[32px] border border-white/10 justify-start items-center gap-2.5 inline-flex overflow-hidden">
 					<div className="text-white text-sm font-bold font-['Satoshi Variable'] leading-normal">
 						View Them All
 					</div>

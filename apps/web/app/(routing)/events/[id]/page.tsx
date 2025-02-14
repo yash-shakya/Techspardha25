@@ -13,7 +13,7 @@ const SingleEventPage: React.FC<SingleEventProps> = async ({ params }) => {
   id = id.replace(/%20/g, " ");
   console.log(id);
   const event = await SERVICES.getEventById(id);
-  console.log(event);
+  // console.log(event);
   const rules = typeof event.rules == 'string' ? (event.rules as any as string).split("|") : event.rules;
   event.rules = rules;
   return <SingleEventClient event={event} />

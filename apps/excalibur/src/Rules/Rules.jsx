@@ -11,7 +11,7 @@ export default function Rules() {
                         Students from the first, second, and pre-final years of all branches and programs are eligible to participate.
                     </li>
                     <li className="before:content-['🔹'] text-left m-[10px_auto] w-[98%] p-5 list-inside rounded-[20px] bg-[rgba(0,0,0,0.352)] backdrop-blur-[20px] shadow-[0px_0px_2px_rgba(152,152,152,0.2)]">
-                        A team should comprise 3 to 4 members.
+                        A team should comprise of 3 to 4 members.
                     </li>
                     <li className="before:content-['🔹'] text-left m-[10px_auto] w-[98%] p-5 list-inside rounded-[20px] bg-[rgba(0,0,0,0.352)] backdrop-blur-[20px] shadow-[0px_0px_2px_rgba(152,152,152,0.2)]">
                         Inclusion of at least one female member is compulsory in each team.
@@ -20,10 +20,10 @@ export default function Rules() {
                         There will be three rounds in two weeks.
                     </li>
                     <li className="before:content-['🔹'] text-left m-[10px_auto] w-[98%] p-5 list-inside rounded-[20px] bg-[rgba(0,0,0,0.352)] backdrop-blur-[20px] shadow-[0px_0px_2px_rgba(152,152,152,0.2)]">
-                        The first round will be a PPT round.
+                        The first round will be aN abstract submission round.
                     </li>
                     <li className="before:content-['🔹'] text-left m-[10px_auto] w-[98%] p-5 list-inside rounded-[20px] bg-[rgba(0,0,0,0.352)] backdrop-blur-[20px] shadow-[0px_0px_2px_rgba(152,152,152,0.2)]">
-                        The second round will be mentor evaluation.
+                        The second round will be mentor evaluation round.
                     </li>
                     <li className="before:content-['🔹'] text-left m-[10px_auto] w-[98%] p-5 list-inside rounded-[20px] bg-[rgba(0,0,0,0.352)] backdrop-blur-[20px] shadow-[0px_0px_2px_rgba(152,152,152,0.2)]">
                         The final round will be offline, and teams need to be present on campus.

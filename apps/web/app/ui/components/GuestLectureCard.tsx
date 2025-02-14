@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaFacebook } from "react-icons/fa";
@@ -20,10 +20,22 @@ interface GuestLectureCardProps {
 
 const ExpandableDescription: React.FC<{ description: string }> = ({ description }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [maxLength, setMaxLength] = useState(130);
+
+  useEffect(() => {
+    const updateMaxLength = () => {
+      setMaxLength(window.innerWidth < 640 ? 130 : 200);
+    };
+
+    updateMaxLength();
+    window.addEventListener("resize", updateMaxLength);
+
+    return () => window.removeEventListener("resize", updateMaxLength);
+  }, []);
 
   return (
-    <div className="relative">
-      <p 
+    <div className="relative overflow-y-auto max-sm:h-20 h-36">
+      <p
         className={`
           text-white text-xs leading-relaxed 
           ${isExpanded ? 'line-clamp-none' : 'line-clamp-3'}
@@ -31,7 +43,7 @@ const ExpandableDescription: React.FC<{ description: string }> = ({ description 
       >
         {description}
       </p>
-      {description.length > 100 && (
+      {description.length > maxLength && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="text-blue-300 text-xs underline mt-1 block"
@@ -55,8 +67,8 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
   link
 }) => {
   return (
-    <div className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col min-h-[70svh]">
+    <div className="w-full max-w-xs rounded-2xl sm:max-w-sm md:max-w-md lg:max-w-lg shadow-guest h-full">
+      <div className="bg-blue-500 rounded-2xl shadow-lg overflow-hidden relative flex flex-col h-full">
         <Link href="/" passHref>
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full z-0">
@@ -64,7 +76,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={backGroundImage}
               alt="Background"
               fill
-              className="object-cover opacity-70"
+              className="object-cover opacity-70 bg-cover"
             />
           </div>
 
@@ -74,7 +86,7 @@ const GuestLectureCard: React.FC<GuestLectureCardProps> = ({
               src={image}
               alt="Person"
               fill
-              className="object-cover rounded-t-2xl"
+              className="object-fill object-top rounded-t-2xl"
             />
           </div>
         </Link>

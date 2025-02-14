@@ -6,9 +6,9 @@ export default function About() {
 	return (
 		<>
 			<div className="space-y-12">
-				<section className="space-y-6 p-4">
+				<section className="space-y-6 p-8">
 					<h2 className="text-2xl md:text-3xl font-semibold">
-						What is Techspardha 2024?
+						What is Techspardha 2025?
 					</h2>
 					<p className="text-gray-300 leading-relaxed w-full text-justify">
 						{ABOUT_TECHSPARDHA}
