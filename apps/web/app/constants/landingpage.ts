@@ -98,131 +98,65 @@ export const tempNotifications = [
 	{ title: "Many more..." },
 ];
 
-
 export const wallcardData = [
 	{
 		id: "1",
-		name: "Alice Johnson",
-		role: "UX Designer",
+		name: "Akash Kumar",
+		role: "Event Head",
 		testimonial:
-			"The intuitive design and seamless user experience provided by this product have completely transformed the way I approach my work. It's rare to find a tool that not only meets but exceeds expectations in both functionality and aesthetic appeal.",
-		imageUrl: "https://example.com/images/alice.jpg",
+			"Well I really got an amazing experience by participating in escape room event organised by mexperts and also ended up being a runner up for the event. And I also participated in fun and game events. It was really awesome and fun by enjoying everything with friends and creating a lot of memories.",
+		imageUrl: "https://i.ibb.co/xSHmFLq5/image.png",
 	},
 	{
 		id: "2",
-		name: "Michael Brown",
-		role: "Data Scientist",
+		name: "Tanisha",
+		role: "Co-Convener",
 		testimonial:
-			"This tool has truly revolutionized the way we work as a team. It has streamlined our workflow by integrating multiple functionalities into one cohesive platform, allowing us to collaborate effortlessly. The ability to quickly analyze and interpret data has become much easier, and we no longer have to rely on multiple, disconnected tools.",
-		imageUrl: "https://example.com/images/michael.jpg",
+			"Technospardha was an unforgettable experience! Leading the EP and guest lectures team was both challenging and rewarding, while collaborating with juniors and decorating our stall brought immense joy and creativity. The vibrant energy and enthusiasm throughout the fest made it a perfect blend of learning, teamwork, and fun!",
+		imageUrl: "https://i.ibb.co/cc2qzggx/Tanisha.jpg",
 	},
 	{
 		id: "3",
-		name: "Emily Carter",
-		role: "Marketing Specialist",
+		name: "Tushar",
+		role: "Convener",
 		testimonial:
-			"This product has been a game changer for our marketing campaigns. The insights we've gained from using this tool have been invaluable in shaping our strategies and improving our decision-making process. Not only has it helped us understand our audience better, but it has also given us the tools to reach them more effectively.",
-		imageUrl: "https://example.com/images/emily.jpg",
+			"As a convener of Techspardha, I’m excited for the opportunities ahead! So far, I’ve contributed as a team member across multiple areas—media, social media, video, website, decoration, and management—gaining invaluable experience and working with an incredible team. The energy and enthusiasm throughout the fest made every effort worthwhile. Looking forward to taking on new challenges and making the next edition even more remarkable!",
+		imageUrl: "https://i.ibb.co/W8rJJnt/Tushar-Tushar.jpg",
 	},
 	{
 		id: "4",
-		name: "David Lee",
-		role: "Full Stack Developer",
+		name: "Lalit Gidwani",
+		role: "Event Head",
 		testimonial:
-			"Working with this product has been an absolute pleasure. As a full stack developer, I appreciate the attention to detail and how every feature is thoughtfully designed to enhance the overall user experience. The speed and responsiveness are outstanding, and the seamless integration with other tools and platforms has made my development process so much easier.",
-		imageUrl: "https://example.com/images/david.jpg",
+			"I love the enthusiasm of people willing to participate in the fest. The energy, teamwork, and excitement made every event memorable. Learning, competing, and collaborating with friends and seniors have been amazing experiences. Can't wait for this one!",
+		imageUrl: "https://i.ibb.co/5WY3KJ2q/IMG-20241228-WA0014-Lalit-Gidwani.jpg",
 	},
 	{
 		id: "5",
-		name: "Sophia Taylor",
-		role: "Product Manager",
+		name: "Rahul Sehgal",
+		role: "Co-Convener",
 		testimonial:
-			"As a product manager, finding tools that improve team collaboration and productivity is a constant challenge. This product not only solved those issues but also introduced features that I didn't even realize we needed. It's now an indispensable part of our workflow.",
-		imageUrl: "https://example.com/images/sophia.jpg",
+			"Techspardha was an amazing experience! I took part in events like Excalibur and Designathon, learned a lot, and had a great time working with my friends and seniors. The energy and excitement all around made it a fest to remember!",
+		imageUrl: "https://i.ibb.co/1YpyGrss/DSC-1553.jpg",
 	},
 	{
 		id: "6",
-		name: "Chris Green",
-		role: "Software Architect",
+		name: "Anupma",
+		role: "Co-Convener",
 		testimonial:
-			"The architecture and scalability of this product are remarkable. It handles high loads effortlessly and integrates seamlessly with our existing systems. As someone who evaluates tools for enterprise use, I can confidently say this is one of the best solutions I've come across.",
-		imageUrl: "https://example.com/images/chris.jpg",
+			"Techspardha has been an integral part of my journey at NIT Kurukshetra. Over the past four years, I have witnessed Techspardha evolve tremendously. Each year, new and exciting events have been introduced, making the fest even more engaging and enriching. The enthusiasm in the eyes of participants, the dedication of the organizing teams, and the invaluable experiences shared by esteemed speakers have made every edition of Techspardha truly special. It has been an incredible platform for learning, collaboration, and innovation, and I feel fortunate to have been a part of this remarkable journey.",
+		imageUrl: "https://i.ibb.co/wkdmRLP/image.png",
 	},
 	{
 		id: "7",
-		name: "Olivia Martinez",
-		role: "Content Creator",
+		name: "Vedant Mishra",
+		role: "Event Head",
 		testimonial:
-			"Creating content has never been easier. This tool has streamlined my workflow and allowed me to focus on producing high-quality work instead of wasting time on tedious tasks. I recommend it to every creator out there!",
-		imageUrl: "https://example.com/images/olivia.jpg",
-	},
-	{
-		id: "8",
-		name: "James Anderson",
-		role: "Cybersecurity Specialist",
-		testimonial:
-			"Security is always a priority, and this product delivers on every front. The built-in features ensure that our data remains secure while providing a user-friendly experience. Highly recommend it for teams prioritizing security.",
-		imageUrl: "https://example.com/images/james.jpg",
-	},
-	{
-		id: "9",
-		name: "Liam Wright",
-		role: "Product Designer",
-		testimonial:
-			"This product has improved my workflow as a designer. With its efficient collaboration tools and intuitive interface, I'm able to get feedback quickly and make design changes seamlessly. It's become a crucial part of my design process.",
-		imageUrl: "https://example.com/images/liam.jpg",
-	},
-	{
-		id: "10",
-		name: "Ava King",
-		role: "Business Analyst",
-		testimonial:
-			"By using this tool, I've been able to analyze data with greater efficiency and accuracy. The insights derived from this platform have guided our strategic decisions and have played a key role in improving our bottom line.",
-		imageUrl: "https://example.com/images/ava.jpg",
-	},
-	{
-		id: "11",
-		name: "Noah Scott",
-		role: "Project Manager",
-		testimonial:
-			"Managing multiple projects simultaneously has become much easier thanks to this tool. The ability to track progress, communicate with the team, and stay on top of tasks all in one place has saved me so much time.",
-		imageUrl: "https://example.com/images/noah.jpg",
-	},
-	{
-		id: "12",
-		name: "Isabella Green",
-		role: "Frontend Developer",
-		testimonial:
-			"As a frontend developer, I highly value the integration capabilities and user-centered design this product offers. It's not only made my coding tasks easier but also improved the interaction with backend services, making development more efficient overall.",
-		imageUrl: "https://example.com/images/isabella.jpg",
-	},
-	{
-		id: "13",
-		name: "Ethan White",
-		role: "Operations Manager",
-		testimonial:
-			"Since adopting this tool, our operations have become more streamlined and efficient. The automation features have reduced manual tasks, allowing us to focus on the bigger picture. It has definitely helped us save time and resources.",
-		imageUrl: "https://example.com/images/ethan.jpg",
-	},
-	{
-		id: "14",
-		name: "Mia Harris",
-		role: "Community Manager",
-		testimonial:
-			"This product has been a game changer for managing online communities. The communication tools are intuitive, and the reporting features help me keep track of engagement and activity. I can't imagine managing our community without it.",
-		imageUrl: "https://example.com/images/mia.jpg",
-	},
-	{
-		id: "15",
-		name: "Lucas Walker",
-		role: "Software Engineer",
-		testimonial:
-			"As a software engineer, it's important to have tools that are flexible and scalable. This product has been incredibly helpful in both respects, and its ability to handle complex workflows makes it an indispensable part of our team's toolkit.",
-		imageUrl: "https://example.com/images/lucas.jpg",
+			"Last year at Technspardha was an unforgettable experience for me. I had the opportunity to participate in multiple events like Hackshetra and Encoder, where I not only learned a lot but also enjoyed working alongside my friends and seniors. Winning several competitions made the journey even more special, boosting my confidence and passion for tech. This year, I am thrilled to take my involvement to the next level by hosting some of these events. With an improved version and even more enthusiasm, I can't wait to contribute to making Technspardha an even bigger success!",
+		imageUrl:
+			"https://i.ibb.co/0Rs3fCN9/Event-Head-12114102-Vedant-Vedant-Mishra.jpg",
 	},
 ];
-
-
 
 export const SOCIALS = {
 	instagram: "https://www.instagram.com/technobyte_nitkkr",

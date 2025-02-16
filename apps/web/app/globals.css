@@ -17,6 +17,11 @@
 	border-radius: 5px; /* Optional: Rounded corners */
 }
 
+/* Defining a classname for scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+	width: 10px; /* Width of the scrollbar */
+}
+
 /* For Firefox */
 html {
 	scrollbar-width: thin; /* Makes the scrollbar 10px wide */
