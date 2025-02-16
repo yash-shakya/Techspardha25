@@ -71,10 +71,7 @@ async function getSponsors() {
 }
 
 export default async function Home() {
-	// Fetching All Lectures
-	const lectures = await getLectures();
-	// Fetching All Sponsors
-	const sponsors = await getSponsors();
+	const [lectures, sponsors] = await Promise.all([getLectures(), getSponsors()]);
 
 	return (
 		<>
