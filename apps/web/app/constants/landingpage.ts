@@ -92,10 +92,10 @@ export const NavItems = [
 ];
 
 export const tempNotifications = [
-	{ title: "Notification" },
-	{ title: "Notification" },
-	{ title: "Notification" },
-	{ title: "Notification" },
+	{ title: "Excalibur is live!" },
+	{ title: "Hackshetra" },
+	{ title: "Black Box" },
+	{ title: "Many more..." },
 ];
 
 

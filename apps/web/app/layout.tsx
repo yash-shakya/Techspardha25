@@ -11,6 +11,9 @@ import UserAuthButton from "./components/UserAuthButton";
 export const metadata: Metadata = {
   title: "Techspardha",
   description: "Techspardha'25",
+  icons: {
+    icon: "/logo.png"
+  }
 };
 
 export default function RootLayout({
@@ -20,6 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="logo.png" type="image/png" />
+      </head>
       <body className={`${poppins.className} bg-gray-900 text-white relative h-screen w-screen overflow-x-hidden`}>
         <AuthProvider>
         <NavBar navitems={NavItems} />

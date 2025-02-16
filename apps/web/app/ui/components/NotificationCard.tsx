@@ -8,13 +8,13 @@ export default function NotificationCard() {
 				{tempNotifications.map((tempNoti, i) => {
 					return (
 						<div
-							className="w-[270px] h-6 flex flex-row justify-around text-[#e5e1e6]/60 hover:text-[#e5e1e6] hover:font-extrabold cursor-pointer"
+							className="w-[270px] h-6 flex flex-row justify-start gap-[20px] text-[#e5e1e6]/60 hover:text-[#e5e1e6] hover:font-extrabold cursor-pointer"
 							key={i}
 						>
 							<div className="text-2xl font-extrabold font-['JetBrains Mono'] uppercase leading-normal">
 								&gt;&gt;
 							</div>
-							<div className="text-2xl font-bold font-['Satoshi Variable'] uppercase leading-normal">
+							<div className="text-2xl font-bold font-['Satoshi Variable'] leading-normal">
 								{tempNoti.title}
 							</div>
 						</div>
