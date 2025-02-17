@@ -81,7 +81,7 @@ export default async function Home() {
 					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-semibold font-sans leading-[33px]">
 						Frontier Reimagined
 					</h2>
-					<PresentedBy />
+					{/* <PresentedBy /> */}
 					<NotificationCard />
 					<Watermark />
 				</section>
