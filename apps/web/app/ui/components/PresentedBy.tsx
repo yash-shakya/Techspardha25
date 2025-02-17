@@ -1,7 +1,5 @@
 import Image from "next/image";
-import docker from "../../../public/docker.svg";
-import appWrite from "../../../public/appWrite.svg";
-import digitalOcean from "../../../public/digitalOcean.svg";
+import technobyte from "../../../public/TeamLogos/technoLogo.svg";
 
 export default function PresentedBy() {
   return (
@@ -10,9 +8,7 @@ export default function PresentedBy() {
         Presented by
       </div>
       <div className="flex gap-[25px] items-end flex-wrap max-sm:flex-col max-sm:items-center">
-        <Image src={digitalOcean} alt="docker" />
-        <Image src={appWrite} alt="docker" />
-        <Image src={docker} alt="docker" />
+        <Image src={technobyte} alt="technobyte" />
       </div>
     </div>
   );
