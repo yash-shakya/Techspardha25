@@ -92,10 +92,8 @@ export const NavItems = [
 ];
 
 export const tempNotifications = [
-	{ title: "Excalibur is live!" },
-	{ title: "Hackshetra" },
-	{ title: "Black Box" },
-	{ title: "Many more..." },
+	{ title: "Techspardha Website is Live!" },
+	{ title: "Techspardha App is Live" },
 ];
 
 export const wallcardData = [
