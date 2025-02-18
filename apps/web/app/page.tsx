@@ -12,7 +12,7 @@ import Guestgroup from "./ui/GuestGroup";
 import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
-import PresentedBy from "./ui/components/PresentedBy";
+// import PresentedBy from "./ui/components/PresentedBy";
 
 // ACTIONS
 import SERVICES from "./server/actions/services";
