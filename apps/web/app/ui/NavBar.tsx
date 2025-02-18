@@ -108,9 +108,12 @@ export default function NavBar({ navitems }: NavBarProps) {
       {isDropdownOpen && (
         <div
           id="mobile-menu"
-          className={`flex flex-col items-center justify-center w-[100vw] absolute top-[-32] left-0 bg-[#001926] z-30 p-4 rounded-lg 
+          className={`flex flex-col items-center justify-center w-[100vw] absolute left-0 bg-[#001926] z-30 p-4 rounded-lg 
               transition-all duration-300 ease-in-out transform translate-y-[-100%] opacity-0
              animate-[slideDown_0.3s_ease-in-out_forwards]`}
+          style={{
+            top: "-32px", // "top-[-32px]" is not working as expected in deployment
+          }}
         >
           {renderNavItems()}
         </div>
