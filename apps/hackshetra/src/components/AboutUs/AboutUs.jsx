@@ -19,7 +19,7 @@ function AboutUs(props) {
 
     return (
         <section className='text-white w-[75%] max-md:w-[90%] mt-11  backdrop-blur-xl md:p-4 font-kode rounded-lg shadow-[0px_0px_10px_0px_#3cb7dd]' id='about'>
-            <h3 className='text-center text-4xl my-6'>{props.que}</h3>
+            <h3 className='text-center text-4xl max-md:text-2xl my-6'>{props.que}</h3>
             <div className='flex flex-col justify-center items-center md:justify-between md:flex-row'>
                 <div id="slider" className='w-[45vw] h-[21vw] max-md:w-[90vw] max-md:h-[40vw] mb-3'>
                     <input

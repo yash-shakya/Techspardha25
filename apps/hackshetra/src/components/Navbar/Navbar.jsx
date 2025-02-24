@@ -17,7 +17,7 @@ function NormalNav() {
             <button className='hover:scale-110 transition-all duration-150' onClick={()=>scrollToSection("#theme")}>
                 Theme
             </button>
-            <a href="" className='w-9 hover:scale-110 transition-all duration-150'>
+            <a href="https://techspardha.in" className='w-9 hover:scale-110 transition-all duration-150'>
 
                 <span className="techspardha_logo 'relative  my-auto" style={{ filter: 'drop-shadow(0px 0px 20px rgb(54, 124, 255))' }}>
                     <img src="/TechspardhaLogo.svg" alt="T" loading='lazy' decoding='async' />
@@ -37,7 +37,7 @@ function DropMenu() {
     return (
         <div className='md:hidden mt-2 z-10 text-white font-kode w-[100%]  bg-cyan-800/20 shadow-[0px_0px_20px_0px_rgba(0,51,102,1.00)] backdrop-blur-sm '>
             <div className='flex flex-col items-center gap-3 py-3'>
-                <a href=''>
+                <a href='https://techspardha.in'>
                     Home
                 </a>
                 <button onClick={()=>scrollToSection("#about")}>

@@ -23,19 +23,15 @@ function App() {
           lg:text-[4rem] 
           xl:text-[4rem] xl:[text-shadow:6px_6px_3px_#00cccc]`}>{hackshetra}</h1>
 
-          <div className='text-white lg:text-[2rem] font-kode uppercase mt-14  backdrop-blur-sm rounded-3xl w-fit align-middle text-center  p-2 px-5 mb-10
+          <div className='text-white lg:text-[2rem] font-kode uppercase mt-14 max-md:mt-4  backdrop-blur-sm rounded-3xl w-fit align-middle text-center  p-2 px-5 mb-10
           sm:text-xl
           md:text-2xl
           text-md'>
             {tagline}
           </div>
 
-          <div className=' w-fit h-min rounded-lg p-5 bg-cyan-400/5 backdrop-blur-xl
-          text-gray-300 text-2xl mx-2 text-center font-pirata shadow-[0px_0px_10px_0px_#3cb7dd]
-            max-md:scale-[1] max-sm:scale-[0.8] max-xs:scale-[0.7]'>
-
+          <div className='w-[50%] flex justify-center'>
             <Register />
-
           </div>
         </div>
         <AboutUs data={aboutData} que={what}/>

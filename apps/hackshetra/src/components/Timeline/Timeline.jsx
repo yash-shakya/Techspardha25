@@ -29,14 +29,14 @@ const Card = ({ side, initialX, date, name, detail }) => {
         animate={mainControls}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col w-full">
           <span className="text-cyan-500 text-center font-quicksand px-1 py-2 text-xl max-md:text-lg font-extrabold leading-7">
             {date}
           </span>
           <span className="text-cyan-400 mb-2 font-kode text-lg max-md:text-sm max-md:px-1 text-center font-semibold leading-7">
             {name}
           </span>
-          <p className="text-white font-quicksand text-base max-md:text-xs text-center px-2 font-normal leading-6">
+          <p className="text-white font-quicksand text-base max-md:text-xs text-center px-2 font-normal leading-6 overflow-clip ">
             {detail}
           </p>
         </div>
