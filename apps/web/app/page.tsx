@@ -12,7 +12,7 @@ import Guestgroup from "./ui/GuestGroup";
 import EventCarouselServer from "./ui/components/carousel/EventCarouselServer";
 import Watermark from "./ui/components/Watermark";
 import NotificationCard from "./ui/components/NotificationCard";
-import PresentedBy from "./ui/components/PresentedBy";
+// import PresentedBy from "./ui/components/PresentedBy";
 
 // ACTIONS
 import SERVICES from "./server/actions/services";
@@ -71,20 +71,17 @@ async function getSponsors() {
 }
 
 export default async function Home() {
-	// Fetching All Lectures
-	const lectures = await getLectures();
-	// Fetching All Sponsors
-	const sponsors = await getSponsors();
+	const [lectures, sponsors] = await Promise.all([getLectures(), getSponsors()]);
 
 	return (
 		<>
 			<main className="snap-y snap-mandatory w-full h-full">
-				<section className="snap-center min-h-[100svh] md:min-h-[90vh] flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
+				<section className="snap-center flex flex-col items-center gap-[22px]  mb-10 md:mb-0">
 					<RubikWetHeading text={TECHSPARDHA} />
 					<h2 className="w-[376.21px] h-[27px] text-center text-[#bdbdc0] text-[22px] font-semibold font-sans leading-[33px]">
 						Frontier Reimagined
 					</h2>
-					<PresentedBy />
+					{/* <PresentedBy /> */}
 					<NotificationCard />
 					<Watermark />
 				</section>
